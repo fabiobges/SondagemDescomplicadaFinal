@@ -1,0 +1,45 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.project.sondagemocr.PrincipalActivity">
+    <item
+        android:id="@+id/item_cadastra"
+        android:orderInCategory="100"
+        android:title="@string/item_cadastra"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item_consulta"
+        android:orderInCategory="100"
+        android:title="@string/item_consulta"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item_cadastra_turma"
+        android:orderInCategory="100"
+        android:title="@string/item_cadastra_turma"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/item_consulta_turma"
+        android:orderInCategory="100"
+        android:title="@string/item_consulta_turma"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item_cadastra_aluno"
+        android:orderInCategory="100"
+        android:title="@string/item_cadastra_aluno"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/item_relatorio"
+        android:orderInCategory="100"
+        android:title="@string/item_relatorio"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item_grafico"
+        android:orderInCategory="100"
+        android:title="@string/item_grafico"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item_sair"
+        android:orderInCategory="100"
+        android:title="@string/item_sair"
+        app:showAsAction="never" />
+</menu>

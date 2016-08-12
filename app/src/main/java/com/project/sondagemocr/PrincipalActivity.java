@@ -1,0 +1,112 @@
+package com.project.sondagemocr;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+import android.widget.Toast;
+
+//import com.google.android.gms.appindexing.Action;
+//import com.google.android.gms.appindexing.AppIndex;
+//import com.google.android.gms.common.api.GoogleApiClient;
+
+public class PrincipalActivity extends AppCompatActivity {
+
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    //private GoogleApiClient client;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_principal);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_principal, menu);
+ /*
+        MenuItem item1 = menu.add(0, 1, 0, "Cadastrar Sondagem");
+        item1.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+
+        MenuItem item2 = menu.add(0, 2, 1, "Consultar Sondagem");
+        item2.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+
+        MenuItem item3 = menu.add(0, 3, 2, "Consultar Turma");
+        item3.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+
+        MenuItem item4 = menu.add(0, 4, 3, "Relatórios");
+        item4.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+
+        MenuItem item5 = menu.add(0, 5, 4, "Gráficos");
+        item5.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+
+        MenuItem item6 = menu.add(0, 6, 5, "Sair");
+        item6.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+    */
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        Intent intent= new Intent();
+
+        switch(id) {
+            case R.id.item_cadastra:
+                Toast.makeText(this, "Cadastro de Sondagem",Toast.LENGTH_SHORT).show();
+                intent = new Intent(this,MenuSondagemActivity.class);
+                break;
+            case R.id.item_consulta:
+                Toast.makeText(this, "Consulta de Sondagem", Toast.LENGTH_SHORT).show();
+                // intent = new Intent(this,null);
+                break;
+            case R.id.item_cadastra_turma:
+                Toast.makeText(this, "Cadastro de Turma", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this,CadastroTurmaActivity.class);
+                break;
+            case R.id.item_consulta_turma:
+                Toast.makeText(this, "Consulta de Turma", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this,null);
+                break;
+            case R.id.item_cadastra_aluno:
+                Toast.makeText(this, "Cadastro de Aluno", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this,CadastroAlunoActivity.class);
+                break;
+            case R.id.item_relatorio:
+                Toast.makeText(this, "Relatórios", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this,null);
+                break;
+            case R.id.item_grafico:
+                Toast.makeText(this, "Gráficos", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this,null);
+                break;
+            case R.id.item_sair:
+                Toast.makeText(this, "Sair do Sistema", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this,MainActivity.class);
+                break;
+
+        }
+
+        startActivity(intent);
+
+        return super.onOptionsItemSelected(item);
+    }
+
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.project.sondagemocr.AjudaSondagemActivity"
+    tools:showIn="@layout/activity_ajuda_sondagem"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:textSize="18dp"
+        android:text="A sondagem deverá ser aplicada seguindo a respectiva ordem de palavras: polissílaba, trissílaba, dissílaba, monossílaba, seguida de uma frase. A frase deve possuir ao menos uma das palavras anteriores. Todas as palavras e frases devem pertencer ao mesmo campo semântico."
+        android:id="@+id/textView11"
+        android:gravity="center"
+        android:background="#ffff00"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+    <ImageButton
+        android:layout_width="67dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgVolta"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_reply_black_24dp"
+        android:background="#ffffff"
+        android:layout_marginTop="12dp"
+        android:layout_weight="0.10" />
+</LinearLayout>

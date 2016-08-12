@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">SondagemOCR</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_principal">Sondagem OCR</string>
+    <string name="item_cadastra">Cadastrar Sondagem</string>
+    <string name="item_consulta">Consultar Sondagens</string>
+    <string name="item_cadastra_turma">Cadastrar Turma</string>
+    <string name="item_consulta_turma">Consultar Turmas</string>
+    <string name="item_cadastra_aluno">Cadastrar Aluno</string>
+    <string name="item_relatorio">Relatórios</string>
+    <string name="item_grafico">Gráficos</string>
+    <string name="item_sair">Sair</string>
+    <string name="title_activity_menu_sondagem">MenuSondagemActivity</string>
+    <string name="title_activity_cadastro_sondagem">CadastroSondagemActivity</string>
+    <string name="palavra_poli">Palavra Polissílaba</string>
+    <string name="palavra_tri">Palavra Trissílaba</string>
+    <string name="palavra_dissi">Palavra Dissílaba</string>
+    <string name="palavra_mono">Palavra Monossílaba</string>
+    <string name="palavra_frase">Frase</string>
+    <string name="gravar">Gravar</string>
+    <string name="limpar">Limpar</string>
+    <string name="title_activity_cadastro_usuario">CadastroUsuarioActivity</string>
+    <string name="cadastro_usuario">Cadastro Usuário</string>
+    <string name="cadastro_login">Cadastro Login</string>
+    <string name="cadastro_turma">Cadastro Turma</string>
+    <string name="cadastro_aluno">Cadastro Aluno</string>
+    <string name="dados_responsável">Dados Responsável</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="title_activity_cadastro_turma">CadastroTurmaActivity</string>
+    <string name="title_activity_cadastro_aluno">CadastroAlunoActivity</string>
+    <string name="title_activity_cadastro_sondagem_mod">CadastroSondagemModActivity</string>
+    <string name="numero">Número </string>
+    <string name="insiraPalavras">Insira as palavras: </string>
+    <string name="insiraFrase">Insira a frase: </string>
+    <string name="title_activity_ajuda_sondagem">AjudaSondagemActivity</string>
+</resources>

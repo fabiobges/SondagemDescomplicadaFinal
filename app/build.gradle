@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'MyAndroidKeyVision'
+            keyPassword 'keyfabvi'
+            storeFile file('C:/Users/Fabio B/.android/debug.keystore')
+            storePassword 'storefabvi'
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion '24.0.1'
+    defaultConfig {
+        applicationId "com.project.sondagemocr"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:design:23.2.1'
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    compile 'com.android.support:support-v4:23.1.0'
+
+    compile 'com.google.api-client:google-api-client-android:1.20.0' exclude module: 'httpclient'
+    compile 'com.google.http-client:google-http-client-gson:1.20.0' exclude module: 'httpclient'
+    //compile files('libs/apache-maven-3.3.9/lib/maven-plugin-api-3.3.9.jar')
+
+}
+
+repositories {
+    mavenCentral();
+}
+dependencies {
+    compile 'com.google.apis:google-api-services-vision:v1-rev22-1.22.0'
+    // NOTE: Do not place your application dependencies here; they belong
+    // in the individual module build.gradle files
+}
