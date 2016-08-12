@@ -2,7 +2,6 @@ package com.project.sondagemocr;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -15,9 +14,6 @@ import com.project.sondagemocr.Controller.TurmaController;
 import com.project.sondagemocr.DataBase.DataBase;
 import com.project.sondagemocr.Pojo.Turma;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
 
 //import com.google.android.gms.appindexing.Action;
 //import com.google.android.gms.appindexing.AppIndex;
