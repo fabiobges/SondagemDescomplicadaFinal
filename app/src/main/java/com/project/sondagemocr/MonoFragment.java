@@ -30,6 +30,7 @@ import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.gson.GsonFactory;
+import com.project.sondagemocr.OCR.GoogleVision;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -64,7 +65,7 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
         edtTextMono.setText(strEscritaMono);
 
         //setRetainInstance(true);
-
+        Log.i("Script:","onCreate");
         return view;
     }
 
@@ -84,6 +85,8 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
 
         }else if(v == imgBtnEscrita){
             strEscritaMono = edtTextMono.getText().toString();
+            strEscritaMono = GoogleVision.resposta;
+            edtTextMono.setText(strEscritaMono);
         }
     }
 
@@ -94,11 +97,11 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
             Bundle bundle = data.getExtras();
             if (bundle != null){
                 bitmap = (Bitmap) bundle.get("data");
-                bitmap = scaleBitmapDown(bitmap,1200);
+                bitmap = GoogleVision.scaleBitmapDown(bitmap,1200);
                 try {
                     if(bitmap != null) {
-                        callCloudVision(bitmap);
-                        Log.i("Script:","Bitmap não é null");
+                        GoogleVision.callCloudVision(bitmap);
+                        Log.i("Script:","Bitmap não é null: "+strEscritaMono);
                     }else{
                         Log.i("Script:","Bitmap é null");
                     }
@@ -106,12 +109,22 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
                     e.printStackTrace();
                 }
                 imgEscrita.setImageBitmap(bitmap);
-                //strEscritaMono = CadastroSondagemActivity.gravaImagemStorage(bitmap,"monossilaba.png");
 
             }
+
         }
+
+
     }
 
+    public void teste(){
+
+        Log.i("teste: ","teste");
+
+    }
+
+    //Estruturando dimensões da imagem para melhor aproveitamento
+    /*
     public Bitmap scaleBitmapDown(Bitmap bitmap, int maxDimension) {
 
         int originalWidth = bitmap.getWidth();
@@ -136,7 +149,7 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
         // Switch text to loading
         //mImageDetails.setText(R.string.loading_message);
 
-        // Do the real work in an async task, because we need to use the network anyway
+        // Estruturando tarefas assincronas, é necessária a conexão com internet
         new AsyncTask<Object, Void, String>() {
             @Override
             protected String doInBackground(Object... params) {
@@ -154,27 +167,27 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
                     batchAnnotateImagesRequest.setRequests(new ArrayList<AnnotateImageRequest>() {{
                         AnnotateImageRequest annotateImageRequest = new AnnotateImageRequest();
 
-                        // Add the image
+                        // Adicinando imagem
                         Image base64EncodedImage = new Image();
-                        // Convert the bitmap to a JPEG
+                        // Convertendo imagem para JPEG
                         // Just in case it's a format that Android understands but Cloud Vision
                         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                         bitmap.compress(Bitmap.CompressFormat.JPEG, 90, byteArrayOutputStream);
                         byte[] imageBytes = byteArrayOutputStream.toByteArray();
 
-                        // Base64 encode the JPEG
+                        // Base64 codifica o JPEG
                         base64EncodedImage.encodeContent(imageBytes);
                         annotateImageRequest.setImage(base64EncodedImage);
 
-                        // add the features we want
+                        // Adicionando dados que nós queremos, como detecção de caracteres
                         annotateImageRequest.setFeatures(new ArrayList<Feature>() {{
-                            Feature labelDetection = new Feature();
-                            labelDetection.setType("TEXT_DETECTION");
-                            labelDetection.setMaxResults(10);
-                            add(labelDetection);
+                            Feature textDetection = new Feature();
+                            textDetection.setType("TEXT_DETECTION");
+                            textDetection.setMaxResults(1);
+                            add(textDetection);
                         }});
 
-                        // Add the list of one thing to the request
+                        // Adicionando requisições
                         add(annotateImageRequest);
                     }});
 
@@ -203,7 +216,7 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
     }
 
     private String convertResponseToString(BatchAnnotateImagesResponse response) {
-        String message = "I found these things:\n\n";
+        String message = "Nós achamos estes dados:\n\n";
 
         List<EntityAnnotation> texts = response.getResponses().get(0).getTextAnnotations();
         if (texts != null) {
