@@ -18,7 +18,7 @@ import com.project.sondagemocr.DataBase.DataBase;
 public class MainActivity extends Activity implements View.OnClickListener {
 
     private Button button;
-    private Button btCadastro;
+    private TextView txCadastroUsuario;
     private DataBase dataBase;
     private SQLiteDatabase connection;
     //private GoogleApiClient client;
@@ -34,10 +34,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
         button = (Button)findViewById(R.id.btEntra);
-        btCadastro = (Button)findViewById(R.id.btnCadastro);
+        txCadastroUsuario = (TextView) findViewById(R.id.textView6);
 
         button.setOnClickListener(this);
-        btCadastro.setOnClickListener(this);
+
+        txCadastroUsuario.setOnClickListener(this);
 
         try {
             dataBase = new DataBase(this, null, 1);
@@ -62,7 +63,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         if(v == button){
             Intent intent = new Intent(this,PrincipalActivity.class);
             startActivity(intent);
-        }else if(v == btCadastro){
+        }else if(v == txCadastroUsuario){
             Intent intent = new Intent(this,CadastroUsuarioActivity.class);
             startActivity(intent);
         }
