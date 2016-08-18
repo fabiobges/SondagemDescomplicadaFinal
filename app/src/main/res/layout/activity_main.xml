@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/amarelo">
+    android:background="@color/colorPrimary">
 
     <LinearLayout
         android:orientation="vertical"
@@ -12,7 +12,7 @@
         android:paddingTop="56dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
-        android:background="@color/amarelo">
+        android:background="@color/colorPrimary">
 
         <ImageView android:src="@drawable/logo_branco"
             android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
             android:layout_marginBottom="24dp"
             android:padding="12dp"
             android:background="@color/cinza"
-            android:textColor="@color/amarelo"
+            android:textColor="@color/colorPrimary"
             android:text="Entrar"/>
 
         <TextView android:id="@+id/textView5"
