@@ -117,11 +117,7 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
 
     }
 
-    public void teste(){
 
-        Log.i("teste: ","teste");
-
-    }
 
     //Estruturando dimensões da imagem para melhor aproveitamento
     /*

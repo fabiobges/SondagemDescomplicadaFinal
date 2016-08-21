@@ -8,12 +8,17 @@ import android.util.Log;
 import android.view.*;
 import android.widget.*;
 
+import com.project.sondagemocr.OCR.GoogleVision;
+
+import java.io.IOException;
+
 public class DissiFragment extends Fragment implements View.OnClickListener{
 
     static Bitmap bitmap;
+    static String strEscritaDissi;
     ImageView imgEscrita;
     EditText edtDissi;
-    ImageButton imgBtn;
+    ImageButton imgBtn, imgBtnEscrita;
 
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup group, Bundle bundle){
@@ -22,7 +27,11 @@ public class DissiFragment extends Fragment implements View.OnClickListener{
 
         imgEscrita = (ImageView) view.findViewById(R.id.imageEscrita);
         imgBtn = (ImageButton) view.findViewById(R.id.imageButtonTiraFoto);
+        imgBtnEscrita = (ImageButton) view.findViewById(R.id.imageEscritaDi);
+        edtDissi = (EditText) view.findViewById(R.id.editTextDissi);
 
+        edtDissi.setText(strEscritaDissi);
+        imgBtnEscrita.setOnClickListener(this);
         imgEscrita.setImageBitmap(bitmap);
         imgBtn.setOnClickListener(this);
 
@@ -35,6 +44,9 @@ public class DissiFragment extends Fragment implements View.OnClickListener{
         if(v == imgBtn){
             Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
             startActivityForResult(intent,0);
+        }else if(v == imgBtnEscrita){
+            strEscritaDissi = GoogleVision.resposta;
+            edtDissi.setText(strEscritaDissi);
         }
     }
 
@@ -45,6 +57,17 @@ public class DissiFragment extends Fragment implements View.OnClickListener{
             Bundle bundle = data.getExtras();
             if(bundle != null){
                 bitmap =(Bitmap) bundle.get("data");
+                bitmap = GoogleVision.scaleBitmapDown(bitmap,1200);
+                try {
+                    if(bitmap != null) {
+                        GoogleVision.callCloudVision(bitmap);
+                        Log.i("Script:","Bitmap não é null: ");
+                    }else{
+                        Log.i("Script:","Bitmap é null");
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 imgEscrita.setImageBitmap(bitmap);
             }
         }

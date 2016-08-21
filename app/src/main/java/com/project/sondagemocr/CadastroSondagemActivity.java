@@ -27,6 +27,10 @@ public class CadastroSondagemActivity extends FragmentActivity implements View.O
     private Bitmap bitmapPoli;
     private Bitmap bitmapFrase;
     private String escritaMono;
+    private String escritaDissi;
+    private String escritaTri;
+    private String escritaPoli;
+    private String escritaFrase;
     private TextView textViewMono;
     private TextView textViewDissi;
     private TextView textViewTri;
@@ -113,6 +117,7 @@ public class CadastroSondagemActivity extends FragmentActivity implements View.O
             if(bitmapDissi != null){
                 Log.i("Script","Transferiu bitmap para DissiFragment");
                 DissiFragment.bitmap = bitmapDissi;
+                DissiFragment.strEscritaDissi = escritaDissi;
             }
         }else if(v == textViewTri){
             //Instanciando TriFragment e enviando dados já existentes
@@ -123,6 +128,7 @@ public class CadastroSondagemActivity extends FragmentActivity implements View.O
             if(bitmapTri != null){
                 Log.i("Script","Transferiu bitmap para TriFragment");
                 TriFragment.bitmap = bitmapTri;
+                TriFragment.strEscritaTri = escritaTri;
             }
         }else if(v == textViewPoli){
             //Instanciando PoliFragment e enviando dados já existentes
@@ -130,9 +136,10 @@ public class CadastroSondagemActivity extends FragmentActivity implements View.O
             FragmentTransaction fragTrans = fragManag.beginTransaction();
             fragTrans.replace(R.id.layout_frag,poliFragment,"fragpoli");
             fragTrans.commit();
-            if(bitmapTri != null){
+            if(bitmapPoli != null){
                 Log.i("Script","Transferiu bitmap para PoliFragment");
                 PoliFragment.bitmap = bitmapPoli;
+                PoliFragment.strEscritaPoli = escritaPoli;
             }
         }else if(v == textViewFrase){
             //Instanciando FraseFragment e enviando dados já existentes
@@ -140,9 +147,10 @@ public class CadastroSondagemActivity extends FragmentActivity implements View.O
             FragmentTransaction fragTrans = fragManag.beginTransaction();
             fragTrans.replace(R.id.layout_frag,fraseFragment,"fragfrase");
             fragTrans.commit();
-            if(bitmapTri != null){
+            if(bitmapFrase != null){
                 Log.i("Script","Transferiu bitmap para TriFragment");
                 FraseFragment.bitmap = bitmapFrase;
+                FraseFragment.strEscritaFrase = escritaFrase;
             }
         }
     }
@@ -164,21 +172,25 @@ public class CadastroSondagemActivity extends FragmentActivity implements View.O
     public void salvarDadosFragmentDissi(){
         DissiFragment dissiFragment = (DissiFragment) fragManag.findFragmentByTag("fragdissi");
         bitmapDissi = dissiFragment.bitmap;
+        escritaDissi = dissiFragment.strEscritaDissi;
     }
 
     public void salvarDadosFragmentTri(){
         TriFragment triFragment = (TriFragment) fragManag.findFragmentByTag("fragtri");
         bitmapTri = triFragment.bitmap;
+        escritaTri = triFragment.strEscritaTri;
     }
 
     public void salvarDadosFragmentPoli(){
         PoliFragment poliFragment = (PoliFragment) fragManag.findFragmentByTag("fragpoli");
         bitmapPoli = poliFragment.bitmap;
+        escritaPoli = poliFragment.strEscritaPoli;
     }
 
     public void salvarDadosFragmentFrase(){
         FraseFragment fraseFragment = (FraseFragment) fragManag.findFragmentByTag("fragfrase");
         bitmapFrase = fraseFragment.bitmap;
+        escritaFrase = fraseFragment.strEscritaFrase;
     }
 
 

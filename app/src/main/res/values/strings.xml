@@ -34,4 +34,6 @@
     <string name="insiraPalavras">Insira as palavras: </string>
     <string name="insiraFrase">Insira a frase: </string>
     <string name="title_activity_ajuda_sondagem">AjudaSondagemActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
