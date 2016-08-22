@@ -82,6 +82,7 @@ public class TriFragment extends Fragment implements View.OnClickListener{
     public void onDestroy() {
         ((CadastroSondagemActivity)getActivity()).salvarDadosFragmentTri();
         bitmap = null;
+        GoogleVision.resposta = null;
         super.onDestroy();
         Log.i("Script","onDestroy TriFragment");
     }

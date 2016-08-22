@@ -83,6 +83,7 @@ public class FraseFragment extends Fragment implements View.OnClickListener{
     public void onDestroy() {
         ((CadastroSondagemActivity)getActivity()).salvarDadosFragmentFrase();
         bitmap = null;
+        GoogleVision.resposta = null;
         super.onDestroy();
         Log.i("Script","onDestroy PoliFragment");
     }

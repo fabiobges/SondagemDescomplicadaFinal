@@ -78,6 +78,7 @@ public class DissiFragment extends Fragment implements View.OnClickListener{
     public void onDestroy() {
         ((CadastroSondagemActivity)getActivity()).salvarDadosFragmentDissi();
         bitmap = null;
+        GoogleVision.resposta = null;
         super.onDestroy();
         Log.i("Script","onDestroy DissiFragment");
     }

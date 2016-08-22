@@ -350,6 +350,7 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
     public void onDestroy() {
         ((CadastroSondagemActivity)getActivity()).salvarDadosFragmentMono();
         bitmap = null;
+        GoogleVision.resposta = null;
         Log.i("Script","bitmap recebe null");
         super.onDestroy();
         Log.i("Script","onDestroy");
