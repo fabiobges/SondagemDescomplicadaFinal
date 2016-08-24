@@ -2,13 +2,10 @@
     <string name="app_name">SondagemOCR</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_principal">Sondagem OCR</string>
-    <string name="item_cadastra">Cadastrar Sondagem</string>
-    <string name="item_consulta">Consultar Sondagens</string>
-    <string name="item_cadastra_turma">Cadastrar Turma</string>
-    <string name="item_consulta_turma">Consultar Turmas</string>
-    <string name="item_cadastra_aluno">Cadastrar Aluno</string>
+    <string name="item_sondagens">Sondagens</string>
+    <string name="item_turmas">Turmas</string>
+    <string name="item_alunos">Alunos</string>
     <string name="item_relatorio">Relatórios</string>
-    <string name="item_grafico">Gráficos</string>
     <string name="item_sair">Sair</string>
     <string name="title_activity_menu_sondagem">MenuSondagemActivity</string>
     <string name="title_activity_cadastro_sondagem">CadastroSondagemActivity</string>

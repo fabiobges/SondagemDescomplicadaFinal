@@ -341,14 +341,11 @@
     <string name="gravar">Gravar</string>
     <string name="insiraFrase">Insira a frase: </string>
     <string name="insiraPalavras">Insira as palavras: </string>
-    <string name="item_cadastra">Cadastrar Sondagem</string>
-    <string name="item_cadastra_aluno">Cadastrar Aluno</string>
-    <string name="item_cadastra_turma">Cadastrar Turma</string>
-    <string name="item_consulta">Consultar Sondagens</string>
-    <string name="item_consulta_turma">Consultar Turmas</string>
-    <string name="item_grafico">Gráficos</string>
+    <string name="item_alunos">Alunos</string>
     <string name="item_relatorio">Relatórios</string>
     <string name="item_sair">Sair</string>
+    <string name="item_sondagens">Sondagens</string>
+    <string name="item_turmas">Turmas</string>
     <string name="limpar">Limpar</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
