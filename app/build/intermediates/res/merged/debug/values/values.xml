@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
     <string-array name="titles_tab">
-        <item>TAB A</item>
-        <item>TAB B</item>
+        <item>SONDAGENS</item>
+        <item>MODELO</item>
     </string-array>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -360,8 +360,8 @@
     <string name="palavra_poli">Palavra Polissílaba</string>
     <string name="palavra_tri">Palavra Trissílaba</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="text_fragment_a">Frag A</string>
-    <string name="text_fragment_b">Frag B</string>
+    <string name="text_fragment_a">Sondagens</string>
+    <string name="text_fragment_b">Modelo</string>
     <string name="title_activity_ajuda_sondagem">AjudaSondagemActivity</string>
     <string name="title_activity_cadastro_aluno">CadastroAlunoActivity</string>
     <string name="title_activity_cadastro_sondagem">CadastroSondagemActivity</string>
