@@ -12,16 +12,13 @@ import android.widget.GridView;
 
 public class ResultadoFragment extends Fragment {
 
-    GridView gridView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.resultado_fragment, null);
 
-        gridView = (GridView) view.findViewById(R.id.gridView);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
 
 
 
