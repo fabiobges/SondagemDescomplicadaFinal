@@ -38,7 +38,6 @@ public class ScriptSQL {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("CREATE TABLE IF NOT EXISTS tb_usuario ( ");
         stringBuilder.append("_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ");
-        stringBuilder.append("_id_endereco INTEGER, ");
         stringBuilder.append("login_user VARCHAR(40) NOT NULL, ");
         stringBuilder.append("nome_usuario VARCHAR(80) NOT NULL, ");
         stringBuilder.append("rg_usuario CHAR(9), ");
