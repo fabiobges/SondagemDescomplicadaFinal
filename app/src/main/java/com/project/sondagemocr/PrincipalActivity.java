@@ -82,36 +82,20 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         Intent intent= new Intent();
 
         switch(id) {
-            case R.id.item_cadastra:
-                Toast.makeText(this, "Cadastro de Sondagem",Toast.LENGTH_SHORT).show();
+            case R.id.item_sondagens:
+                Toast.makeText(this, "Sondagens",Toast.LENGTH_SHORT).show();
                 intent = new Intent(this,MenuSondagemActivity.class);
                 break;
-            case R.id.item_consulta:
-                Toast.makeText(this, "Consulta de Sondagem", Toast.LENGTH_SHORT).show();
-                // intent = new Intent(this,null);
-                break;
-            case R.id.item_cadastra_turma:
-                Toast.makeText(this, "Cadastro de Turma", Toast.LENGTH_SHORT).show();
+            case R.id.item_turmas:
+                Toast.makeText(this, "Turmas", Toast.LENGTH_SHORT).show();
                 intent = new Intent(this,CadastroTurmaActivity.class);
-                break;
-            case R.id.item_consulta_turma:
-                Toast.makeText(this, "Consulta de Turma", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this,null);
-                break;
-            case R.id.item_cadastra_aluno:
-                Toast.makeText(this, "Cadastro de Aluno", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this,CadastroAlunoActivity.class);
                 break;
             case R.id.item_relatorio:
                 Toast.makeText(this, "Relatórios", Toast.LENGTH_SHORT).show();
                 intent = new Intent(this,null);
                 break;
-            case R.id.item_grafico:
-                Toast.makeText(this, "Gráficos", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this,null);
-                break;
             case R.id.item_sair:
-                Toast.makeText(this, "Sair do Sistema", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sair", Toast.LENGTH_SHORT).show();
                 intent = new Intent(this,MainActivity.class);
                 break;
 
@@ -130,36 +114,20 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         Intent intent= new Intent();
 
         switch(id) {
-            case R.id.item_cadastra:
-                Toast.makeText(this, "Cadastro de Sondagem",Toast.LENGTH_SHORT).show();
+            case R.id.item_sondagens:
+                Toast.makeText(this, "Sondagens",Toast.LENGTH_SHORT).show();
                 intent = new Intent(this,MenuSondagemActivity.class);
                 break;
-            case R.id.item_consulta:
-                Toast.makeText(this, "Consulta de Sondagem", Toast.LENGTH_SHORT).show();
-                // intent = new Intent(this,null);
-                break;
-            case R.id.item_cadastra_turma:
-                Toast.makeText(this, "Cadastro de Turma", Toast.LENGTH_SHORT).show();
+            case R.id.item_turmas:
+                Toast.makeText(this, "Turmas", Toast.LENGTH_SHORT).show();
                 intent = new Intent(this,CadastroTurmaActivity.class);
-                break;
-            case R.id.item_consulta_turma:
-                Toast.makeText(this, "Consulta de Turma", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this,null);
-                break;
-            case R.id.item_cadastra_aluno:
-                Toast.makeText(this, "Cadastro de Aluno", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this,CadastroAlunoActivity.class);
                 break;
             case R.id.item_relatorio:
                 Toast.makeText(this, "Relatórios", Toast.LENGTH_SHORT).show();
                 intent = new Intent(this,null);
                 break;
-            case R.id.item_grafico:
-                Toast.makeText(this, "Gráficos", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this,null);
-                break;
             case R.id.item_sair:
-                Toast.makeText(this, "Sair do Sistema", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sair", Toast.LENGTH_SHORT).show();
                 intent = new Intent(this,MainActivity.class);
                 break;
 

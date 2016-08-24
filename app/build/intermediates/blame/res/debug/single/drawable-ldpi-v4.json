@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_pencil.png",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_pencil.png"
+    },
+    {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_camera_alt_black_24dp.png",
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_camera_alt_black_24dp.png"
     },
@@ -8,8 +12,20 @@
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_pencil.png"
     },
     {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_camera_alt_black_24dp.png",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_camera_alt_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_reply_black_24dp.png",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_reply_black_24dp.png"
+    },
+    {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_reply_black_24dp.png",
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_reply_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_error_black_24dp.png",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_error_black_24dp.png"
     },
     {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_error_black_24dp.png",

@@ -4,15 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.*;
 
-public class MenuSondagemActivity extends AppCompatActivity implements View.OnClickListener  {
+import com.project.sondagemocr.Adapters.MyFragmentPagerAdapter;
 
-    private Button btnSondagem;
-    private Button btnSondagemModelo;
+public class MenuSondagemActivity extends AppCompatActivity  {
+
+    private TabLayout mTabLayout;
+    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,27 +25,12 @@ public class MenuSondagemActivity extends AppCompatActivity implements View.OnCl
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        mViewPager = (ViewPager) findViewById(R.id.view_pager);
 
+        mViewPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), getResources().getStringArray(R.array.titles_tab)));
 
-        btnSondagem = (Button) findViewById(R.id.btSondagem);
-        btnSondagemModelo = (Button) findViewById(R.id.btSondagemModelo);
-        btnSondagem.setOnClickListener(this);
-        btnSondagemModelo.setOnClickListener(this);
+        mTabLayout.setupWithViewPager(mViewPager);
 
-
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        if(v == btnSondagem){
-            Intent intent = new Intent(this,CadastroSondagemActivity.class);
-            startActivity(intent);
-        }else {
-            if (v == btnSondagemModelo) {
-                Intent intent = new Intent(this,CadastroSondagemModActivity.class);
-                startActivity(intent);
-            }
-        }
     }
 }

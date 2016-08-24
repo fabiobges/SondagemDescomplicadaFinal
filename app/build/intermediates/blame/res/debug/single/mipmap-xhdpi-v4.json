@@ -1,7 +1,19 @@
 [
     {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_camera.png",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\src\\main\\res\\mipmap-xhdpi\\ic_camera.png"
+    },
+    {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icone.png",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\src\\main\\res\\mipmap-xhdpi\\icone.png"
     },
     {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_logo_branco_preto.png",
@@ -14,5 +26,13 @@
     {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_camera.png",
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\src\\main\\res\\mipmap-xhdpi\\ic_camera.png"
+    },
+    {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_logo_branco_preto.png",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\src\\main\\res\\mipmap-xhdpi\\ic_logo_branco_preto.png"
+    },
+    {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_menu_drawer.png",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\src\\main\\res\\mipmap-xhdpi\\ic_menu_drawer.png"
     }
 ]
