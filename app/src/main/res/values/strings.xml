@@ -33,4 +33,12 @@
     <string name="title_activity_ajuda_sondagem">AjudaSondagemActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string-array name="titles_tab">
+        <item>SONDAGENS</item>
+        <item>MODELO</item>
+    </string-array>
+
+    <string name="text_fragment_a">Sondagens</string>
+    <string name="text_fragment_b">Modelo</string>
 </resources>

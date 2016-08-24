@@ -12,22 +12,9 @@
     tools:context="com.project.sondagemocr.MenuSondagemActivity"
     tools:showIn="@layout/activity_menu_sondagem">
 
-    <Button
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:text="Sondagem"
-        android:id="@+id/btSondagem"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
-        android:textStyle="normal" />
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/view_pager"/>
 
-    <Button
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:text="Sondagem Modelo"
-        android:id="@+id/btSondagemModelo"
-        android:layout_below="@+id/btSondagem"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="49dp" />
 </RelativeLayout>
