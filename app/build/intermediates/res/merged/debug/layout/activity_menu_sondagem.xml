@@ -29,7 +29,7 @@
     <include layout="@layout/content_menu_sondagem" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fabMenuSondagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right|bottom"

@@ -44,12 +44,14 @@
                 android:layout_height="50dp"/>
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/textAlunoPoli"
                 android:text="Aluno"
                 android:textSize="15dp"
                 android:layout_height="50dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/textModeloPoli"
                 android:text="Modelo"
                 android:textSize="15dp"
                 android:layout_height="50dp"/>
@@ -67,12 +69,14 @@
                 android:layout_height="50dp"/>
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/textAlunoTri"
                 android:text="Aluno"
                 android:textSize="15dp"
                 android:layout_height="50dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/textModeloTri"
                 android:text="Modelo"
                 android:textSize="15dp"
                 android:layout_height="50dp"/>
@@ -90,12 +94,14 @@
                 android:layout_height="50dp"/>
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/textAlunoDissi"
                 android:text="Aluno"
                 android:textSize="15dp"
                 android:layout_height="50dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/textModeloDissi"
                 android:text="Modelo"
                 android:textSize="15dp"
                 android:layout_height="50dp"/>
@@ -114,12 +120,14 @@
                 android:paddingRight="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/textAlunoMono"
                 android:text="Aluno"
                 android:textSize="15dp"
                 android:layout_height="50dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/textModeloMono"
                 android:text="Modelo"
                 android:textSize="15dp"
                 android:layout_height="50dp"/>
@@ -137,12 +145,14 @@
                 android:layout_height="50dp"/>
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/textAlunoFrase"
                 android:text="Aluno aluno aluno aluno aluno"
                 android:textSize="15dp"
                 android:layout_height="50dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/textModeloFrase"
                 android:text="Modelo modelo modelo modelo"
                 android:textSize="15dp"
                 android:layout_height="50dp"/>

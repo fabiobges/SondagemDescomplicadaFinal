@@ -116,6 +116,12 @@
             android:layout_weight="0.14"
             android:layout_marginTop="8dp"></LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resultado"
+            android:id="@+id/textViewResultado"/>
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"

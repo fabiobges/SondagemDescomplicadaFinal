@@ -36,6 +36,7 @@ public class CadastroSondagemActivity extends FragmentActivity implements View.O
     private TextView textViewTri;
     private TextView textViewPoli;
     private TextView textViewFrase;
+    private TextView textViewResultado;
     private FragmentManager fragManag = getSupportFragmentManager();
     private Spinner spnTurma;
     private Spinner spnAluno;
@@ -66,6 +67,7 @@ public class CadastroSondagemActivity extends FragmentActivity implements View.O
         textViewTri = (TextView) findViewById(R.id.tri_text);
         textViewPoli = (TextView) findViewById(R.id.poli_text);
         textViewFrase = (TextView) findViewById(R.id.frase_text);
+        textViewResultado = (TextView) findViewById(R.id.textViewResultado);
         spnTurma = (Spinner) findViewById(R.id.spinner_turma);
         spnAluno = (Spinner) findViewById(R.id.spinner_aluno);
 
@@ -74,6 +76,7 @@ public class CadastroSondagemActivity extends FragmentActivity implements View.O
         textViewTri.setOnClickListener(this);
         textViewPoli.setOnClickListener(this);
         textViewFrase.setOnClickListener(this);
+        textViewResultado.setOnClickListener(this);
 
         dataBase = new DataBase(this,null,1);
         turmaController = new TurmaController(dataBase);
@@ -152,6 +155,16 @@ public class CadastroSondagemActivity extends FragmentActivity implements View.O
                 FraseFragment.bitmap = bitmapFrase;
                 FraseFragment.strEscritaFrase = escritaFrase;
             }
+        }else if(v == textViewResultado){
+            ResultadoFragment resultadoFragment = new ResultadoFragment();
+            FragmentTransaction fragTrans = fragManag.beginTransaction();
+            fragTrans.replace(R.id.layout_frag,resultadoFragment,"fragresultado");
+            fragTrans.commit();
+            ResultadoFragment.strAlunoPoli = escritaPoli;
+            ResultadoFragment.strAlunoTri = escritaTri;
+            ResultadoFragment.strAlunoDissi = escritaDissi;
+            ResultadoFragment.strAlunoMono = escritaMono;
+            ResultadoFragment.strAlunoFrase = escritaFrase;
         }
     }
 
