@@ -11,6 +11,8 @@ public class AnalisePalavras {
     public AnalisePalavras(String palavraCorreta, String palavraInserida){
         this.palavraCorreta = palavraCorreta;
         this.palavraInserida = palavraInserida;
+        this.palavraCorreta.toLowerCase();
+        this.palavraInserida.toLowerCase();
         this.listaSilabasCorreta = separaSilabas(this.palavraCorreta);
         this.listaSilabasInserida = separaSilabas(this.palavraInserida);
 

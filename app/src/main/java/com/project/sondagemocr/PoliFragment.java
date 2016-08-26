@@ -22,7 +22,7 @@ public class PoliFragment extends Fragment implements View.OnClickListener{
     static Bitmap bitmap;
     static String strEscritaPoli;
     ImageView imgEscrita;
-    EditText edtPoli;
+    public static EditText edtPoli;
     ImageButton imgBtn, imgBtnEscrita;
 
 

@@ -15,21 +15,17 @@ import org.w3c.dom.Text;
 
 public class ResultadoFragment extends Fragment {
 
-    private TextView textAlunoPoli;
-    private TextView textAlunoTri;
-    private TextView textAlunoDissi;
-    private TextView textAlunoMono;
-    private TextView textAlunoFrase;
+    public static TextView textAlunoPoli;
+    public static TextView textAlunoTri;
+    public static TextView textAlunoDissi;
+    public static TextView textAlunoMono;
+    public static TextView textAlunoFrase;
     private TextView textModeloPoli;
     private TextView textModeloTri;
     private TextView textModeloDissi;
     private TextView textModeloMono;
     private TextView textModeloFrase;
-    public static String strAlunoPoli;
-    public static String strAlunoTri;
-    public static String strAlunoDissi;
-    public static String strAlunoMono;
-    public static String strAlunoFrase;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -51,6 +47,8 @@ public class ResultadoFragment extends Fragment {
         return view;
 
     }
+
+
 
 
 /*

@@ -24,7 +24,7 @@ import com.project.sondagemocr.Pojo.Turma;
 //import com.google.android.gms.common.api.GoogleApiClient;
 
 //public class CadastroSondagemActivity extends FragmentActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
-public class CadastroSondagemActivity extends AppCompatActivity {
+public class CadastroSondagemActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener{
 
     private TabLayout mTabLayout_cadastro_sondagem;
     private ViewPager mViewPager_cadastro_sondagem;
@@ -63,8 +63,12 @@ public class CadastroSondagemActivity extends AppCompatActivity {
         mViewPager_cadastro_sondagem = (ViewPager) findViewById(R.id.view_pager_cadastro_sondagem);
 
         mViewPager_cadastro_sondagem.setAdapter(new MyFragmentPagerStateAdapter(getSupportFragmentManager(), getResources().getStringArray(R.array.titles_tab_cadastro_sondagem)));
-
         mTabLayout_cadastro_sondagem.setupWithViewPager(mViewPager_cadastro_sondagem);
+
+        mTabLayout_cadastro_sondagem.setOnTabSelectedListener(this);
+
+        Log.i("Script :","zdas2222");
+
 
         //Caso seja a primeira vez que a activity foi instanciada
         //automaticamante a MonoFragment será convocada
@@ -106,6 +110,38 @@ public class CadastroSondagemActivity extends AppCompatActivity {
 */
 
     }
+
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+        Log.i("Script :","zdas4444: "+tab.getPosition());
+        if(tab.getPosition() == 6){
+            ResultadoFragment.textAlunoPoli.setText(PoliFragment.edtPoli.getText());
+            ResultadoFragment.textAlunoTri.setText(TriFragment.edtTri.getText());
+            ResultadoFragment.textAlunoDissi.setText(DissiFragment.edtDissi.getText());
+            ResultadoFragment.textAlunoMono.setText(MonoFragment.edtTextMono.getText());
+            ResultadoFragment.textAlunoFrase.setText(FraseFragment.edtFrase.getText());
+        }
+
+    }
+
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
+        Log.i("Script :","zdas1111");
+    }
+
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
+        Log.i("Script :","zdas5555");
+    }
+
+
+
+
+
+
+
+
+
 /*
     @Override
     public void onClick(View v) {

@@ -8,6 +8,7 @@
     android:weightSum="1"
     android:scrollbarAlwaysDrawVerticalTrack="true">
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,6 +16,7 @@
         android:text="@string/palavra_mono"
         android:layout_marginLeft="10dp"
         android:id="@+id/textViewMono" />
+
 
     <ImageButton
         android:layout_width="56dp"
@@ -26,12 +28,14 @@
         android:layout_marginLeft="10dp"
         android:background="#ffffff"/>
 
+
     <ImageView
-        android:layout_width="437dp"
-        android:layout_height="150dp"
+        android:layout_width="425dp"
+        android:layout_height="270dp"
         android:id="@+id/imageEscrita"
         android:layout_gravity="center"
         android:layout_weight="0.04" />
+
 
     <LinearLayout
         android:orientation="horizontal"
@@ -54,4 +58,6 @@
             android:background="#ffffff"
             android:paddingTop="8dp"/>
     </LinearLayout>
+
+
 </LinearLayout>

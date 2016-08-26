@@ -17,7 +17,7 @@ public class DissiFragment extends Fragment implements View.OnClickListener{
     static Bitmap bitmap;
     static String strEscritaDissi;
     ImageView imgEscrita;
-    EditText edtDissi;
+    static public EditText edtDissi;
     ImageButton imgBtn, imgBtnEscrita;
 
     @Override

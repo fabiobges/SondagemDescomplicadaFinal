@@ -12,9 +12,7 @@ import com.project.sondagemocr.ResultadoFragment;
 import com.project.sondagemocr.Sondagem.IdentificacaoFragment;
 import com.project.sondagemocr.TriFragment;
 
-/**
- * Created by Patrick Oliveira on 25/08/2016.
- */
+
 public class MyFragmentPagerStateAdapter extends FragmentStatePagerAdapter{
 
     private String[] mTabTitles_cadastro_sondagem;

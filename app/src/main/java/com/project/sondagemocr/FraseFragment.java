@@ -22,7 +22,7 @@ public class FraseFragment extends Fragment implements View.OnClickListener{
     static Bitmap bitmap;
     static String strEscritaFrase;
     ImageView imgEscrita;
-    EditText edtFrase;
+    public static EditText edtFrase;
     ImageButton imgBtn, imgBtnEscrita;
 
     @Override

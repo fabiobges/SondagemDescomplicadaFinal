@@ -21,7 +21,7 @@ public class TriFragment extends Fragment implements View.OnClickListener{
     static Bitmap bitmap;
     static String strEscritaTri;
     ImageView imgEscrita;
-    EditText edtTri;
+    public static EditText edtTri;
     ImageButton imgBtn, imgBtnEscrita;
 
     @Override

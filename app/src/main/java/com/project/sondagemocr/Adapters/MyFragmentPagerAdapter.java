@@ -7,9 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.project.sondagemocr.FragmentSondagem;
 import com.project.sondagemocr.FragmentSondagemModelo;
 
-/**
- * Created by Patrick Oliveira on 24/08/2016.
- */
+
 public class MyFragmentPagerAdapter extends FragmentPagerAdapter{
 
     private String[] mTabTitles;

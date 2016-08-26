@@ -17,7 +17,7 @@ import java.io.IOException;
 public class MonoFragment extends Fragment implements View.OnClickListener{
 
     ImageButton imgBtn,imgBtnEscrita;
-    EditText edtTextMono;
+    public static EditText edtTextMono;
     View view;
     ImageView imgEscrita;
     static Bitmap bitmap;
@@ -321,10 +321,10 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
         Log.i("Script","onSaveInstanceState");
 
     }
-/*
+
     @Override
     public void onDestroy() {
-        ((CadastroSondagemActivity)getActivity()).salvarDadosFragmentMono();
+        //((CadastroSondagemActivity)getActivity()).salvarDadosFragmentMono();
         bitmap = null;
         GoogleVision.resposta = null;
         Log.i("Script","bitmap recebe null");
@@ -332,6 +332,6 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
         Log.i("Script","onDestroy");
     }
 
-*/
+
 
 }
