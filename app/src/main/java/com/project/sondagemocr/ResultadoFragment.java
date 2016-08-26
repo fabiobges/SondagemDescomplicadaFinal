@@ -53,13 +53,13 @@ public class ResultadoFragment extends Fragment {
     }
 
 
-
+/*
 
     @Override
     public void onDestroy() {
         ((CadastroSondagemActivity)getActivity()).salvarDadosFragmentPoli();
         super.onDestroy();
         Log.i("Script","onDestroy Resultado Fragment");
-    }
+    }*/
 
 }

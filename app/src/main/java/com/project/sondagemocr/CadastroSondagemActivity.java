@@ -2,13 +2,17 @@ package com.project.sondagemocr;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
+import com.project.sondagemocr.Adapters.MyFragmentPagerStateAdapter;
 import com.project.sondagemocr.Controller.AlunoController;
 import com.project.sondagemocr.Controller.TurmaController;
 import com.project.sondagemocr.DataBase.DataBase;
@@ -19,7 +23,11 @@ import com.project.sondagemocr.Pojo.Turma;
 //import com.google.android.gms.appindexing.AppIndex;
 //import com.google.android.gms.common.api.GoogleApiClient;
 
-public class CadastroSondagemActivity extends FragmentActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
+//public class CadastroSondagemActivity extends FragmentActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
+public class CadastroSondagemActivity extends AppCompatActivity {
+
+    private TabLayout mTabLayout_cadastro_sondagem;
+    private ViewPager mViewPager_cadastro_sondagem;
 
     private Bitmap bitmapMono;
     private Bitmap bitmapDissi;
@@ -51,9 +59,16 @@ public class CadastroSondagemActivity extends FragmentActivity implements View.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_sondagem);
 
+        mTabLayout_cadastro_sondagem = (TabLayout) findViewById(R.id.tab_layout_cadastro_sondagem);
+        mViewPager_cadastro_sondagem = (ViewPager) findViewById(R.id.view_pager_cadastro_sondagem);
+
+        mViewPager_cadastro_sondagem.setAdapter(new MyFragmentPagerStateAdapter(getSupportFragmentManager(), getResources().getStringArray(R.array.titles_tab_cadastro_sondagem)));
+
+        mTabLayout_cadastro_sondagem.setupWithViewPager(mViewPager_cadastro_sondagem);
+
         //Caso seja a primeira vez que a activity foi instanciada
         //automaticamante a MonoFragment será convocada
-        if(savedInstanceState == null){
+ /*       if(savedInstanceState == null){
             MonoFragment fragMono = new MonoFragment();
             FragmentTransaction fragTrans = fragManag.beginTransaction();
             fragTrans.add(R.id.layout_frag,fragMono,"fragmono");
@@ -88,10 +103,10 @@ public class CadastroSondagemActivity extends FragmentActivity implements View.O
 
         spnTurma.setOnItemSelectedListener(this);
 
-
+*/
 
     }
-
+/*
     @Override
     public void onClick(View v) {
         if(v == textViewMono){
@@ -230,7 +245,7 @@ public class CadastroSondagemActivity extends FragmentActivity implements View.O
     @Override
     public void onNothingSelected(AdapterView<?> parent) {}
 
-
+*/
 
 
 }

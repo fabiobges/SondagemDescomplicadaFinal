@@ -39,6 +39,16 @@
         <item>MODELO</item>
     </string-array>
 
+    <string-array name="titles_tab_cadastro_sondagem">
+        <item>IDENTIFICAÇÃO</item>
+        <item>POLISSÍLABA</item>
+        <item>TRISSÍLABA</item>
+        <item>DISSÍLABA</item>
+        <item>MONOSSÍLABA</item>
+        <item>FRASE</item>
+        <item>RESULTADO</item>
+    </string-array>
+
     <string name="text_fragment_a">Sondagens</string>
     <string name="text_fragment_b">Modelo</string>
 </resources>

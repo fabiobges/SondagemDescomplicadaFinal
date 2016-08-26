@@ -77,7 +77,7 @@ public class TriFragment extends Fragment implements View.OnClickListener{
         }
 
     }
-
+/*
     @Override
     public void onDestroy() {
         ((CadastroSondagemActivity)getActivity()).salvarDadosFragmentTri();
@@ -85,5 +85,5 @@ public class TriFragment extends Fragment implements View.OnClickListener{
         GoogleVision.resposta = null;
         super.onDestroy();
         Log.i("Script","onDestroy TriFragment");
-    }
+    }*/
 }

@@ -321,7 +321,7 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
         Log.i("Script","onSaveInstanceState");
 
     }
-
+/*
     @Override
     public void onDestroy() {
         ((CadastroSondagemActivity)getActivity()).salvarDadosFragmentMono();
@@ -332,6 +332,6 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
         Log.i("Script","onDestroy");
     }
 
-
+*/
 
 }

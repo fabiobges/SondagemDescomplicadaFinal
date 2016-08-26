@@ -79,7 +79,7 @@ public class PoliFragment extends Fragment implements View.OnClickListener{
         }
 
     }
-
+/*
     @Override
     public void onDestroy() {
         ((CadastroSondagemActivity)getActivity()).salvarDadosFragmentPoli();
@@ -87,6 +87,6 @@ public class PoliFragment extends Fragment implements View.OnClickListener{
         GoogleVision.resposta = null;
         super.onDestroy();
         Log.i("Script","onDestroy PoliFragment");
-    }
+    }*/
 
 }

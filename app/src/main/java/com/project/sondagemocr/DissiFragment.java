@@ -73,7 +73,7 @@ public class DissiFragment extends Fragment implements View.OnClickListener{
         }
 
     }
-
+/*
     @Override
     public void onDestroy() {
         ((CadastroSondagemActivity)getActivity()).salvarDadosFragmentDissi();
@@ -81,5 +81,5 @@ public class DissiFragment extends Fragment implements View.OnClickListener{
         GoogleVision.resposta = null;
         super.onDestroy();
         Log.i("Script","onDestroy DissiFragment");
-    }
+    }*/
 }

@@ -78,7 +78,7 @@ public class FraseFragment extends Fragment implements View.OnClickListener{
         }
 
     }
-
+/*
     @Override
     public void onDestroy() {
         ((CadastroSondagemActivity)getActivity()).salvarDadosFragmentFrase();
@@ -87,6 +87,6 @@ public class FraseFragment extends Fragment implements View.OnClickListener{
         super.onDestroy();
         Log.i("Script","onDestroy PoliFragment");
     }
-
+*/
 
 }
