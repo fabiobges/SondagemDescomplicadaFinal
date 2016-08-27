@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 
 
 import com.project.sondagemocr.DataBase.DataBase;
+import com.project.sondagemocr.IdentificacaoFragment;
 import com.project.sondagemocr.Pojo.Turma;
 
 public class TurmaController {
@@ -50,7 +51,7 @@ public class TurmaController {
                     Log.i("Script", "Não achou nenhuma turma em BD");
                 }
             }catch (Exception ex){
-                Log.i("Script", "Erro "+ex.getMessage() );
+                Log.i("Script", "Erro sss"+ex.getMessage() );
             }
 
 

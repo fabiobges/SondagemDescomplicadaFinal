@@ -6,10 +6,10 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.project.sondagemocr.DissiFragment;
 import com.project.sondagemocr.FraseFragment;
+import com.project.sondagemocr.IdentificacaoFragment;
 import com.project.sondagemocr.MonoFragment;
 import com.project.sondagemocr.PoliFragment;
 import com.project.sondagemocr.ResultadoFragment;
-import com.project.sondagemocr.Sondagem.IdentificacaoFragment;
 import com.project.sondagemocr.TriFragment;
 
 

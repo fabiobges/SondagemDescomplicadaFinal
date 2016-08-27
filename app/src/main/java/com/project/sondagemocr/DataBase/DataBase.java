@@ -6,12 +6,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.project.sondagemocr.IdentificacaoFragment;
+
 
 public class DataBase extends SQLiteOpenHelper {
 
     private final static String dbName = "SondagemBD";
 
-    public DataBase(Context context,  SQLiteDatabase.CursorFactory factory, int version) {
+    public DataBase(Context context, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, dbName, factory, 2);
     }
 
