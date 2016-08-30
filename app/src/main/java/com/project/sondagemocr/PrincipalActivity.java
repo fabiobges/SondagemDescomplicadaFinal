@@ -16,10 +16,6 @@ import android.view.View;
 
 import android.widget.Toast;
 
-//import com.google.android.gms.appindexing.Action;
-//import com.google.android.gms.appindexing.AppIndex;
-//import com.google.android.gms.common.api.GoogleApiClient;
-
 public class PrincipalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     /**
@@ -52,25 +48,6 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_principal, menu);
- /*
-        MenuItem item1 = menu.add(0, 1, 0, "Cadastrar Sondagem");
-        item1.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
-
-        MenuItem item2 = menu.add(0, 2, 1, "Consultar Sondagem");
-        item2.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
-
-        MenuItem item3 = menu.add(0, 3, 2, "Consultar Turma");
-        item3.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
-
-        MenuItem item4 = menu.add(0, 4, 3, "Relatórios");
-        item4.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
-
-        MenuItem item5 = menu.add(0, 5, 4, "Gráficos");
-        item5.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
-
-        MenuItem item6 = menu.add(0, 6, 5, "Sair");
-        item6.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
-    */
 
         return true;
     }
@@ -89,6 +66,10 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
             case R.id.item_turmas:
                 Toast.makeText(this, "Turmas", Toast.LENGTH_SHORT).show();
                 intent = new Intent(this,CadastroTurmaActivity.class);
+                break;
+            case R.id.item_alunos:
+                Toast.makeText(this, "Alunos", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this,CadastroAlunoActivity.class);
                 break;
             case R.id.item_relatorio:
                 Toast.makeText(this, "Relatórios", Toast.LENGTH_SHORT).show();
@@ -121,6 +102,10 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
             case R.id.item_turmas:
                 Toast.makeText(this, "Turmas", Toast.LENGTH_SHORT).show();
                 intent = new Intent(this,CadastroTurmaActivity.class);
+                break;
+            case R.id.item_alunos:
+                Toast.makeText(this, "Alunos", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this,CadastroAlunoActivity.class);
                 break;
             case R.id.item_relatorio:
                 Toast.makeText(this, "Relatórios", Toast.LENGTH_SHORT).show();

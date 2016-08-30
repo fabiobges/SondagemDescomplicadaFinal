@@ -2329,15 +2329,17 @@ containing a value of this type.
         public static final int ic_camera_alt_black_24dp=0x7f020053;
         public static final int ic_error_black_24dp=0x7f020054;
         public static final int ic_exit_to_app_black_48dp=0x7f020055;
-        public static final int ic_pencil=0x7f020056;
-        public static final int ic_reply_black_24dp=0x7f020057;
-        public static final int ic_supervisor_account_black_48dp=0x7f020058;
-        public static final int ic_visibility_black_48dp=0x7f020059;
-        public static final int letras=0x7f02005a;
-        public static final int logo_amarelo=0x7f02005b;
-        public static final int logo_branco=0x7f02005c;
-        public static final int notification_template_icon_bg=0x7f02005e;
-        public static final int side_nav_bar=0x7f02005d;
+        public static final int ic_face_black_48dp=0x7f020056;
+        public static final int ic_pencil=0x7f020057;
+        public static final int ic_person_black_48dp=0x7f020058;
+        public static final int ic_reply_black_24dp=0x7f020059;
+        public static final int ic_supervisor_account_black_48dp=0x7f02005a;
+        public static final int ic_visibility_black_48dp=0x7f02005b;
+        public static final int letras=0x7f02005c;
+        public static final int logo_amarelo=0x7f02005d;
+        public static final int logo_branco=0x7f02005e;
+        public static final int notification_template_icon_bg=0x7f020060;
+        public static final int side_nav_bar=0x7f02005f;
     }
     public static final class id {
         public static final int action0=0x7f0d00b8;
@@ -2456,8 +2458,9 @@ containing a value of this type.
         public static final int imgAjuda=0x7f0d0084;
         public static final int imgVolta=0x7f0d0077;
         public static final int info=0x7f0d00c3;
-        public static final int item_relatorio=0x7f0d00dd;
-        public static final int item_sair=0x7f0d00de;
+        public static final int item_alunos=0x7f0d00dd;
+        public static final int item_relatorio=0x7f0d00de;
+        public static final int item_sair=0x7f0d00df;
         public static final int item_sondagens=0x7f0d00db;
         public static final int item_touch_helper_previous_elevation=0x7f0d0005;
         public static final int item_turmas=0x7f0d00dc;
