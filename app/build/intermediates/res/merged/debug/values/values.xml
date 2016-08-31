@@ -308,7 +308,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="app_name">SondagemOCR</string>
+    <string name="app_name">Sondagem Descomplicada</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="auth_google_play_services_client_facebook_display_name">Facebook</string>
     <string name="auth_google_play_services_client_google_display_name">Google</string>
@@ -378,7 +378,7 @@
     <string name="title_activity_cadastro_turma">CadastroTurmaActivity</string>
     <string name="title_activity_cadastro_usuario">CadastroUsuarioActivity</string>
     <string name="title_activity_main2">Main2Activity</string>
-    <string name="title_activity_menu_sondagem">MenuSondagemActivity</string>
+    <string name="title_activity_menu_sondagem"/>
     <string name="title_activity_principal">Sondagem OCR</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>

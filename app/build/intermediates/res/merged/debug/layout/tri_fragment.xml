@@ -2,18 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_vertical_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/palavra_tri"
-        android:id="@+id/textView3" />
 
-    <ImageButton
+<ImageButton
         android:layout_width="56dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageButtonTiraFoto"
@@ -21,35 +13,32 @@
         android:padding="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginLeft="10dp"
-        android:background="#ffffff"/>
+        android:background="#fafafa" />
 
     <ImageView
-        android:layout_width="437dp"
+        android:layout_width="300dp"
         android:layout_height="150dp"
         android:id="@+id/imageEscrita"
         android:layout_gravity="center"
-        android:layout_weight="0.04" />
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="#a4a4a4"
+        android:adjustViewBounds="true" />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp">
+    <ImageButton
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageEscritaTri"
+        android:src="@drawable/ic_sync_black_24dp"
+        android:padding="0dp"
+        android:layout_gravity="center"
+        android:background="#fafafa"
+        android:layout_marginTop="40dp" />
 
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/editTextTri"
-            android:layout_marginTop="5dp" />
-
-        <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="41dp"
-            android:src="@drawable/ic_pencil"
-            android:id="@+id/imageEscritaTri"
-            android:background="#ffffff"
-            android:paddingTop="8dp"/>
-    </LinearLayout>
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/editTextTri" />
 
 </LinearLayout>

@@ -27,7 +27,14 @@
 
     </android.support.design.widget.AppBarLayout>
 
-
     <include layout="@layout/content_cadastro_sondagem" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabMenuSondagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/next" />
 
 </android.support.design.widget.CoordinatorLayout>

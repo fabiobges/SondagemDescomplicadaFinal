@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SondagemOCR</string>
+    <string name="app_name">Sondagem Descomplicada</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_principal">Sondagem OCR</string>
     <string name="item_sondagens">Sondagens</string>
@@ -7,7 +7,7 @@
     <string name="item_alunos">Alunos</string>
     <string name="item_relatorio">Relatórios</string>
     <string name="item_sair">Sair</string>
-    <string name="title_activity_menu_sondagem">MenuSondagemActivity</string>
+    <string name="title_activity_menu_sondagem"></string>
     <string name="title_activity_cadastro_sondagem">CadastroSondagemActivity</string>
     <string name="palavra_poli">Palavra Polissílaba</string>
     <string name="palavra_tri">Palavra Trissílaba</string>
