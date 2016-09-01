@@ -23,7 +23,7 @@ import com.project.sondagemocr.Pojo.Turma;
 
 public class IdentificacaoFragment extends Fragment implements AdapterView.OnItemSelectedListener{
 
-    private Spinner spnTurma,spnAluno,spnSondagemModelo;
+    public static Spinner spnTurma,spnAluno,spnSondagemModelo;
     private TurmaController turmaController;
     private DataBase dataBase;
     private SondagemModeloController sondagemModeloController;

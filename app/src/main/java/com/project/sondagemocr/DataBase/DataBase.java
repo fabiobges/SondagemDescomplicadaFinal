@@ -11,10 +11,10 @@ import com.project.sondagemocr.IdentificacaoFragment;
 
 public class DataBase extends SQLiteOpenHelper {
 
-    private final static String dbName = "SondagemBD";
+    private final static String dbName = "SondagemDescBD";
 
     public DataBase(Context context, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, dbName, factory, 2);
+        super(context, dbName, factory, 1);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DataBase extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(ScriptSQL.createTableEndereco());
-        Log.i("Script","A tabela foi criada!");
+        Log.i("Script","A tabela foi criada! Com Update.");
         db.execSQL(ScriptSQL.createTableLoginUsuario());
         Log.i("Script","A tabela foi criada!");
         db.execSQL(ScriptSQL.createTableUsuario());

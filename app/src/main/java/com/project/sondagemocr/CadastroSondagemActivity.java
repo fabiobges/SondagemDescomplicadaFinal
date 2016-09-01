@@ -2,10 +2,8 @@ package com.project.sondagemocr;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -13,21 +11,24 @@ import android.view.View;
 import android.widget.*;
 
 import com.project.sondagemocr.Adapters.MyFragmentPagerStateAdapter;
-import com.project.sondagemocr.Controller.AlunoController;
+
+import com.project.sondagemocr.Controller.SondagemModeloController;
 import com.project.sondagemocr.Controller.TurmaController;
 import com.project.sondagemocr.DataBase.DataBase;
+import com.project.sondagemocr.Pojo.SondagemModelo;
 import com.project.sondagemocr.Pojo.Turma;
 
 
-//import com.google.android.gms.appindexing.Action;
-//import com.google.android.gms.appindexing.AppIndex;
-//import com.google.android.gms.common.api.GoogleApiClient;
+
 
 //public class CadastroSondagemActivity extends FragmentActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
-public class CadastroSondagemActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener{
+public class CadastroSondagemActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener, View.OnClickListener{
 
     private TabLayout mTabLayout_cadastro_sondagem;
     private ViewPager mViewPager_cadastro_sondagem;
+    private FloatingActionButton fabMenuSondagem;
+
+    public static SondagemModelo sondagemModelo;
 
     private Bitmap bitmapMono;
     private Bitmap bitmapDissi;
@@ -45,7 +46,6 @@ public class CadastroSondagemActivity extends AppCompatActivity implements TabLa
     private TextView textViewPoli;
     private TextView textViewFrase;
     private TextView textViewResultado;
-    private FragmentManager fragManag = getSupportFragmentManager();
     private Spinner spnTurma;
     private Spinner spnAluno;
 
@@ -61,6 +61,9 @@ public class CadastroSondagemActivity extends AppCompatActivity implements TabLa
 
         mTabLayout_cadastro_sondagem = (TabLayout) findViewById(R.id.tab_layout_cadastro_sondagem);
         mViewPager_cadastro_sondagem = (ViewPager) findViewById(R.id.view_pager_cadastro_sondagem);
+        fabMenuSondagem = (FloatingActionButton) findViewById(R.id.fabMenuSondagem);
+
+        fabMenuSondagem.setOnClickListener(this);
 
         mViewPager_cadastro_sondagem.setAdapter(new MyFragmentPagerStateAdapter(getSupportFragmentManager(), getResources().getStringArray(R.array.titles_tab_cadastro_sondagem)));
         mTabLayout_cadastro_sondagem.setupWithViewPager(mViewPager_cadastro_sondagem);
@@ -120,18 +123,42 @@ public class CadastroSondagemActivity extends AppCompatActivity implements TabLa
             ResultadoFragment.textAlunoDissi.setText(DissiFragment.edtDissi.getText());
             ResultadoFragment.textAlunoMono.setText(MonoFragment.edtTextMono.getText());
             ResultadoFragment.textAlunoFrase.setText(FraseFragment.edtFrase.getText());
+            ResultadoFragment.textModeloPoli.setText(sondagemModelo.getPolissilaba());
+            ResultadoFragment.textModeloTri.setText(sondagemModelo.getTrissilaba());
+            ResultadoFragment.textModeloDissi.setText(sondagemModelo.getDissilaba());
+            ResultadoFragment.textModeloMono.setText(sondagemModelo.getMonossilaba());
+            ResultadoFragment.textModeloFrase.setText(sondagemModelo.getFrase());
         }
 
     }
 
     @Override
     public void onTabUnselected(TabLayout.Tab tab) {
-        Log.i("Script :","zdas1111");
+
     }
 
     @Override
     public void onTabReselected(TabLayout.Tab tab) {
-        Log.i("Script :","zdas5555");
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v == fabMenuSondagem){
+            if(mTabLayout_cadastro_sondagem.getSelectedTabPosition()==0){
+                if(!IdentificacaoFragment.spnSondagemModelo.getSelectedItem().equals("Sondagem Modelo")){
+                    SondagemModeloController sondagemModeloController = new SondagemModeloController(new DataBase(this,null,1));
+                    sondagemModelo = new SondagemModelo();
+                    sondagemModelo.setDescSondagemMod(IdentificacaoFragment.spnSondagemModelo.getSelectedItem().toString());
+                    sondagemModelo = sondagemModeloController.consultaSondagemModeloPorIdentificador(this,sondagemModelo);
+                    mViewPager_cadastro_sondagem.setCurrentItem(1);
+
+                }else {
+                    Toast.makeText(this,"A sondagem modelo não foi selecionada!",Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+
     }
 
 

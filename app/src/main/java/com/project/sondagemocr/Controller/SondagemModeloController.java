@@ -24,6 +24,7 @@ public class SondagemModeloController {
         SQLiteDatabase connection = dataBase.getWritableDatabase();
 
         ContentValues values = new ContentValues();
+        values.put("desc_sondagem_mod",sondagemModelo.getDescSondagemMod());
         values.put("polissilaba",sondagemModelo.getPolissilaba());
         values.put("trissilaba",sondagemModelo.getTrissilaba());
         values.put("dissilaba",sondagemModelo.getDissilaba());
@@ -40,12 +41,12 @@ public class SondagemModeloController {
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         try{
             SQLiteDatabase connection = dataBase.getReadableDatabase();
-            Cursor cursor = connection.query("tb_sondagem_modelo",null,null,null,null,null,"_id",null);
+            Cursor cursor = connection.query("tb_sondagem_modelo",null,null,null,null,null,"desc_sondagem_mod",null);
             cursor.moveToFirst();
             if (cursor.getCount() > 0) {
-                while (cursor.moveToNext()) {
-                    arrayAdapter.add(cursor.getString(cursor.getColumnIndex("_id")));
-                }
+                 do{
+                    arrayAdapter.add(cursor.getString(cursor.getColumnIndex("desc_sondagem_mod")));
+                }while (cursor.moveToNext());
             }else {
                 Log.i("Script", "Não achou nenhuma Sondagem em BD");
             }
@@ -56,6 +57,32 @@ public class SondagemModeloController {
 
         return arrayAdapter;
 
+
+    }
+
+    public SondagemModelo consultaSondagemModeloPorIdentificador(Context context,SondagemModelo sondagemModelo){
+
+        try {
+            SQLiteDatabase connection = dataBase.getReadableDatabase();
+            Cursor cursor = connection.query("tb_sondagem_modelo", null, "desc_sondagem_mod = '" + sondagemModelo.getDescSondagemMod()+"'", null, null, null, null);
+            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                do {
+                    sondagemModelo.setId(cursor.getInt(cursor.getColumnIndex("_id")));
+                    sondagemModelo.setPolissilaba(cursor.getString(cursor.getColumnIndex("polissilaba")));
+                    sondagemModelo.setTrissilaba(cursor.getString(cursor.getColumnIndex("trissilaba")));
+                    sondagemModelo.setDissilaba(cursor.getString(cursor.getColumnIndex("dissilaba")));
+                    sondagemModelo.setMonossilaba(cursor.getString(cursor.getColumnIndex("monossilaba")));
+                    sondagemModelo.setFrase(cursor.getString(cursor.getColumnIndex("frase")));
+                } while (cursor.moveToNext());
+            } else {
+                Log.i("Script", "Não achou nenhuma Sondagem Modelo em BD");
+            }
+            return sondagemModelo;
+        }catch (Exception ex){
+            Log.i("Script", "Erro "+ex.getMessage() );
+            return null;
+        }
 
     }
 

@@ -21,6 +21,7 @@ public class CadastroSondagemModActivity extends AppCompatActivity implements Vi
     EditText edtDissilaba;
     EditText edtMonossilaba;
     EditText edtFrase;
+    EditText edtIdentSondMod;
     Button btCadastra, btCancela;
     ImageButton imgAjuda;
     SondagemModelo sondagemModelo;
@@ -33,6 +34,7 @@ public class CadastroSondagemModActivity extends AppCompatActivity implements Vi
 
         dataBase = new DataBase(this, null,2);
 
+        edtIdentSondMod = (EditText) findViewById(R.id.edtIdentSondMod);
         edtPolissilba = (EditText) findViewById(R.id.edtPoliModelo);
         edtTrissilaba = (EditText) findViewById(R.id.edtTriModelo);
         edtDissilaba = (EditText) findViewById(R.id.edtDiModelo);
@@ -73,6 +75,7 @@ public class CadastroSondagemModActivity extends AppCompatActivity implements Vi
 
     public void insereSondagemModelo(){
         sondagemModelo = new SondagemModelo();
+        sondagemModelo.setDescSondagemMod(edtIdentSondMod.getText().toString());
         sondagemModelo.setPolissilaba(edtPolissilba.getText().toString());
         sondagemModelo.setTrissilaba(edtTrissilaba.getText().toString());
         sondagemModelo.setDissilaba(edtDissilaba.getText().toString());

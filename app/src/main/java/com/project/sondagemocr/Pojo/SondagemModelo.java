@@ -5,6 +5,7 @@ public class SondagemModelo {
 
     private int id;
     private Usuario usuario;
+    private String descSondagemMod;
     private String monossilaba;
     private String dissilaba;
     private String trissilaba;
@@ -25,6 +26,14 @@ public class SondagemModelo {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public String getDescSondagemMod() {
+        return descSondagemMod;
+    }
+
+    public void setDescSondagemMod(String descSondagemMod) {
+        this.descSondagemMod = descSondagemMod;
     }
 
     public String getMonossilaba() {

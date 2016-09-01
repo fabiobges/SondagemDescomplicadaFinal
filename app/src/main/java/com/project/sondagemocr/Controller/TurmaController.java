@@ -41,12 +41,12 @@ public class TurmaController {
                 Cursor cursor = connection.query( "tb_turma", null, null, null, null, null, null, null);
                 cursor.moveToFirst();
                 if (cursor.getCount() > 0) {
-                    while (cursor.moveToNext()) {
+                    do{
                         int i;
                         arrayAdapter.add(cursor.getString(cursor.getColumnIndex("identificacao_turma")));
                         i = cursor.getInt(cursor.getColumnIndex("_id"));
                         Log.i("Script", "Retornou: " + cursor.getString(cursor.getColumnIndex("identificacao_turma")) + " + " + i);
-                    }
+                    }while (cursor.moveToNext());
                 } else {
                     Log.i("Script", "Não achou nenhuma turma em BD");
                 }

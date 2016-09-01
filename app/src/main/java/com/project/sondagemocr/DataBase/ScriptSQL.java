@@ -105,6 +105,7 @@ public class ScriptSQL {
         stringBuilder.append("create table if not exists tb_sondagem_modelo ( ");
         stringBuilder.append("_id integer not null primary key autoincrement, ");
         stringBuilder.append("_id_usuario integer, ");
+        stringBuilder.append("desc_sondagem_mod varchar(50) not null, ");
         stringBuilder.append("monossilaba varchar(5), ");
         stringBuilder.append("dissilaba varchar(10), ");
         stringBuilder.append("trissilaba varchar(15), ");

@@ -20,11 +20,11 @@ public class ResultadoFragment extends Fragment {
     public static TextView textAlunoDissi;
     public static TextView textAlunoMono;
     public static TextView textAlunoFrase;
-    private TextView textModeloPoli;
-    private TextView textModeloTri;
-    private TextView textModeloDissi;
-    private TextView textModeloMono;
-    private TextView textModeloFrase;
+    public static TextView textModeloPoli;
+    public static TextView textModeloTri;
+    public static TextView textModeloDissi;
+    public static TextView textModeloMono;
+    public static TextView textModeloFrase;
 
 
     @Override

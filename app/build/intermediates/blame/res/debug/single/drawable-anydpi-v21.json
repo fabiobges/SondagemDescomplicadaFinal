@@ -34,5 +34,9 @@
     {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_reply_black_24dp.xml",
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_reply_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_sync_black_24dp.xml",
+        "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_sync_black_24dp.xml"
     }
 ]
