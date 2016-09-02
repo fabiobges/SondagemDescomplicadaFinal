@@ -52,7 +52,7 @@ public class PoliFragment extends Fragment implements View.OnClickListener{
             startActivityForResult(intent,0);
         }else if(v == imgBtnEscrita){
             strEscritaPoli = GoogleVision.resposta;
-            edtPoli.setText(strEscritaPoli);
+            edtPoli.setText(strEscritaPoli.replaceAll(" ",""));
         }
     }
 

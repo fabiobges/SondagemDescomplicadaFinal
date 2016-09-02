@@ -118,10 +118,14 @@ public class CadastroSondagemActivity extends AppCompatActivity implements TabLa
     public void onTabSelected(TabLayout.Tab tab) {
         Log.i("Script :","zdas4444: "+tab.getPosition());
         if(tab.getPosition() == 6){
-            ResultadoFragment.textAlunoPoli.setText(PoliFragment.edtPoli.getText());
-            ResultadoFragment.textAlunoTri.setText(TriFragment.edtTri.getText());
-            ResultadoFragment.textAlunoDissi.setText(DissiFragment.edtDissi.getText());
-            ResultadoFragment.textAlunoMono.setText(MonoFragment.edtTextMono.getText());
+            escritaPoli = PoliFragment.edtPoli.getText().toString();
+            ResultadoFragment.textAlunoPoli.setText(escritaPoli.replaceAll(" ",""));  //Tratando qualquer espaço que Usuário deixe
+            escritaTri = TriFragment.edtTri.getText().toString();
+            ResultadoFragment.textAlunoTri.setText(escritaTri.replaceAll(" ",""));
+            escritaDissi = DissiFragment.edtDissi.getText().toString();
+            ResultadoFragment.textAlunoDissi.setText(escritaDissi.replaceAll(" ",""));
+            escritaMono = MonoFragment.edtTextMono.getText().toString();
+            ResultadoFragment.textAlunoMono.setText(escritaDissi.replaceAll(" ",""));
             ResultadoFragment.textAlunoFrase.setText(FraseFragment.edtFrase.getText());
             ResultadoFragment.textModeloPoli.setText(sondagemModelo.getPolissilaba());
             ResultadoFragment.textModeloTri.setText(sondagemModelo.getTrissilaba());

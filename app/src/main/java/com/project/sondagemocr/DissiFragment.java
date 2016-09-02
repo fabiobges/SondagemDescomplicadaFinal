@@ -46,7 +46,7 @@ public class DissiFragment extends Fragment implements View.OnClickListener{
             startActivityForResult(intent,0);
         }else if(v == imgBtnEscrita){
             strEscritaDissi = GoogleVision.resposta;
-            edtDissi.setText(strEscritaDissi);
+            edtDissi.setText(strEscritaDissi.replaceAll(" ",""));
         }
     }
 

@@ -50,6 +50,7 @@ public class SondagemModeloController {
             }else {
                 Log.i("Script", "Não achou nenhuma Sondagem em BD");
             }
+            cursor.close();
         }catch (Exception ex){
             Log.i("Script", "Erro "+ex.getMessage() );
         }
@@ -78,6 +79,7 @@ public class SondagemModeloController {
             } else {
                 Log.i("Script", "Não achou nenhuma Sondagem Modelo em BD");
             }
+            cursor.close();
             return sondagemModelo;
         }catch (Exception ex){
             Log.i("Script", "Erro "+ex.getMessage() );

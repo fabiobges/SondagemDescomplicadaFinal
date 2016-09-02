@@ -8,12 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.project.sondagemocr.Sondagem.AnalisePalavras;
+
 import org.w3c.dom.Text;
 
-public class ResultadoFragment extends Fragment {
+public class ResultadoFragment extends Fragment implements View.OnClickListener {
 
     public static TextView textAlunoPoli;
     public static TextView textAlunoTri;
@@ -25,6 +28,13 @@ public class ResultadoFragment extends Fragment {
     public static TextView textModeloDissi;
     public static TextView textModeloMono;
     public static TextView textModeloFrase;
+    private Button btGravar;
+
+    public AnalisePalavras analisePalavras;
+
+    public int alfabetico = 0,silabAlfabetico = 0,silabComValor = 0,silabSemValor = 0,preSilabico = 0;
+
+
 
 
     @Override
@@ -42,6 +52,14 @@ public class ResultadoFragment extends Fragment {
         textModeloDissi = (TextView) view.findViewById(R.id.textModeloDissi);
         textModeloMono = (TextView) view.findViewById(R.id.textModeloMono);
         textModeloFrase = (TextView) view.findViewById(R.id.textModeloFrase);
+        btGravar = (Button) view.findViewById(R.id.btCadastraResultadoSondagem);
+
+        btGravar.setOnClickListener(this);
+
+
+        //analisePalavras = new AnalisePalavras(textModeloFrase.getText().toString(),textAlunoFrase.getText().toString());
+
+
 
 
         return view;
@@ -49,6 +67,46 @@ public class ResultadoFragment extends Fragment {
     }
 
 
+    public void sondagemAvaliacao(){
+
+        if(analisePalavras.alfabetico() == true){
+            alfabetico++;
+            Log.i("Sondagem: ","Alfabético");
+        }else{
+            if(analisePalavras.silabicoAlfabetico() == true){
+                silabAlfabetico++;
+                Log.i("Sondagem: ","Silábico Alfabético");
+            }else{
+                if(analisePalavras.silabicoComValor() == true){
+                    silabComValor++;
+                    Log.i("Sondagem: ","Silábico com Valor");
+                }else{
+                    if(analisePalavras.silabicoSemValor() == true){
+                        silabSemValor++;
+                        Log.i("Sondagem: ","Silábico sem Valor");
+                    }else {
+                        preSilabico++;
+                        Log.i("Sondagem: ","Pré-Silábico");
+                    }
+                }
+            }
+        }
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v == btGravar){
+            analisePalavras = new AnalisePalavras(textModeloPoli.getText().toString(),textAlunoPoli.getText().toString());
+            sondagemAvaliacao();
+            analisePalavras = new AnalisePalavras(textModeloTri.getText().toString(),textAlunoTri.getText().toString());
+            sondagemAvaliacao();
+            analisePalavras = new AnalisePalavras(textModeloDissi.getText().toString(),textAlunoDissi.getText().toString());
+            sondagemAvaliacao();
+            analisePalavras = new AnalisePalavras(textModeloMono.getText().toString(),textAlunoMono.getText().toString());
+            sondagemAvaliacao();
+        }
+    }
 
 
 /*

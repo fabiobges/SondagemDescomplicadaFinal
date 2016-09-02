@@ -50,7 +50,7 @@ public class TriFragment extends Fragment implements View.OnClickListener{
             startActivityForResult(intent,0);
         }else if(v == imgBtnEscrita){
             strEscritaTri = GoogleVision.resposta;
-            edtTri.setText(strEscritaTri);
+            edtTri.setText(strEscritaTri.replaceAll(" ",""));
         }
     }
 

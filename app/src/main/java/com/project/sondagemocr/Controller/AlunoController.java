@@ -53,6 +53,7 @@ public class AlunoController {
                     while (cursor.moveToNext()) {
                         arrayAdapter.add(cursor.getString(cursor.getColumnIndex("nome_aluno")));
                     }
+                    cursor.close();
                     return arrayAdapter;
                 }else{
                     return  null;

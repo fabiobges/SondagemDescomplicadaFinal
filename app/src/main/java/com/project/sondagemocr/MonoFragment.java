@@ -62,7 +62,7 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
         }else if(v == imgBtnEscrita){
             strEscritaMono = edtTextMono.getText().toString();
             strEscritaMono = GoogleVision.resposta;
-            edtTextMono.setText(strEscritaMono);
+            edtTextMono.setText(strEscritaMono.replaceAll(" ",""));
         }
     }
 

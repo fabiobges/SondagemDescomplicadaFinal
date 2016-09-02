@@ -36,36 +36,48 @@ public class ResponsavelController {
 
       public int consultaLastResponsavel(){
 
-          SQLiteDatabase connection = dataBase.getReadableDatabase();
-          ResponsavelAluno responsavel = new ResponsavelAluno();
-          Cursor cursor = connection.query("tb_responsavel_aluno",null,null,null,null,null,"_id desc","1");
-          cursor.moveToFirst();
+          try {
+              SQLiteDatabase connection = dataBase.getReadableDatabase();
+              ResponsavelAluno responsavel = new ResponsavelAluno();
+              Cursor cursor = connection.query("tb_responsavel_aluno", null, null, null, null, null, "_id desc", "1");
+              cursor.moveToFirst();
 
-          while(cursor.moveToNext()){
-              responsavel.setNome(cursor.getString(cursor.getColumnIndex("nome_responsavel")));
-              responsavel.setId(cursor.getInt(cursor.getColumnIndex("_id")));
+              while (cursor.moveToNext()) {
+                  responsavel.setNome(cursor.getString(cursor.getColumnIndex("nome_responsavel")));
+                  responsavel.setId(cursor.getInt(cursor.getColumnIndex("_id")));
+              }
+
+              cursor.close();
+              Log.i("Script","Responsável é: "+responsavel.getId());
+              return responsavel.getId();
+          }catch (Exception ex){
+              return 0;
           }
 
-          Log.i("Script","Responsável é: "+responsavel.getId());
-          return responsavel.getId();
 
       }
 
     public ArrayAdapter consultaLastResponsavel(Context context){
 
 
-        SQLiteDatabase connection = dataBase.getReadableDatabase();
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(context,android.R.layout.simple_spinner_item);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Cursor cursor = connection.query("tb_responsavel_aluno",null,null,null,null,null,"nome_responsavel asc",null);
-        cursor.moveToFirst();
+        try {
+            SQLiteDatabase connection = dataBase.getReadableDatabase();
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item);
+            arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            Cursor cursor = connection.query("tb_responsavel_aluno", null, null, null, null, null, "nome_responsavel asc", null);
+            cursor.moveToFirst();
 
-        while(cursor.moveToNext()){
-            arrayAdapter.add(cursor.getString(cursor.getColumnIndex("nome_responsavel")));
+            while (cursor.moveToNext()) {
+                arrayAdapter.add(cursor.getString(cursor.getColumnIndex("nome_responsavel")));
 
+            }
+            cursor.close();
+            return arrayAdapter;
+        }catch (Exception ex){
+            return null;
         }
 
-        return arrayAdapter;
+
     }
 
 }

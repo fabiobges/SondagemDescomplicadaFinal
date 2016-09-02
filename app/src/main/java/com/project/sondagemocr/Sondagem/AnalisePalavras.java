@@ -1,4 +1,7 @@
 package com.project.sondagemocr.Sondagem;
+
+import android.util.Log;
+
 public class AnalisePalavras {
 
     private String palavraCorreta;
@@ -11,8 +14,8 @@ public class AnalisePalavras {
     public AnalisePalavras(String palavraCorreta, String palavraInserida){
         this.palavraCorreta = palavraCorreta;
         this.palavraInserida = palavraInserida;
-        this.palavraCorreta.toLowerCase();
-        this.palavraInserida.toLowerCase();
+        this.palavraCorreta = this.palavraCorreta.toLowerCase();
+        this.palavraInserida = this.palavraInserida.toLowerCase();
         this.listaSilabasCorreta = separaSilabas(this.palavraCorreta);
         this.listaSilabasInserida = separaSilabas(this.palavraInserida);
 
@@ -314,6 +317,13 @@ public class AnalisePalavras {
             }
             //System.out.print("\nContagem y:"+y+" ::para length: "+listaLetras.length+"\n");
         }
+
+        //Apenas informando por console a palavra em avaliação em silabas
+        String palavraSilabas = new String();
+        for(String silaba:silabasCorreta){
+            palavraSilabas = palavraSilabas+"-"+silaba;
+        }
+        Log.i("Sondagem palavra:",palavraSilabas);
 
         return silabasCorreta;
 
