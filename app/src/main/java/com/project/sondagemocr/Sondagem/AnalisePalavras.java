@@ -42,7 +42,9 @@ public class AnalisePalavras {
         for(int i=0; i<listaSilabasInserida.length; i++){
             if(listaSilabasCorreta[i]=="" || listaSilabasCorreta[i]== null){
                 if(listaSilabasInserida[i]==null || listaSilabasCorreta[i]==""){
-
+                    if(listaSilabasCorreta[i].equals("") && (!listaSilabasInserida[i].equals(null)) ||!listaSilabasInserida[i].equals("")){
+                        erros++;
+                    }
                 }else{
                     flag = false;
                 }
@@ -84,7 +86,9 @@ public class AnalisePalavras {
             flag = false;
         }else if((tam == 3)&&(erros > 2)){
             flag = false;
-        }else if(tam <= 2 && erros > 1){
+        }else if(tam == 2 && erros > 1){
+            flag = false;
+        }else if(tam <= 1 && erros > 0){
             flag = false;
         }
 
@@ -203,6 +207,7 @@ public class AnalisePalavras {
     public String[] separaSilabas(String palavra){
         int i = 0;
         int y = 0;
+        boolean ns = false;
         silabasCorreta = new String[12];
         listaLetras = new char[16];
         //Recebendo letra por letra da palavra e transferindo para um array de char
@@ -221,6 +226,14 @@ public class AnalisePalavras {
                 break;
             }
 
+            //Caso tenha occorrido a relação ans,ens,ins,ons,uns sera adicionado a letra "s" e fechara silaba
+            if (ns == true){
+                ns = false;
+                silabasCorreta[y] = silabasCorreta[y]+String.valueOf(listaLetras[i]);
+                y++;
+                continue;
+            }
+
             //Caso a letra na posição atual seja Consoante, entrará nesta condição
             if((listaLetras[i]!='a')&&(listaLetras[i]!='e')&&(listaLetras[i]!='i')&&(listaLetras[i]!='o')&&
                     (listaLetras[i]!='u')){
@@ -229,11 +242,19 @@ public class AnalisePalavras {
                 if(((listaLetras[i+1]=='a')||(listaLetras[i+1]=='e')||(listaLetras[i+1]=='i')||(listaLetras[i+1]=='o')||
                         (listaLetras[i+1]=='u')||(listaLetras[i+1]=='h'))
                         //
-                        ||((listaLetras[i]=='b' || listaLetras[i]=='c' || listaLetras[i]=='d' || listaLetras[i]=='f' || listaLetras[i]=='g' || listaLetras[i]=='t' || listaLetras[i]=='p') && listaLetras[i+1]=='r')&&
-                        ((listaLetras[i+2]=='a')||(listaLetras[i+2]=='e')||(listaLetras[i+2]=='i')||(listaLetras[i+2]=='o')||
+                        ||((listaLetras[i]=='b' || listaLetras[i]=='c' || listaLetras[i]=='d' || listaLetras[i]=='f' || listaLetras[i]=='g' || listaLetras[i]=='t' || listaLetras[i]=='p') && listaLetras[i+1]=='r')
+
+                        || ((listaLetras[i]=='b' || listaLetras[i]=='c' || listaLetras[i]=='f' ||
+                        listaLetras[i]=='g' || listaLetras[i]=='p')&&(listaLetras[i+1]=='l'))
+
+                        && ((listaLetras[i+2]=='a')||(listaLetras[i+2]=='e')||(listaLetras[i+2]=='i')||(listaLetras[i+2]=='o')||
                                 (listaLetras[i+2]=='u'))){
                     //Array de silaba recebe letra e continua na sílaba
                     silabasCorreta[y] = silabasCorreta[y]+String.valueOf(listaLetras[i]);
+                }else if(  listaLetras[i] == 'n' && listaLetras[i+1] == 's' && ((listaLetras[i+2]!='a')&&(listaLetras[i+2]!='e')&&(listaLetras[i+2]!='i')&&(listaLetras[i+2]!='o')&&
+                        (listaLetras[i+2]!='u'))) {
+                    silabasCorreta[y] = silabasCorreta[y] + String.valueOf(listaLetras[i]);
+                    ns = true;
                 }
                 else{
                     //Array de silaba recebe letra e fecha a silaba
@@ -250,7 +271,7 @@ public class AnalisePalavras {
                     //Caso a letra após a Vogal seja l, s, r, y, z ou x. E ainda que a letra seguinte não seja Vogal nem H, entrará na condição
                     //Isto trata questão como silabas al,el,ar,er,ir,or,ur,an,en,etc
                     if(((listaLetras[i+1]=='l')||(listaLetras[i+1]=='s')||(listaLetras[i+1]=='r')||(listaLetras[i+1]=='y')||
-                            (listaLetras[i+1]=='z')||(listaLetras[i+1]=='x')||(listaLetras[i+1]=='n'))
+                            (listaLetras[i+1]=='z')||(listaLetras[i+1]=='x')||(listaLetras[i+1]=='n'||(listaLetras[i+1]=='m')))
                             &&((listaLetras[i+2]!='a')&&(listaLetras[i+2]!='e')&&(listaLetras[i+2]!='i')&&(listaLetras[i+2]!='o')&&
                             (listaLetras[i+2]!='u')&&(listaLetras[i+2]!=' ')&&(listaLetras[i+2]!='h'))){//pode alterar
                         //Array de silaba recebe letra e continua na sílaba
@@ -297,6 +318,13 @@ public class AnalisePalavras {
                                     (listaLetras[i+1]=='ú'))){
                         silabasCorreta[y]=silabasCorreta[y]+listaLetras[i];
                         y++;
+                        continue;
+                    }
+                    //Casos como letras "ao" estiverem unidas serão mantidas na mesma silaba
+                    if(((listaLetras[i] == 'a' && listaLetras[i+1] == 'o')||
+                            (listaLetras[i] == 'e' && listaLetras[i+1] == 'i')||
+                            (listaLetras[i] == 'o' && listaLetras[i+1] == 'i'))&&(listaLetras[i+2]!= 'm')){
+                        silabasCorreta[y]=silabasCorreta[y]+listaLetras[i];
                         continue;
                     }
                     //Caso a letra da posição atual seja vogal e a próxima seja igual

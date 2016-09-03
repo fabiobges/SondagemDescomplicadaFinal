@@ -125,7 +125,7 @@ public class CadastroSondagemActivity extends AppCompatActivity implements TabLa
             escritaDissi = DissiFragment.edtDissi.getText().toString();
             ResultadoFragment.textAlunoDissi.setText(escritaDissi.replaceAll(" ",""));
             escritaMono = MonoFragment.edtTextMono.getText().toString();
-            ResultadoFragment.textAlunoMono.setText(escritaDissi.replaceAll(" ",""));
+            ResultadoFragment.textAlunoMono.setText(escritaMono.replaceAll(" ",""));
             ResultadoFragment.textAlunoFrase.setText(FraseFragment.edtFrase.getText());
             ResultadoFragment.textModeloPoli.setText(sondagemModelo.getPolissilaba());
             ResultadoFragment.textModeloTri.setText(sondagemModelo.getTrissilaba());

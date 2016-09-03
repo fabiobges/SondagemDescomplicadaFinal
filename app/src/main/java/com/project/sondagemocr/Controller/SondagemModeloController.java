@@ -47,10 +47,12 @@ public class SondagemModeloController {
                  do{
                     arrayAdapter.add(cursor.getString(cursor.getColumnIndex("desc_sondagem_mod")));
                 }while (cursor.moveToNext());
+
             }else {
                 Log.i("Script", "Não achou nenhuma Sondagem em BD");
             }
             cursor.close();
+            connection.close();
         }catch (Exception ex){
             Log.i("Script", "Erro "+ex.getMessage() );
         }
@@ -80,6 +82,7 @@ public class SondagemModeloController {
                 Log.i("Script", "Não achou nenhuma Sondagem Modelo em BD");
             }
             cursor.close();
+            connection.close();
             return sondagemModelo;
         }catch (Exception ex){
             Log.i("Script", "Erro "+ex.getMessage() );
