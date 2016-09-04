@@ -8,14 +8,16 @@ public class AnalisePalavras {
     private String palavraInserida;
     private String[] listaSilabasCorreta;
     private String[] listaSilabasInserida;
-    private String[] silabasCorreta = new String[12];
-    private char[] listaLetras = new char[11];
+    private String[] silabasCorreta = new String[20];
+    private char[] listaLetras = new char[30];
 
     public AnalisePalavras(String palavraCorreta, String palavraInserida){
         this.palavraCorreta = palavraCorreta;
         this.palavraInserida = palavraInserida;
         this.palavraCorreta = this.palavraCorreta.toLowerCase();
         this.palavraInserida = this.palavraInserida.toLowerCase();
+        this.palavraCorreta = this.palavraCorreta.replace(" ", "");
+        this.palavraInserida = this.palavraInserida.replace(" ","");
         this.listaSilabasCorreta = separaSilabas(this.palavraCorreta);
         this.listaSilabasInserida = separaSilabas(this.palavraInserida);
 
@@ -28,7 +30,71 @@ public class AnalisePalavras {
         if(palavraCorreta.equals(palavraInserida)){
             return true;
         }else{
-            return false;
+            int tam = 0;
+            for(int i=0;i<listaSilabasCorreta.length;i++){
+                if(listaSilabasCorreta[i] == null || listaSilabasCorreta[i] == ""){
+                    break;
+                }else{
+                    tam++;
+                }
+            }
+            if(tam > 4){
+                System.out.println("Length:"+listaSilabasCorreta.length);
+                int erros = 0;
+                int acertos = 0;
+                boolean flag = true;
+                for(int i=0; i<listaSilabasInserida.length; i++){
+                    if(listaSilabasCorreta[i]=="" || listaSilabasCorreta[i]== null){
+                        if(listaSilabasInserida[i]==null || listaSilabasCorreta[i].equals("")){
+                            if((listaSilabasCorreta[i]==""|| listaSilabasCorreta[i]==null) && (listaSilabasInserida[i]!=null || listaSilabasCorreta[i]!="" )){
+                                erros++;
+                            }else{
+                                break;
+                            }
+                        }else{
+                            flag = false;
+                        }
+
+                        break;
+                    }
+                    for(char c : listaSilabasInserida[i].toCharArray()){
+                        for(int y=0; y<listaSilabasCorreta[i].length(); y++){
+                            if((c == listaSilabasCorreta[i].charAt(y))||((c == 'k')&&(listaSilabasCorreta[i].charAt(y)=='c'))){
+                                acertos++;
+                            }
+                        }
+                    }
+                    if(acertos == 0){
+                        if(i>0){
+                            if(listaSilabasInserida[i-1].charAt(listaSilabasInserida[i-1].length()-1) == listaSilabasCorreta[i].charAt(0)){
+                                i++;
+                                erros++;
+                                continue;
+                            }else{
+                                erros++;
+                                flag = false;
+                                break;
+                            }
+                        }else{
+                            erros++;
+                            flag = false;
+                            break;
+                        }
+                    }else if(acertos==1 && listaSilabasCorreta[i].length()==2){ //Caso na silaba apenas obteve-se 1 acerto e a silaba é formada por 2 letras ou mais contara erro
+                        erros++;
+                    }else if(acertos==1 && listaSilabasCorreta[i].length()==3){
+                        erros = erros + 2;
+                    }
+                    acertos = 0;
+                }
+                if(erros > 3 || flag == false){
+                    return false;
+                }else{
+                    return true;
+                }
+            }else{
+                return false;
+            }
         }
     }
 
@@ -37,52 +103,79 @@ public class AnalisePalavras {
         boolean flag = true;
         int acertos = 0;
         int erros = 0;
+        int reg = 0;
         int tam = 0;
+        for(int i=0;i<listaSilabasCorreta.length;i++){
+            if(listaSilabasCorreta[i+reg] == null || listaSilabasCorreta[i+reg] == ""){
+                break;
+            }else{
+                tam++;
+            }
+        }
         //Percorrendo array de silabas de paralavra inserida
         for(int i=0; i<listaSilabasInserida.length; i++){
-            if(listaSilabasCorreta[i]=="" || listaSilabasCorreta[i]== null){
-                if(listaSilabasInserida[i]==null || listaSilabasCorreta[i]==""){
-                    if(listaSilabasCorreta[i].equals("") && (!listaSilabasInserida[i].equals(null)) ||!listaSilabasInserida[i].equals("")){
+            if(listaSilabasCorreta[i+reg]=="" || listaSilabasCorreta[i+reg]== null){
+                if(listaSilabasInserida[i]==null || listaSilabasCorreta[i+reg]==""){
+                    if((listaSilabasCorreta[i+reg] == "" || listaSilabasCorreta[i+reg]==null)&& (listaSilabasInserida[i] != null|| listaSilabasCorreta[i]!="" ) ||!listaSilabasInserida[i].equals("")){
                         erros++;
+                    }else{
+                        break;
                     }
                 }else{
                     flag = false;
                 }
-                tam = i;
+                break;
+            }else if (listaSilabasInserida[i]==null){
+                erros = erros + (i-tam);
                 break;
             }
             for(char c : listaSilabasInserida[i].toCharArray()){
-                for(int y=0; y<listaSilabasCorreta[i].length(); y++){
-                    if((c == listaSilabasCorreta[i].charAt(y))||((c == 'k')&&(listaSilabasCorreta[i].charAt(y)=='c'))){
+                for(int y=0; y<listaSilabasCorreta[i+reg].length(); y++){
+                    if((c == listaSilabasCorreta[i+reg].charAt(y))||((c == 'k')&&(listaSilabasCorreta[i].charAt(y)=='c'))){
                         acertos++;
                     }
                 }
             }
             if(acertos == 0){
                 if(i>0){
+                    //Caso não se tenha encontrado algum acerto de letras na silaba
+                    //atual tentamos encontrar algma combinada com silaba anterior da palavra inserida
                     if(listaSilabasInserida[i-1].charAt(listaSilabasInserida[i-1].length()-1) == listaSilabasCorreta[i].charAt(0)){
                         i++;
+                        erros++;
                         continue;
                     }else{
-                        erros++;
-                        flag = false;
-                        break;
+                        if(tam > 5){
+                            erros++;
+                            //Caso silaba anterior ou posterior seja compatível a silaba correta derá reposicionada de acordo com sílaba inserida
+                            if(listaSilabasInserida[i].equals(listaSilabasCorreta[(i+reg)-1])){
+                                reg--;
+                            }else if (listaSilabasInserida[i].equals(listaSilabasCorreta[(i+reg)+1])){
+                                reg++;
+                            }
+                            continue;
+                        }else{
+                            erros++;
+                            flag = false;
+                            break;
+                        }
                     }
                 }else{
                     erros++;
                     flag = false;
                     break;
                 }
-            }else if(acertos==1 && listaSilabasCorreta[i].length()==2){
+            }else if(acertos==1 && listaSilabasCorreta[i+reg].length()==2){
                 erros++;
-            }else if(acertos==1 && listaSilabasCorreta[i].length()==3){
+            }else if(acertos==1 && listaSilabasCorreta[i+reg].length()==3){
                 erros = erros + 2;
             }
             acertos = 0;
         }
 
-        if((tam >= 4 )&&(erros > 3)){
-            System.out.println("erros acima");
+        if((tam > 5)&&(erros > 5)){
+            flag = false;
+        }else if((tam == 4 || tam ==5 )&&(erros > 3)){
             flag = false;
         }else if((tam == 3)&&(erros > 2)){
             flag = false;
@@ -208,8 +301,8 @@ public class AnalisePalavras {
         int i = 0;
         int y = 0;
         boolean ns = false;
-        silabasCorreta = new String[12];
-        listaLetras = new char[16];
+        silabasCorreta = new String[20];
+        listaLetras = new char[30];
         //Recebendo letra por letra da palavra e transferindo para um array de char
         for(char c : palavra.toCharArray()){
             listaLetras[i] = c;
