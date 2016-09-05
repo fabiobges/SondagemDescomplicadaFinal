@@ -42,7 +42,6 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
         arrayAdapter.add("Superior");
         arrayAdapter.add("Pós-Graduação");
 
-
         edtNome = (EditText) findViewById(R.id.edtNomeUsuario);
         edtRg = (EditText) findViewById(R.id.edtRgUsuario);
         edtCpf = (EditText) findViewById(R.id.edtCpfUsuario);

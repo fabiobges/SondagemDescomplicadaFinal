@@ -375,7 +375,7 @@
     <string name="title_activity_cadastro_aluno">CadastroAlunoActivity</string>
     <string name="title_activity_cadastro_sondagem">Cadastro de Sondagem</string>
     <string name="title_activity_cadastro_sondagem_mod">CadastroSondagemModActivity</string>
-    <string name="title_activity_cadastro_turma">CadastroTurmaActivity</string>
+    <string name="title_activity_cadastro_turma">Cadastro de Turma</string>
     <string name="title_activity_cadastro_usuario">Cadastro de Usuário</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_menu_sondagem"/>

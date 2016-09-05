@@ -14,55 +14,34 @@
     tools:showIn="@layout/activity_cadastro_turma"
     >
 
-    <TextView
+    <ImageView android:src="@drawable/ic_supervisor_account_black_48dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/cadastro_turma"
-        android:textSize="25dp"
-        android:id="@+id/textView4"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"/>
+        android:layout_height="72dp"
+        android:layout_marginBottom="24dp"
+        android:layout_gravity="center_horizontal" />
 
-    <EditText
-        android:layout_width="80dp"
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:id="@+id/edtIdentTurma"
-        android:hint="Turma"
-        android:layout_marginTop="12dp"/>
-
-    <EditText
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:id="@+id/edtAnoTurma"
-        android:hint="Ano"
-        android:layout_marginTop="12dp"/>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="200dp">
-
-        <Button
-            android:layout_width="120dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+        <EditText android:id="@+id/edtIdentTurma"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/cancelar"
-            android:id="@+id/btCancelaTurma"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="7dp"/>
+            android:inputType="text"
+            android:hint="Turma" />
+    </android.support.design.widget.TextInputLayout>
 
-        <Button
-            android:layout_width="120dp"
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+        <EditText android:id="@+id/edtAnoTurma"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/cadastrar"
-            android:id="@+id/btCadastraTurma"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="7dp"/>
-    </LinearLayout>
+            android:inputType="number"
+            android:hint="Ano" />
+    </android.support.design.widget.TextInputLayout>
 
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.project.sondagemocr;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,7 +17,7 @@ public class CadastroTurmaActivity extends AppCompatActivity implements View.OnC
 
     EditText edtIdentTurma;
     EditText edtAno;
-    Button btCadastra,btCancela;
+    FloatingActionButton btCadastra;
     Turma turma;
     DataBase dataBase;
 
@@ -27,10 +28,7 @@ public class CadastroTurmaActivity extends AppCompatActivity implements View.OnC
 
         edtIdentTurma = (EditText) findViewById(R.id.edtIdentTurma);
         edtAno = (EditText) findViewById(R.id.edtAnoTurma);
-        btCadastra = (Button) findViewById(R.id.btCadastraTurma);
-        btCancela = (Button) findViewById(R.id.btCancelaTurma);
-
-        btCancela.setOnClickListener(this);
+        btCadastra = (FloatingActionButton) findViewById(R.id.btCadastraTurma);
         btCadastra.setOnClickListener(this);
 
         dataBase = new DataBase(this, null, 1);
@@ -55,9 +53,6 @@ public class CadastroTurmaActivity extends AppCompatActivity implements View.OnC
             }else{
                 lancaAlertDialog("Os campos não foram preenchidos corretamente!",null);
             }
-        }else if(v == btCancela){
-            Intent intent = new Intent(this,PrincipalActivity.class);
-            startActivity(intent);
         }
     }
 

@@ -24,7 +24,7 @@
     <string name="dados_responsável">Dados Responsável</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="cancelar">Cancelar</string>
-    <string name="title_activity_cadastro_turma">CadastroTurmaActivity</string>
+    <string name="title_activity_cadastro_turma">Cadastro de Turma</string>
     <string name="title_activity_cadastro_aluno">CadastroAlunoActivity</string>
     <string name="title_activity_cadastro_sondagem_mod">CadastroSondagemModActivity</string>
     <string name="numero">Número </string>
