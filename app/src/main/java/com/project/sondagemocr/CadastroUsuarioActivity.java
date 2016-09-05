@@ -2,6 +2,7 @@ package com.project.sondagemocr;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -23,8 +24,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
     private EditText edtCoord;
     private EditText edtLoginUsuario;
     private EditText edtSenha;
-    private Button btCadastra;
-    private Button btCancela;
+    private FloatingActionButton btCadastra;
     private DataBase dataBase;
 
     private Usuario usuario;
@@ -52,11 +52,9 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
         edtCoord = (EditText) findViewById(R.id.edtCoord);
         edtLoginUsuario = (EditText) findViewById(R.id.edtLoginUsuario);
 
-        btCadastra = (Button) findViewById(R.id.btCadastraUsuario);
-        btCancela = (Button) findViewById(R.id.btCancelarUsuario);
+        btCadastra = (FloatingActionButton) findViewById(R.id.btCadastraUsuario);
 
         btCadastra.setOnClickListener(this);
-        btCancela.setOnClickListener(this);
 
         usuario = new Usuario();
 
@@ -87,10 +85,6 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
                 alertDialog.setNeutralButton("Ok",null);
                 alertDialog.show();
             }
-        }else if(v == btCancela){
-            Toast.makeText(this,"Cadastro Cancelado!",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this,MainActivity.class);
-            startActivity(intent);
         }
 
     }

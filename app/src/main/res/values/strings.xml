@@ -8,7 +8,7 @@
     <string name="item_relatorio">Relatórios</string>
     <string name="item_sair">Sair</string>
     <string name="title_activity_menu_sondagem"></string>
-    <string name="title_activity_cadastro_sondagem">CadastroSondagemActivity</string>
+    <string name="title_activity_cadastro_sondagem">Cadastro de Sondagem</string>
     <string name="palavra_poli">Palavra Polissílaba</string>
     <string name="palavra_tri">Palavra Trissílaba</string>
     <string name="palavra_dissi">Palavra Dissílaba</string>
@@ -16,11 +16,11 @@
     <string name="palavra_frase">Frase</string>
     <string name="gravar">Gravar</string>
     <string name="limpar">Limpar</string>
-    <string name="title_activity_cadastro_usuario">CadastroUsuarioActivity</string>
-    <string name="cadastro_usuario">Cadastro Usuário</string>
-    <string name="cadastro_login">Cadastro Login</string>
-    <string name="cadastro_turma">Cadastro Turma</string>
-    <string name="cadastro_aluno">Cadastro Aluno</string>
+    <string name="title_activity_cadastro_usuario">Cadastro de Usuário</string>
+    <string name="cadastro_usuario">Cadastro de Usuário</string>
+    <string name="cadastro_login">Cadastro de Login</string>
+    <string name="cadastro_turma">Cadastro de Turma</string>
+    <string name="cadastro_aluno">Cadastro de Aluno</string>
     <string name="dados_responsável">Dados Responsável</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="cancelar">Cancelar</string>

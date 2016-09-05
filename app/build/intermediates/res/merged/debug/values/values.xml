@@ -314,10 +314,10 @@
     <string name="auth_google_play_services_client_google_display_name">Google</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="cadastrar">Cadastrar</string>
-    <string name="cadastro_aluno">Cadastro Aluno</string>
-    <string name="cadastro_login">Cadastro Login</string>
-    <string name="cadastro_turma">Cadastro Turma</string>
-    <string name="cadastro_usuario">Cadastro Usuário</string>
+    <string name="cadastro_aluno">Cadastro de Aluno</string>
+    <string name="cadastro_login">Cadastro de Login</string>
+    <string name="cadastro_turma">Cadastro de Turma</string>
+    <string name="cadastro_usuario">Cadastro de Usuário</string>
     <string name="cancelar">Cancelar</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="common_android_wear_notification_needs_update_text"><ns1:g id="app_name">%1$s</ns1:g> requires an update to the Android Wear app.</string>
@@ -373,10 +373,10 @@
     <string name="text_fragment_b">Modelo</string>
     <string name="title_activity_ajuda_sondagem">AjudaSondagemActivity</string>
     <string name="title_activity_cadastro_aluno">CadastroAlunoActivity</string>
-    <string name="title_activity_cadastro_sondagem">CadastroSondagemActivity</string>
+    <string name="title_activity_cadastro_sondagem">Cadastro de Sondagem</string>
     <string name="title_activity_cadastro_sondagem_mod">CadastroSondagemModActivity</string>
     <string name="title_activity_cadastro_turma">CadastroTurmaActivity</string>
-    <string name="title_activity_cadastro_usuario">CadastroUsuarioActivity</string>
+    <string name="title_activity_cadastro_usuario">Cadastro de Usuário</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_menu_sondagem"/>
     <string name="title_activity_principal">Sondagem OCR</string>
