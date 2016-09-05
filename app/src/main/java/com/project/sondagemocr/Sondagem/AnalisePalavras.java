@@ -31,13 +31,7 @@ public class AnalisePalavras {
             return true;
         }else{
             int tam = 0;
-            for(int i=0;i<listaSilabasCorreta.length;i++){
-                if(listaSilabasCorreta[i] == null || listaSilabasCorreta[i] == ""){
-                    break;
-                }else{
-                    tam++;
-                }
-            }
+            tam = tamanhoArray(listaSilabasCorreta);
             if(tam > 4){
                 System.out.println("Length:"+listaSilabasCorreta.length);
                 int erros = 0;
@@ -55,6 +49,10 @@ public class AnalisePalavras {
                             flag = false;
                         }
 
+                        break;
+                    }
+                    else if (listaSilabasInserida[i]==null){
+                        erros = erros + (tam-i);
                         break;
                     }
                     for(char c : listaSilabasInserida[i].toCharArray()){
@@ -105,13 +103,7 @@ public class AnalisePalavras {
         int erros = 0;
         int reg = 0;
         int tam = 0;
-        for(int i=0;i<listaSilabasCorreta.length;i++){
-            if(listaSilabasCorreta[i+reg] == null || listaSilabasCorreta[i+reg] == ""){
-                break;
-            }else{
-                tam++;
-            }
-        }
+        tam = tamanhoArray(listaSilabasCorreta);
         //Percorrendo array de silabas de paralavra inserida
         for(int i=0; i<listaSilabasInserida.length; i++){
             if(listaSilabasCorreta[i+reg]=="" || listaSilabasCorreta[i+reg]== null){
@@ -126,7 +118,7 @@ public class AnalisePalavras {
                 }
                 break;
             }else if (listaSilabasInserida[i]==null){
-                erros = erros + (i-tam);
+                erros = erros + (tam-i);
                 break;
             }
             for(char c : listaSilabasInserida[i].toCharArray()){
@@ -191,9 +183,9 @@ public class AnalisePalavras {
 
     public boolean silabicoComValor(){
 
-        boolean flag = true;    //Flag indica se aluno se ancaixo como silabico com valor ou não
-        boolean flag2 = true;   //Flag indica se palavra é polissilaba ou não
+        boolean flag = true;    //Flag indica se aluno se encaixo como silabico com valor ou não
         int acertos = 0;
+        int erros = 0;
         int tam = 0;
         int w = 0;
         int tamcorreta = tamanhoArray(listaSilabasCorreta);
@@ -205,23 +197,20 @@ public class AnalisePalavras {
                 if((listaSilabasInserida[i]==null && listaSilabasCorreta[i]=="" || listaSilabasCorreta[i]==null)||
                         (listaSilabasInserida[i]=="" && listaSilabasCorreta[i]=="")){
                     if(tamcorreta >= 4 && listaSilabasInserida[i]==null && listaSilabasCorreta[i]==""){
-                        flag = false;
+                        break;
                     }
 
                 }else{
-                    flag = false;
+                    erros++;
+                    break;
                 }
-                tam = i;
+                break;
+            }else if (listaSilabasInserida[i]==null){
+                erros = erros + (tam-i);
                 break;
             }
 
-            //Caso seja polissilaba e tenha ocorrido erro de alguma silaba
-            //uma chance é dada e a posição avança uma casa
-            if(flag2 == false){
-                w = i+1;
-            }else{
-                w = i;
-            }
+
 
             for(char c : listaSilabasInserida[i].toCharArray()){   //Percorrendo silaba da atual posição de array de silabas da palavra inserida pelo aluno
                 for(int y=0; y<listaSilabasCorreta[w].length(); y++){    //Percorrendo silaba da atual posição de array de silabas da palavra correta
@@ -233,43 +222,27 @@ public class AnalisePalavras {
 
             //Caso nenhuma das letras da silabas sejam iguais, entratá nesta condição
             if(acertos == 0){
-
+                erros++;
                 if(i>0){  //Verifica se array de silabas da palavra inserida não esta na primeira casa
                     if(listaSilabasInserida[i-1].charAt(listaSilabasInserida[i-1].length()-1) == listaSilabasCorreta[i].charAt(0)){  //Caso silaba anterior da inserida tenha alguma letra em comum com silaba correta, terá a chance se ainda seguir no metodo
                         i++;
                         continue;
-                    }else if(tamcorreta >= 4 && flag2 == true){  //Verifica se palavra é polissilaba e se for da a chance de se errar apenas uma silaba
-                        i++;
-                        flag2 = false;
-                        continue;
                     }
-                    else{
-                        flag = false; //Não silabico com valor
-                        break;
-                    }
-                }else{
-                    if(tamcorreta >= 4 && flag2 == true){  //Verifica se palavra é polissilaba e se for da a chance de se errar apenas uma silaba
-                        i++;
-                        flag2 = false;
-                        continue;
-                    }else{
-                        flag = false;  //Não silabico com valor
-                        break;
-                    }
+
                 }
             }
             acertos = 0;
         }
-        System.out.println(tam);
-
 
         //Teste final de polissilaba
-        if(tamcorreta >= 4){
-            if(listaSilabasInserida[tamcorreta]==null &&     //Permite somente o erro de uma silaba
-                    listaSilabasCorreta[tamcorreta] == null &&
-                    flag2 == false) {
-                flag = false;
-            }
+        if(tamcorreta > 4 && erros > 3){
+            flag = false;
+        }else if(tamcorreta == 4 && erros > 1){
+            //Caso seja polissilaba e tenha ocorrido erro de alguma silaba
+            //uma chance é dada
+            flag = false;
+        }else if(tamcorreta < 4 && erros > 0){
+            flag = false;
         }
         return flag;
     }
@@ -283,7 +256,12 @@ public class AnalisePalavras {
         int tamcor = tamanhoArray(listaSilabasCorreta);
 
         //Caso a quantidade de silabas sejam iguais, será declarado Silabico alfabético
-        if(tamcor >= 4){
+        if(tamcor > 5){
+            if(tamcor - taminc > 3 || tamcor - taminc < -3){
+                flag = false;
+            }
+        }
+        else if(tamcor == 4 || tamcor == 5){
             if(tamcor - taminc > 1 || tamcor - taminc < -1){
                 flag = false;
             }
@@ -477,7 +455,7 @@ public class AnalisePalavras {
     public int tamanhoArray(String[] array){
         int tam = 0;
         for(int i=0;i<array.length;i++){
-            if(array[i]==""){
+            if(array[i]=="" || array[i]==null){
                 break;
             }
             tam = tam+ 1;
