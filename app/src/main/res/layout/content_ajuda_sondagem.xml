@@ -21,16 +21,5 @@
         android:text="A sondagem deverá ser aplicada seguindo a respectiva ordem de palavras: polissílaba, trissílaba, dissílaba, monossílaba, seguida de uma frase. A frase deve possuir ao menos uma das palavras anteriores. Todas as palavras e frases devem pertencer ao mesmo campo semântico."
         android:id="@+id/textView11"
         android:gravity="center"
-        android:textColor="@color/cinza"
-        android:textStyle="bold"/>
-
-    <ImageButton
-        android:layout_width="67dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/imgVolta"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/ic_reply_black_24dp"
-        android:background="#ffffff"
-        android:layout_marginTop="12dp"
-        android:layout_weight="0.10" />
+        android:textColor="@color/cinza" />
 </LinearLayout>
