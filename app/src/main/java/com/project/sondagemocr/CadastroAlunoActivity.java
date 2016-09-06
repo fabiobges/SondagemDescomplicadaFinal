@@ -3,6 +3,7 @@ package com.project.sondagemocr;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -28,8 +29,7 @@ public class CadastroAlunoActivity extends AppCompatActivity implements View.OnC
     EditText edtNomeResp;
     EditText edtCpfResp;
     EditText edtTelResp;
-    Button btGrava;
-    Button btCancela;
+    FloatingActionButton btGrava;
     Aluno aluno;
     DataBase dataBase;
     TurmaController turmaController;
@@ -49,10 +49,7 @@ public class CadastroAlunoActivity extends AppCompatActivity implements View.OnC
         edtNomeResp = (EditText) findViewById(R.id.edtNomeResponsavel);
         edtCpfResp = (EditText) findViewById(R.id.edtCpfResponsavel);
         edtTelResp = (EditText) findViewById(R.id.edtTelResponsavel);
-        btCancela = (Button) findViewById(R.id.btCancelaAluno);
-        btGrava = (Button) findViewById(R.id.btCadastraAluno);
-
-        btCancela.setOnClickListener(this);
+        btGrava = (FloatingActionButton) findViewById(R.id.btCadastraAluno);
         btGrava.setOnClickListener(this);
 
         aluno = new Aluno();
@@ -81,9 +78,6 @@ public class CadastroAlunoActivity extends AppCompatActivity implements View.OnC
                     lancaAlertDialog("Erro ao inserir aluno e responsável ao Banco de dados", ex);
                 }
             }
-        }else if(v == btCancela){
-            Intent intent = new Intent(this,PrincipalActivity.class);
-            startActivity(intent);
         }
     }
 

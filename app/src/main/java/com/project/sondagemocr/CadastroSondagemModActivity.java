@@ -2,6 +2,7 @@ package com.project.sondagemocr;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -22,8 +23,7 @@ public class CadastroSondagemModActivity extends AppCompatActivity implements Vi
     EditText edtMonossilaba;
     EditText edtFrase;
     EditText edtIdentSondMod;
-    Button btCadastra, btCancela;
-    ImageButton imgAjuda;
+    FloatingActionButton btCadastra, imgAjuda;
     SondagemModelo sondagemModelo;
     DataBase dataBase;
 
@@ -40,12 +40,9 @@ public class CadastroSondagemModActivity extends AppCompatActivity implements Vi
         edtDissilaba = (EditText) findViewById(R.id.edtDiModelo);
         edtMonossilaba = (EditText) findViewById(R.id.edtMonoModelo);
         edtFrase = (EditText) findViewById(R.id.edtFraseModelo);
-        imgAjuda = (ImageButton) findViewById(R.id.imgAjuda);
-        btCancela = (Button) findViewById(R.id.btnCancelarSondModelo);
-        btCadastra = (Button) findViewById(R.id.btnCadastroSondModelo);
+        imgAjuda = (FloatingActionButton) findViewById(R.id.imgAjuda);
+        btCadastra = (FloatingActionButton) findViewById(R.id.btnCadastroSondModelo);
 
-
-        btCancela.setOnClickListener(this);
         btCadastra.setOnClickListener(this);
         imgAjuda.setOnClickListener(this);
 
@@ -60,10 +57,6 @@ public class CadastroSondagemModActivity extends AppCompatActivity implements Vi
             SondagemModeloController sondModCont = new SondagemModeloController(dataBase);
             sondModCont.insereSondagemModelo(sondagemModelo);
             makeToast("A sondagem modelo foi cadastrada!");
-            Intent intent = new Intent(this,MenuSondagemActivity.class);
-            startActivity(intent);
-        }else if(v == btCancela){
-            makeToast("O cadastro de sondagem modelo foi cancelada!");
             Intent intent = new Intent(this,MenuSondagemActivity.class);
             startActivity(intent);
         }else if(v == imgAjuda){
