@@ -9,8 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.project.sondagemocr.PrincipalActivity"
-    tools:showIn="@layout/activity_principal">
+    tools:context="com.project.sondagemocr.PrincipalActivity">
+    <!--tools:showIn="@layout/activity_principal">-->
 
 
     <ImageView android:src="@drawable/logo_amarelo"
@@ -35,15 +35,15 @@
         android:onClick="navegar">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/ic_supervisor_account_black_48dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Turmas"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="60dp"
             android:textStyle="bold"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
@@ -51,7 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="60dp"
             android:text="Cadastro e consulta de turmas"/>
 
     </RelativeLayout>
@@ -68,15 +68,15 @@
         android:onClick="navegar">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/ic_face_black_48dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Alunos"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="60dp"
             android:textStyle="bold"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
@@ -84,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="60dp"
             android:text="Cadastro e consulta de alunos por turma"/>
 
     </RelativeLayout>
@@ -101,15 +101,15 @@
         android:onClick="navegar">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/ic_visibility_black_48dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sondagens"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="60dp"
             android:textStyle="bold"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
@@ -117,7 +117,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="60dp"
             android:text="Cadastro e consulta de sondagens"/>
 
     </RelativeLayout>
@@ -134,15 +134,15 @@
         android:onClick="navegar">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/ic_assignment_black_48dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Relatórios"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="60dp"
             android:textStyle="bold"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
@@ -150,7 +150,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="60dp"
             android:text="Relatórios de sondagens por aluno e por turma"/>
 
     </RelativeLayout>
