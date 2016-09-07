@@ -43,15 +43,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
         try {
             dataBase = new DataBase(this, null, 1);
             connection = dataBase.getReadableDatabase();
-            AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-            alertDialog.setMessage("Banco foi criado com sucesso!");
-            alertDialog.setNeutralButton("Ok",null);
-            alertDialog.show();
+            //AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+            //alertDialog.setMessage("Banco foi criado com sucesso!");
+            //alertDialog.setNeutralButton("Ok",null);
+            //alertDialog.show();
         }catch (SQLException ex){
-            AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-            alertDialog.setMessage("Banco nao foi criado!"+ex.getMessage());
-            alertDialog.setNeutralButton("Ok",null);
-            alertDialog.show();
+            //AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+            //alertDialog.setMessage("Banco nao foi criado!"+ex.getMessage());
+            //alertDialog.setNeutralButton("Ok",null);
+            //alertDialog.show();
         }
 
 
@@ -68,7 +68,4 @@ public class MainActivity extends Activity implements View.OnClickListener {
             startActivity(intent);
         }
     }
-
-
-
 }

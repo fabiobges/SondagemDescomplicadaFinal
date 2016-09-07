@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -123,4 +124,23 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
 
         return true;
     }
+
+    public void navegar(View view) {
+        switch (view.getId()) {
+            case R.id.card_turmas:
+                Intent intent = new Intent(this, CadastroTurmaActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.card_alunos:
+                startActivity(new Intent(this, CadastroAlunoActivity.class));
+                break;
+            case R.id.card_sondagens:
+                startActivity(new Intent(this, MenuSondagemActivity.class));
+                break;
+            case R.id.card_relatorios:
+                startActivity(new Intent(this, CadastroAlunoActivity.class));
+                break;
+        }
+    }
+
 }

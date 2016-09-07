@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sondagem Descomplicada</string>
+    <string name="app_name">Sondagem</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_principal">Sondagem OCR</string>
     <string name="item_sondagens">Sondagens</string>
