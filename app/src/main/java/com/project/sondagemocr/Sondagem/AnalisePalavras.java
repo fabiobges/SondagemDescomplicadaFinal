@@ -8,8 +8,8 @@ public class AnalisePalavras {
     private String palavraInserida;
     private String[] listaSilabasCorreta;
     private String[] listaSilabasInserida;
-    private String[] silabasCorreta = new String[20];
-    private char[] listaLetras = new char[30];
+    public static String[] silabasCorreta = new String[20];
+    public static char[] listaLetras = new char[30];
 
     public AnalisePalavras(String palavraCorreta, String palavraInserida){
         this.palavraCorreta = palavraCorreta;
@@ -205,8 +205,8 @@ public class AnalisePalavras {
                     break;
                 }
                 break;
-            }else if (listaSilabasInserida[i]==null){
-                erros = erros + (tam-i);
+            }else if (listaSilabasInserida[i]==null || listaSilabasInserida[i]=="" ){
+                erros = erros + (tamcorreta-i);
                 break;
             }
 
@@ -275,7 +275,7 @@ public class AnalisePalavras {
     }
 
     //Método realiza a separação de silabas
-    public String[] separaSilabas(String palavra){
+    public static String[] separaSilabas(String palavra){
         int i = 0;
         int y = 0;
         boolean ns = false;

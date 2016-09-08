@@ -71,7 +71,7 @@ public class IdentificacaoFragment extends Fragment implements AdapterView.OnIte
                 turma.setIdentificador(parent.getSelectedItem().toString());
                 turma = turmaController.consultaTurmaId(turma);
                 AlunoController alunoController = new AlunoController(dataBase);
-                ArrayAdapter<String> adpAluno = alunoController.cosultaAlunoTurma(context, turma);
+                ArrayAdapter<String> adpAluno = alunoController.consultaAlunoTurma(context, turma);
                 spnAluno.setEnabled(true);
                 spnAluno.setAdapter(adpAluno);
 

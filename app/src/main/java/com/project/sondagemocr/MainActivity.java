@@ -12,7 +12,9 @@ import android.widget.*;
 //import com.google.android.gms.appindexing.Action;
 //import com.google.android.gms.appindexing.AppIndex;
 //import com.google.android.gms.common.api.GoogleApiClient;
+import com.project.sondagemocr.Controller.NivelController;
 import com.project.sondagemocr.DataBase.DataBase;
+import com.project.sondagemocr.Pojo.Nivel;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -21,6 +23,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private TextView txCadastroUsuario;
     private DataBase dataBase;
     private SQLiteDatabase connection;
+
     //private GoogleApiClient client;
 
 
@@ -41,12 +44,25 @@ public class MainActivity extends Activity implements View.OnClickListener {
         txCadastroUsuario.setOnClickListener(this);
 
         try {
+            /*
             dataBase = new DataBase(this, null, 1);
-            connection = dataBase.getReadableDatabase();
-            //AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-            //alertDialog.setMessage("Banco foi criado com sucesso!");
-            //alertDialog.setNeutralButton("Ok",null);
-            //alertDialog.show();
+            NivelController nivelController = new NivelController(dataBase);
+            Nivel nivel = new Nivel();
+            nivel.setNome("Alfabético");
+            nivelController.insereNivel(nivel);
+            nivel.setNome("Silábico Alfabético");
+            nivelController.insereNivel(nivel);
+            nivel.setNome("Silábico com Valor Sonoro");
+            nivelController.insereNivel(nivel);
+            nivel.setNome("Silábico sem Valor Sonoro");
+            nivelController.insereNivel(nivel);
+            nivel.setNome("Pré-Silábico");
+            nivelController.insereNivel(nivel);
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+            alertDialog.setMessage("Banco foi criado com sucesso!");
+            alertDialog.setNeutralButton("Ok",null);
+            alertDialog.show();
+            */
         }catch (SQLException ex){
             //AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
             //alertDialog.setMessage("Banco nao foi criado!"+ex.getMessage());

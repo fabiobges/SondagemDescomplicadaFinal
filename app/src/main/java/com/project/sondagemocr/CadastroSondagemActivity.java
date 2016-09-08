@@ -154,7 +154,7 @@ public class CadastroSondagemActivity extends AppCompatActivity implements TabLa
                     SondagemModeloController sondagemModeloController = new SondagemModeloController(new DataBase(this,null,1));
                     sondagemModelo = new SondagemModelo();
                     sondagemModelo.setDescSondagemMod(IdentificacaoFragment.spnSondagemModelo.getSelectedItem().toString());
-                    sondagemModelo = sondagemModeloController.consultaSondagemModeloPorIdentificador(this,sondagemModelo);
+                    sondagemModelo = sondagemModeloController.consultaSondagemModeloPorIdentificador(sondagemModelo);
                     mViewPager_cadastro_sondagem.setCurrentItem(1);
 
                 }else {

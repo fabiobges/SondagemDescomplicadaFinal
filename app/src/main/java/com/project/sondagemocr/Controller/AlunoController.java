@@ -40,7 +40,7 @@ public class AlunoController {
 
         }
 
-        public ArrayAdapter<String> cosultaAlunoTurma(Context context, Turma turma){
+        public ArrayAdapter<String> consultaAlunoTurma(Context context, Turma turma){
 
             try {
                 SQLiteDatabase connection = dataBase.getReadableDatabase();
@@ -65,6 +65,29 @@ public class AlunoController {
                 return null;
             }
 
+        }
+
+        public Aluno consultaAlunoPorNome(Aluno aluno){
+            try{
+                SQLiteDatabase connection = dataBase.getReadableDatabase();
+                Cursor cursor = connection.query("tb_aluno",null,"nome_aluno = '"+aluno.getNome()+"'",null,null,null,null,"1");
+                if(cursor.getCount() > 0){
+                    cursor.moveToFirst();
+                    do{
+                        aluno.setId(cursor.getInt(cursor.getColumnIndex("_id")));
+                        aluno.setRa(cursor.getString(cursor.getColumnIndex("ra_aluno")));
+                        Log.i("Consulta:","Retornou "+aluno.getNome());
+                    }while (cursor.moveToNext());
+                }else{
+                    aluno=null;
+                }
+                cursor.close();
+                connection.close();
+                return aluno;
+            }catch(Exception ex){
+                Log.i("Script", "Erro "+ex.getMessage() );
+                return null;
+            }
         }
 
 }

@@ -63,7 +63,7 @@ public class SondagemModeloController {
 
     }
 
-    public SondagemModelo consultaSondagemModeloPorIdentificador(Context context,SondagemModelo sondagemModelo){
+    public SondagemModelo consultaSondagemModeloPorIdentificador(SondagemModelo sondagemModelo){
 
         try {
             SQLiteDatabase connection = dataBase.getReadableDatabase();
@@ -79,6 +79,7 @@ public class SondagemModeloController {
                     sondagemModelo.setFrase(cursor.getString(cursor.getColumnIndex("frase")));
                 } while (cursor.moveToNext());
             } else {
+                sondagemModelo = null;
                 Log.i("Script", "Não achou nenhuma Sondagem Modelo em BD");
             }
             cursor.close();
