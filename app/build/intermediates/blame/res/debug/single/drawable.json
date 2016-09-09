@@ -36,6 +36,10 @@
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_ratingbar_small_material.xml"
     },
     {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_delete_black_24dp.png",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\src\\main\\res\\drawable\\ic_delete_black_24dp.png"
+    },
+    {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_cab_background_top_material.xml"
     },
@@ -122,6 +126,10 @@
     {
         "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\save.png",
         "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\src\\main\\res\\drawable\\save.png"
+    },
+    {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_mode_edit_black_24dp.png",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\src\\main\\res\\drawable\\ic_mode_edit_black_24dp.png"
     },
     {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_supervisor_account_black_48dp.png",

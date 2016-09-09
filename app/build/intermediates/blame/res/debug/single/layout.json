@@ -368,6 +368,10 @@
         "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_consulta_turma.xml",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\src\\main\\res\\layout\\fragment_consulta_turma.xml"
+    },
+    {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_ajuda_sondagem.xml",
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\src\\main\\res\\layout\\content_ajuda_sondagem.xml"
     },
