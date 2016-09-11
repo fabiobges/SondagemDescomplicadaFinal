@@ -32,7 +32,7 @@ public class SondagemModeloController {
         values.put("frase",sondagemModelo.getFrase());
 
         connection.insertOrThrow("tb_sondagem_modelo",null,values);
-
+        connection.close();
     }
 
     public ArrayAdapter<String> consultaSondagemModelo(Context context){

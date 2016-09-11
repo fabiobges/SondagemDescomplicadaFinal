@@ -28,6 +28,7 @@ public class TurmaController {
 
             SQLiteDatabase connection = dataBase.getWritableDatabase();
             connection.insertOrThrow("tb_turma",null,values);
+            connection.close();
 
         }
 
@@ -48,6 +49,7 @@ public class TurmaController {
                         Log.i("Script", "Retornou: " + cursor.getString(cursor.getColumnIndex("identificacao_turma")) + " + " + i);
                     }while (cursor.moveToNext());
                     cursor.close();
+                    connection.close();
                 } else {
                     Log.i("Script", "Não achou nenhuma turma em BD");
                 }
@@ -75,6 +77,7 @@ public class TurmaController {
                     turma.setAno(cursor.getString(cursor.getColumnIndex("ano_turma")));
                 }
                 cursor.close();
+                connection.close();
                 return turma;
             } else {
                 Log.i("Script","ID da else"+turma.getId());

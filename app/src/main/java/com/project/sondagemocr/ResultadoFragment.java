@@ -30,6 +30,8 @@ import com.project.sondagemocr.Sondagem.AnalisePalavras;
 
 import org.w3c.dom.Text;
 
+import java.util.Date;
+
 public class ResultadoFragment extends Fragment implements View.OnClickListener {
 
     public static TextView textAlunoPoli;
@@ -117,6 +119,7 @@ public class ResultadoFragment extends Fragment implements View.OnClickListener 
                 sondagemAluno.setDissilaba(textAlunoDissi.getText().toString());
                 sondagemAluno.setMonossilaba(textAlunoMono.getText().toString());
                 sondagemAluno.setFrase(textAlunoFrase.getText().toString());
+                sondagemAluno.setData(String.valueOf(new Date().getTime()));
                 sondagemAluno.setNivel(nivel);
                 SondagemAlunoController sondagemAlunoController = new SondagemAlunoController(dataBase);
                 sondagemAlunoController.insereSondagemAluno(sondagemAluno);

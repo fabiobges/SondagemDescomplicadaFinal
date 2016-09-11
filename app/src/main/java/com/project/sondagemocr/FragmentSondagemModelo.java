@@ -7,9 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Patrick Oliveira on 24/08/2016.
- */
+
 public class FragmentSondagemModelo extends Fragment {
 
     @Nullable

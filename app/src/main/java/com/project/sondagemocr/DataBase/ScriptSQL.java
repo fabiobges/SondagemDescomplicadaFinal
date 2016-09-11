@@ -143,7 +143,8 @@ public class ScriptSQL {
         stringBuilder.append("dissilaba varchar(10), ");
         stringBuilder.append("trissilaba varchar(15), ");
         stringBuilder.append("polissilaba varchar(20), ");
-        stringBuilder.append("frase varchar(40) ");
+        stringBuilder.append("frase varchar(40), ");
+        stringBuilder.append("dt_sondagem date ");
         stringBuilder.append(");");
 
         return stringBuilder.toString();

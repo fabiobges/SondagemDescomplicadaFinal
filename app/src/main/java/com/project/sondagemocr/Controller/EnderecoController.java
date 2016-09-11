@@ -30,6 +30,7 @@ public class EnderecoController {
         values.put("uf_end", endereco.getUf());
 
         connection.insertOrThrow("tb_endereco",null,values);
+        connection.close();
 
     }
 

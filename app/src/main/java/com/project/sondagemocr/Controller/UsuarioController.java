@@ -34,6 +34,7 @@ public class UsuarioController {
         Log.i("Script",dataBase.getDatabaseName());
 
         connection.insertOrThrow("tb_usuario",null,values);
+        connection.close();
 
     }
 

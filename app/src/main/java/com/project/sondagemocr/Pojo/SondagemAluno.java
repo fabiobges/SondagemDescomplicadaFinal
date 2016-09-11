@@ -13,6 +13,7 @@ public class SondagemAluno {
     private String polissilaba;
     private String frase;
     private Nivel nivel;
+    private String data;
 
     public int getId() {
         return id;
@@ -93,4 +94,8 @@ public class SondagemAluno {
     public void setNivel(Nivel nivel) {
         this.nivel = nivel;
     }
+
+    public String getData() {return data;}
+
+    public void setData(String data) {this.data = data;}
 }

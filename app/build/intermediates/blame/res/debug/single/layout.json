@@ -228,6 +228,10 @@
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\src\\main\\res\\layout\\identificacao_fragment.xml"
     },
     {
+        "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_row.xml",
+        "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\src\\main\\res\\layout\\fragment_row.xml"
+    },
+    {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_dialog_title_material.xml"
     },
@@ -546,6 +550,10 @@
     {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.2.1\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_consulta_turma.xml",
+        "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\src\\main\\res\\layout\\fragment_consulta_turma.xml"
     },
     {
         "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",

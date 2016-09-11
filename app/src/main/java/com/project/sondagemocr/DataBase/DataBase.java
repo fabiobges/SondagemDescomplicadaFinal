@@ -11,7 +11,7 @@ import com.project.sondagemocr.IdentificacaoFragment;
 
 public class DataBase extends SQLiteOpenHelper {
 
-    private final static String dbName = "SondagemDescBD";
+    private final static String dbName = "SondagemDescBD2";
 
     public DataBase(Context context, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, dbName, factory, 1);

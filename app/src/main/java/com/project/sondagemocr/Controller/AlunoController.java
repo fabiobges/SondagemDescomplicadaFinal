@@ -37,6 +37,7 @@ public class AlunoController {
             values.put("_id_turma",aluno.getTurma().getId());
 
             connection.insertOrThrow("tb_aluno", null, values);
+            connection.close();
 
         }
 
@@ -54,6 +55,7 @@ public class AlunoController {
                         arrayAdapter.add(cursor.getString(cursor.getColumnIndex("nome_aluno")));
                     }
                     cursor.close();
+                    connection.close();
                     return arrayAdapter;
                 }else{
                     return  null;

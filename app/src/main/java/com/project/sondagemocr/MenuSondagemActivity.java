@@ -1,5 +1,6 @@
 package com.project.sondagemocr;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -30,7 +31,6 @@ public class MenuSondagemActivity extends AppCompatActivity implements View.OnCl
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
         floatingActionButton = (FloatingActionButton) findViewById(R.id.fabMenuSondagem);
-
         floatingActionButton.setOnClickListener(this);
         mViewPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), getResources().getStringArray(R.array.titles_tab)));
 

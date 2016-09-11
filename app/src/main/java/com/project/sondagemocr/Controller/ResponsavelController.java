@@ -30,7 +30,7 @@ public class ResponsavelController {
           values.put("tel_responsavel",responsavel.getTelefone());
 
           connection.insertOrThrow("tb_responsavel_aluno", null, values);
-
+          connection.close();
           return consultaLastResponsavel();
       }
 
@@ -48,6 +48,7 @@ public class ResponsavelController {
               }
 
               cursor.close();
+              connection.close();
               Log.i("Script","Responsável é: "+responsavel.getId());
               return responsavel.getId();
           }catch (Exception ex){
@@ -72,6 +73,7 @@ public class ResponsavelController {
 
             }
             cursor.close();
+            connection.close();
             return arrayAdapter;
         }catch (Exception ex){
             return null;
