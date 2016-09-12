@@ -1,6 +1,6 @@
 package com.project.sondagemocr;
 
-import android.content.Context;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -50,4 +50,6 @@ public class MenuSondagemActivity extends AppCompatActivity implements View.OnCl
 
         }
     }
+
+
 }

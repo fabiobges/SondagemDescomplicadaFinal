@@ -3,12 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:clickable="false"
     >
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:focusable="false"
+        android:clickable="false"
         android:id="@+id/txViewDataSond"
         android:layout_weight="1"/>
 
@@ -16,18 +19,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txViewNomeAluno"
+        android:focusable="false"
+        android:clickable="false"
         android:text="TESTE"
         android:layout_weight="1"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:focusable="false"
+        android:clickable="false"
         android:id="@+id/txViewTurma"
         android:layout_weight="1"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:focusable="false"
+        android:clickable="false"
         android:text="Consulta"
         android:id="@+id/but"
         android:layout_weight="0.1"/>

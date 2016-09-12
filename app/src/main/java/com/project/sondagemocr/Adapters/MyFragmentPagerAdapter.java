@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.project.sondagemocr.FragmentSondagem;
 import com.project.sondagemocr.FragmentSondagemModelo;
+import com.project.sondagemocr.SondagemListFragment;
 
 
 public class MyFragmentPagerAdapter extends FragmentPagerAdapter{
@@ -22,7 +23,8 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter{
 
         switch (position){
             case 0:
-                return new FragmentSondagem();
+                Fragment fragSondagem = new SondagemListFragment();
+                return fragSondagem;
             case 1:
                 return new FragmentSondagemModelo();
             default:

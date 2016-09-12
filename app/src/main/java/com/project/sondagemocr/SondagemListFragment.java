@@ -1,15 +1,16 @@
 package com.project.sondagemocr;
 
 
-import android.app.ListFragment;
+
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.ListFragment;
 import android.util.Log;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -25,46 +26,52 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SondagemListFragment extends ListFragment {
+public class SondagemListFragment extends ListFragment  {
 
     ArrayList<SondagemAluno> sondagensAlunos;
-    List<Map<String,Object>> listSondagens;
+    List<Map<String, Object>> listSondagens;
     DataBase dataBase;
 
 
-    @Override
-    public void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
+    TextView tx;
 
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setRetainInstance(true);
         listSondagens = new ArrayList<Map<String, Object>>();
         Context myContext = getActivity();
-        dataBase = new DataBase(myContext,null,1);
-        preencheListSondagens();
+        dataBase = new DataBase(myContext, null, 1);
+        //preencheListSondagens();
 
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceBundle) {
+        View roofView = inflater.inflate(R.layout.fragment_view_sondagem, container, false);
 
+        return roofView;
 
+    }
 
-    private void preencheListSondagens() {
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
+        //load data
         sondagensAlunos = new ArrayList<SondagemAluno>();
         SondagemAlunoController sondagemAlunoController = new SondagemAlunoController(dataBase);
         sondagensAlunos = sondagemAlunoController.consultaSondagensAlunos();
-
 
 
         try {
 
             for (SondagemAluno sondagemAluno : sondagensAlunos) {
 
-
                 Map<String, Object> item = new HashMap<String, Object>();
 
-                Log.i("Aluno10: ", sondagemAluno.getData());
-                item.put("data", "asdsadasd");
-                Log.i("Aluno11: ", sondagemAluno.getAluno().getNome());
+                item.put("data", sondagemAluno.getData());
                 item.put("nomeAluno", sondagemAluno.getAluno().getNome());
                 item.put("turma", sondagemAluno.getAluno().getTurma().getIdentificador());
 
@@ -73,7 +80,44 @@ public class SondagemListFragment extends ListFragment {
             }
 
 
-            Log.i("Aluno12: ", "=="+getActivity().getLocalClassName());
+            String[] de = {"data", "nomeAluno", "turma"};
+            int[] para = {R.id.txViewDataSond, R.id.txViewNomeAluno,
+                    R.id.txViewTurma};
+
+            SimpleAdapter adapter = new SimpleAdapter(getActivity(), listSondagens,
+                    R.layout.fragment_sondagem, de, para);
+
+            setListAdapter(adapter);
+
+
+        } catch (Exception ex) {
+            Log.e("Error preencher: ", ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+
+    private void preencheListSondagens() {
+
+        sondagensAlunos = new ArrayList<SondagemAluno>();
+        SondagemAlunoController sondagemAlunoController = new SondagemAlunoController(dataBase);
+        sondagensAlunos = sondagemAlunoController.consultaSondagensAlunos();
+
+
+        try {
+
+            for (SondagemAluno sondagemAluno : sondagensAlunos) {
+
+                Map<String, Object> item = new HashMap<String, Object>();
+
+                item.put("data", sondagemAluno.getData());
+                item.put("nomeAluno", sondagemAluno.getAluno().getNome());
+                item.put("turma", sondagemAluno.getAluno().getTurma().getIdentificador());
+
+
+                listSondagens.add(item);
+            }
+
+
             String[] de = {"data", "nomeAluno", "turma"};
             int[] para = {R.id.txViewDataSond, R.id.txViewNomeAluno,
                     R.id.txViewTurma};
@@ -91,13 +135,17 @@ public class SondagemListFragment extends ListFragment {
     }
 
 
-
-
-
     @Override
-    public void onListItemClick(ListView listView,View view,int position, long id){
+    public void onListItemClick(ListView listView, View view, int position, long id) {
+        super.onListItemClick(listView,view,position,id);
+        Log.i("Script","OnListItemClick");
         ViewGroup viewGroup = (ViewGroup) view;
-        TextView tx =(TextView) viewGroup.findViewById(R.id.txViewNomeAluno);
-        Toast.makeText(getActivity(),tx.getText(),Toast.LENGTH_SHORT).show();
+        TextView tx = (TextView) viewGroup.findViewById(R.id.txViewNomeAluno);
+        Toast.makeText(getActivity(), "skfksdjfksd", Toast.LENGTH_SHORT).show();
     }
+
+
+
 }
+
+

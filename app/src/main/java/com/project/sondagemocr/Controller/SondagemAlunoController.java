@@ -74,29 +74,17 @@ public class SondagemAlunoController {
                             "Ano Turma:"+cursor.getColumnIndex("ano_turma")+
                             "Id Turma:"+cursor.getColumnIndex("identificacao_turma")+
                             "column:"+cursor.getColumnName(0));
-                   // sondagemAluno.setPolissilaba(cursor.getString(cursor.getColumnIndex("polissiliba")));
-                   // sondagemAluno.setTrissilaba(cursor.getString(cursor.getColumnIndex("trissilaba")));
-                    //sondagemAluno.setDissilaba(cursor.getString(cursor.getColumnIndex("Dissilaba")));
+                    sondagemAluno.setPolissilaba(cursor.getString(cursor.getColumnIndex("polissilaba")));
+                    sondagemAluno.setTrissilaba(cursor.getString(cursor.getColumnIndex("trissilaba")));
+                    sondagemAluno.setDissilaba(cursor.getString(cursor.getColumnIndex("dissilaba")));
                     sondagemAluno.setMonossilaba(cursor.getString(cursor.getColumnIndex("monossilaba")));
                     sondagemAluno.setFrase(cursor.getString(cursor.getColumnIndex("frase")));
                     sondagemAluno.setData(cursor.getString(cursor.getColumnIndex("dt_sondagem")));
                     aluno.setNome(cursor.getString(cursor.getColumnIndex("nome_aluno")));
-                    Log.i("Aluno 2: ",aluno.getNome()+cursor.getColumnIndex("identificacao_turma"));
                     turma.setIdentificador(cursor.getString(cursor.getColumnIndex("identificacao_turma")));
-                    Log.i("Aluno 3: ",aluno.getNome());
                     turma.setAno(cursor.getString(cursor.getColumnIndex("ano_turma")));
-                    Log.i("Aluno 4: ",aluno.getNome()+cursor.getColumnIndex("ano_turma"));
                     aluno.setTurma(turma);
                     sondagemAluno.setAluno(aluno);
-                    Log.i("Aluno 5: ",aluno.getNome()+cursor.getColumnIndex("polissilaba"));
-
-                    Log.i("Aluno 5: ",aluno.getNome());
-
-
-                    Log.i("Aluno : ",aluno.getNome());
-
-
-
                     sondagensAlunos.add(i, sondagemAluno);
                     Log.i("Aluno : ",aluno.getNome());
                     i++;
