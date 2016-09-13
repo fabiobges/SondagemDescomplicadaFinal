@@ -17,11 +17,11 @@ import com.project.sondagemocr.Pojo.Usuario;
 public class CadastroUsuarioActivity extends AppCompatActivity implements View.OnClickListener{
 
     private EditText edtNome;
-    private EditText edtRg;
-    private EditText edtCpf;
-    private EditText edtNasc;
-    private Spinner edtEscolaridade;
-    private EditText edtCoord;
+//    private EditText edtRg;
+//    private EditText edtCpf;
+//    private EditText edtNasc;
+//    private Spinner edtEscolaridade;
+//    private EditText edtCoord;
     private EditText edtLoginUsuario;
     private EditText edtSenha;
     private FloatingActionButton btCadastra;
@@ -36,19 +36,19 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        arrayAdapter.add("Grau de Escolaridade");
-        arrayAdapter.add("Superior");
-        arrayAdapter.add("Pós-Graduação");
+//        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item);
+//        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        arrayAdapter.add("Grau de Escolaridade");
+//        arrayAdapter.add("Superior");
+//        arrayAdapter.add("Pós-Graduação");
 
         edtNome = (EditText) findViewById(R.id.edtNomeUsuario);
-        edtRg = (EditText) findViewById(R.id.edtRgUsuario);
-        edtCpf = (EditText) findViewById(R.id.edtCpfUsuario);
-        edtNasc = (EditText) findViewById(R.id.edtNascUsuario);
-        edtEscolaridade = (Spinner) findViewById(R.id.spinnerEscolaridade);
-        edtEscolaridade.setAdapter(arrayAdapter);
-        edtCoord = (EditText) findViewById(R.id.edtCoord);
+//        edtRg = (EditText) findViewById(R.id.edtRgUsuario);
+//        edtCpf = (EditText) findViewById(R.id.edtCpfUsuario);
+//        edtNasc = (EditText) findViewById(R.id.edtNascUsuario);
+//        edtEscolaridade = (Spinner) findViewById(R.id.spinnerEscolaridade);
+//        edtEscolaridade.setAdapter(arrayAdapter);
+//        edtCoord = (EditText) findViewById(R.id.edtCoord);
         edtLoginUsuario = (EditText) findViewById(R.id.edtLoginUsuario);
 
         btCadastra = (FloatingActionButton) findViewById(R.id.btCadastraUsuario);
@@ -65,7 +65,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
     public void onClick(View v) {
         if(v == btCadastra){
             try {
-                if(!edtEscolaridade.getSelectedItem().equals("Grau de Escolaridade")) {
+                if(!edtNome.getText().equals("")) {
                     insertUsuario();
                     UsuarioController usuarioController = new UsuarioController(dataBase);
                     usuarioController.insereUsuario(usuario);
@@ -92,11 +92,11 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
         Log.i("Script",edtNome.getText().toString());
         usuario.setNome(edtNome.getText().toString());
         Log.i("Script",usuario.getNome());
-        usuario.setRg(edtRg.getText().toString());
-        usuario.setCpf(edtCpf.getText().toString());
-        usuario.setDt_nascimento(edtNasc.getText().toString());
-        usuario.setGrau_escolaridade(edtEscolaridade.getSelectedItem().toString());
-        usuario.setCoordenador(edtCoord.getText().toString());
+//        usuario.setRg(edtRg.getText().toString());
+//        usuario.setCpf(edtCpf.getText().toString());
+//        usuario.setDt_nascimento(edtNasc.getText().toString());
+//        usuario.setGrau_escolaridade(edtEscolaridade.getSelectedItem().toString());
+//        usuario.setCoordenador(edtCoord.getText().toString());
         usuario.setLoginUser(edtLoginUsuario.getText().toString());
     }
 }

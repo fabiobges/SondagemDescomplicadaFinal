@@ -22,12 +22,12 @@ public class UsuarioController {
         //values.put("_id_endereco",usuario.getEndereco().getId());
         values.put("login_user",usuario.getLoginUser());
         values.put("nome_usuario", usuario.getNome());
-        values.put("rg_usuario", usuario.getRg());
-        values.put("cpf_usuario", usuario.getCpf());
-        values.put("dt_nasc_usuario", usuario.getDt_nascimento());
-        values.put("tel_usuario", usuario.getTelefone());
-        values.put("escolaridade_usuario", usuario.getGrau_escolaridade());
-        values.put("coordenador_usuario", usuario.getCoordenador());
+//        values.put("rg_usuario", usuario.getRg());
+//        values.put("cpf_usuario", usuario.getCpf());
+//        values.put("dt_nasc_usuario", usuario.getDt_nascimento());
+//        values.put("tel_usuario", usuario.getTelefone());
+//        values.put("escolaridade_usuario", usuario.getGrau_escolaridade());
+//        values.put("coordenador_usuario", usuario.getCoordenador());
 
 
         SQLiteDatabase connection = dataBase.getWritableDatabase();

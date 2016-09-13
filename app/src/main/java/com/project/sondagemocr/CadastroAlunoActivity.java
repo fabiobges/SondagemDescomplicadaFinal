@@ -27,7 +27,7 @@ public class CadastroAlunoActivity extends AppCompatActivity implements View.OnC
     EditText edtNasc;
     Spinner spnTurmaAluno;
     EditText edtNomeResp;
-    EditText edtCpfResp;
+//    EditText edtCpfResp;
     EditText edtTelResp;
     FloatingActionButton btGrava;
     Aluno aluno;
@@ -47,7 +47,7 @@ public class CadastroAlunoActivity extends AppCompatActivity implements View.OnC
         edtNasc = (EditText) findViewById(R.id.edtNascAluno);
         spnTurmaAluno = (Spinner) findViewById(R.id.spnTurma);
         edtNomeResp = (EditText) findViewById(R.id.edtNomeResponsavel);
-        edtCpfResp = (EditText) findViewById(R.id.edtCpfResponsavel);
+//        edtCpfResp = (EditText) findViewById(R.id.edtCpfResponsavel);
         edtTelResp = (EditText) findViewById(R.id.edtTelResponsavel);
         btGrava = (FloatingActionButton) findViewById(R.id.btCadastraAluno);
         btGrava.setOnClickListener(this);
@@ -85,7 +85,7 @@ public class CadastroAlunoActivity extends AppCompatActivity implements View.OnC
         aluno.setNome(edtNome.getText().toString());
         aluno.setRa(edtRa.getText().toString());
         aluno.getResponsavel().setNome(edtNomeResp.getText().toString());
-        aluno.getResponsavel().setCpf(edtCpfResp.getText().toString());
+//        aluno.getResponsavel().setCpf(edtCpfResp.getText().toString());
         aluno.getResponsavel().setTelefone(edtTelResp.getText().toString());
         turma.setIdentificador(spnTurmaAluno.getSelectedItem().toString());
         turma = turmaController.consultaTurmaId(turma);

@@ -21,7 +21,7 @@
     <string name="cadastro_login">Cadastro de Login</string>
     <string name="cadastro_turma">Cadastro de Turma</string>
     <string name="cadastro_aluno">Cadastro de Aluno</string>
-    <string name="dados_responsável">Dados Responsável</string>
+    <string name="dados_responsável">Dados do Responsável</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="cancelar">Cancelar</string>
     <string name="title_activity_cadastro_turma">Cadastro de Turma</string>
