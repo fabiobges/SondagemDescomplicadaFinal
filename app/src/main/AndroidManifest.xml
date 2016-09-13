@@ -47,6 +47,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CadastroUsuarioActivity"
+            android:windowSoftInputMode="stateHidden"
             android:label="@string/title_activity_cadastro_usuario"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -55,10 +56,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CadastroAlunoActivity"
+            android:windowSoftInputMode="stateHidden"
             android:label="@string/title_activity_cadastro_aluno"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CadastroSondagemModActivity"
+            android:windowSoftInputMode="stateHidden"
             android:label="@string/title_activity_cadastro_sondagem_mod"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
