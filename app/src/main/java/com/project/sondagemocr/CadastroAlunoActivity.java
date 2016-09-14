@@ -1,6 +1,7 @@
 package com.project.sondagemocr;
 
 import android.app.AlertDialog;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -29,11 +30,27 @@ public class CadastroAlunoActivity extends AppCompatActivity implements View.OnC
     EditText edtNomeResp;
 //    EditText edtCpfResp;
     EditText edtTelResp;
+    EditText edtNascAluno;
     FloatingActionButton btGrava;
     Aluno aluno;
     DataBase dataBase;
     TurmaController turmaController;
     Turma turma;
+
+    public void onStart(){
+        super.onStart();
+        EditText edtNascAluno=(EditText) findViewById(R.id.edtNascAluno);
+        edtNascAluno.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    DateDialog dialog=new DateDialog(v);
+                    FragmentTransaction ft=getFragmentManager().beginTransaction();
+                    dialog.show(ft, "DatePicker");
+                }
+            }
+        });
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
