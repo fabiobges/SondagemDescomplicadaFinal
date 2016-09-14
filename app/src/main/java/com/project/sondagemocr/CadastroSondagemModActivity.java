@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -23,7 +25,9 @@ public class CadastroSondagemModActivity extends AppCompatActivity implements Vi
     EditText edtMonossilaba;
     EditText edtFrase;
     EditText edtIdentSondMod;
-    FloatingActionButton btCadastra, imgAjuda;
+    FloatingActionButton btCadastra, imgAjuda, btnCadastroSondModelo, plus;
+    Animation FabOpen, FabClose, FabClockwise, FabAnticlockwise;
+    boolean isOpen = false;
     SondagemModelo sondagemModelo;
     DataBase dataBase;
 
@@ -31,6 +35,36 @@ public class CadastroSondagemModActivity extends AppCompatActivity implements Vi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_sondagem_mod);
+
+        plus = (FloatingActionButton)findViewById(R.id.plus);
+        btnCadastroSondModelo = (FloatingActionButton)findViewById(R.id.btnCadastroSondModelo);
+        imgAjuda = (FloatingActionButton)findViewById(R.id.imgAjuda);
+        FabOpen = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fab_open);
+        FabClose = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fab_close);
+        FabClockwise = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_clockwise);
+        FabAnticlockwise = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_anticlockwise);
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isOpen){
+                    imgAjuda.startAnimation(FabClose);
+                    btnCadastroSondModelo.startAnimation(FabClose);
+                    plus.startAnimation(FabAnticlockwise);
+                    btnCadastroSondModelo.setClickable(false);
+                    imgAjuda.setClickable(false);
+                    isOpen = false;
+                }
+                else{
+                    imgAjuda.startAnimation(FabOpen);
+                    btnCadastroSondModelo.startAnimation(FabOpen);
+                    plus.startAnimation(FabClockwise);
+                    btnCadastroSondModelo.setClickable(true);
+                    imgAjuda.setClickable(true);
+                    isOpen = true;
+                }
+            }
+        });
+
 
         dataBase = new DataBase(this, null,2);
 

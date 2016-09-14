@@ -24,19 +24,40 @@
     <include layout="@layout/content_cadastro_sondagem_mod" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/btnCadastroSondModelo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/save" />
-
-    <android.support.design.widget.FloatingActionButton
         android:id="@+id/imgAjuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right|top"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/idea" />
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="180dp"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:elevation="6dp"
+        android:src="@drawable/luz"
+        app:pressedTranslationZ="12dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:visibility="invisible"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnCadastroSondModelo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="100dp"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:elevation="6dp"
+        android:src="@drawable/save"
+        app:pressedTranslationZ="12dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:visibility="invisible"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:elevation="6dp"
+        android:src="@drawable/plus"
+        app:pressedTranslationZ="12dp" />
 
 </android.support.design.widget.CoordinatorLayout>
