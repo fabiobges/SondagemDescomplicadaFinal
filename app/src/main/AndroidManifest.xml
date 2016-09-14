@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.project.sondagemocr">
-    <!-- NORMALS PERMISSIONS -->
-    <uses-permission android:name="android.permission.INTERNET"/>
 
+    <!-- NORMALS PERMISSIONS -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- DANGEROUS PERMISSIONS -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,9 +20,9 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="stateHidden"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,26 +48,30 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CadastroUsuarioActivity"
-            android:windowSoftInputMode="stateHidden"
             android:label="@string/title_activity_cadastro_usuario"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".CadastroTurmaActivity"
             android:label="@string/title_activity_cadastro_turma"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CadastroAlunoActivity"
-            android:windowSoftInputMode="stateHidden"
             android:label="@string/title_activity_cadastro_aluno"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".CadastroSondagemModActivity"
-            android:windowSoftInputMode="stateHidden"
             android:label="@string/title_activity_cadastro_sondagem_mod"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".AjudaSondagemActivity"
             android:label="@string/title_activity_ajuda_sondagem"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ConsultaSondagemSimples"
+            android:label="@string/title_activity_consulta_sondagem_simples"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

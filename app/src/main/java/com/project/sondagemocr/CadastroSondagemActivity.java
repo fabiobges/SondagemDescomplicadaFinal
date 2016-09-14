@@ -70,7 +70,6 @@ public class CadastroSondagemActivity extends AppCompatActivity implements TabLa
 
         mTabLayout_cadastro_sondagem.setOnTabSelectedListener(this);
 
-        Log.i("Script :","zdas2222");
 
 
         //Caso seja a primeira vez que a activity foi instanciada

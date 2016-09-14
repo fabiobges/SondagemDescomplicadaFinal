@@ -51,4 +51,5 @@
 
     <string name="text_fragment_a">Sondagens</string>
     <string name="text_fragment_b">Modelo</string>
+    <string name="title_activity_consulta_sondagem_simples">ConsultaSondagemSimples</string>
 </resources>

@@ -57,7 +57,7 @@ public class TurmaController {
                 Log.i("Script", "Erro sss"+ex.getMessage() );
             }
 
-            arrayAdapter.add("Turma");
+
             return arrayAdapter;
         }
 

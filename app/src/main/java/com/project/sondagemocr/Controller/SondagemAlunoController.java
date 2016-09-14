@@ -8,7 +8,9 @@ import android.util.Log;
 
 import com.project.sondagemocr.DataBase.DataBase;
 import com.project.sondagemocr.Pojo.Aluno;
+import com.project.sondagemocr.Pojo.Nivel;
 import com.project.sondagemocr.Pojo.SondagemAluno;
+import com.project.sondagemocr.Pojo.SondagemModelo;
 import com.project.sondagemocr.Pojo.Turma;
 
 import java.util.ArrayList;
@@ -43,6 +45,38 @@ public class SondagemAlunoController {
 
     }
 
+    public SondagemAluno consultaSondagemAlunoPorId(int id){
+        try {
+            SQLiteDatabase connection = this.dataBase.getReadableDatabase();
+            SondagemAluno sondagemAluno = new SondagemAluno();
+            sondagemAluno.setSondagemModelo(new SondagemModelo());
+            sondagemAluno.setAluno(new Aluno());
+            sondagemAluno.setNivel(new Nivel());
+            Cursor cursor = connection.query("tb_sondagem", null, "id = " + id, null, null, null, null);
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
+                do {
+                    sondagemAluno.setId(cursor.getInt(cursor.getColumnIndex("_id")));
+                    sondagemAluno.setPolissilaba(cursor.getString(cursor.getColumnIndex("polissilaba")));
+                    sondagemAluno.setTrissilaba(cursor.getString(cursor.getColumnIndex("trissilaba")));
+                    sondagemAluno.setDissilaba(cursor.getString(cursor.getColumnIndex("dissilaba")));
+                    sondagemAluno.setMonossilaba(cursor.getString(cursor.getColumnIndex("monossilaba")));
+                    sondagemAluno.setFrase(cursor.getString(cursor.getColumnIndex("frase")));
+                    sondagemAluno.setData(cursor.getString(cursor.getColumnIndex("dt_sondagem")));
+                    sondagemAluno.getAluno().setId(cursor.getInt(cursor.getColumnIndex("_id_aluno")));
+                    sondagemAluno.getSondagemModelo().setId(cursor.getInt(cursor.getColumnIndex("_id_sondagem_modelo")));
+                    sondagemAluno.getNivel().setId(cursor.getInt(cursor.getColumnIndex("_id_nivel")));
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+            connection.close();
+            return sondagemAluno;
+        }catch (Exception ex){
+            Log.i("Error ",ex.getMessage());
+            return null;
+        }
+    }
+
     public ArrayList<SondagemAluno> consultaSondagensAlunos(){
         try {
             ArrayList<SondagemAluno> sondagensAlunos = new ArrayList<SondagemAluno>();
@@ -50,7 +84,7 @@ public class SondagemAlunoController {
             Log.i("Passou!: ","Passou1");
             SQLiteDatabase connection = this.dataBase.getReadableDatabase();
             Log.i("Passou!: ","Passou2");
-            Cursor cursor = connection.rawQuery("SELECT s.polissilaba, s.trissilaba, s.dissilaba, s.monossilaba, s.frase, s.dt_sondagem, " +
+            Cursor cursor = connection.rawQuery("SELECT s._id, s.polissilaba, s.trissilaba, s.dissilaba, s.monossilaba, s.frase, s.dt_sondagem, " +
                     " a.nome_aluno, t.identificacao_turma, t.ano_turma" +
                     " FROM tb_sondagem_aluno AS s" +
                     " INNER JOIN tb_aluno AS a ON(s._id_aluno = a._id)" +
@@ -65,15 +99,7 @@ public class SondagemAlunoController {
                     SondagemAluno sondagemAluno = new SondagemAluno();
                     Aluno aluno = new Aluno();
                     Turma turma =  new Turma();
-                    Log.i("Aluno 1: ","Nome aluno:"+cursor.getColumnIndex("nome_aluno")+
-                                        "Poli:"+cursor.getString(cursor.getColumnIndex("polissilaba"))+
-                                        "Tri:"+cursor.getColumnIndex("trissilaba")+
-                            "Dissi:"+cursor.getColumnIndex("monossilaba")+
-                            "frase:"+cursor.getColumnIndex("frase")+
-                            "dta: "+cursor.getColumnIndex("dt_sondagem")+
-                            "Ano Turma:"+cursor.getColumnIndex("ano_turma")+
-                            "Id Turma:"+cursor.getColumnIndex("identificacao_turma")+
-                            "column:"+cursor.getColumnName(0));
+                    sondagemAluno.setId(cursor.getInt(cursor.getColumnIndex("_id")));
                     sondagemAluno.setPolissilaba(cursor.getString(cursor.getColumnIndex("polissilaba")));
                     sondagemAluno.setTrissilaba(cursor.getString(cursor.getColumnIndex("trissilaba")));
                     sondagemAluno.setDissilaba(cursor.getString(cursor.getColumnIndex("dissilaba")));
