@@ -24,6 +24,7 @@
         app:showAsAction="never" />
 
     <item
+        android:visible="false"
         android:id="@+id/item_relatorio"
         android:orderInCategory="100"
         android:icon="@drawable/ic_assignment_black_48dp"

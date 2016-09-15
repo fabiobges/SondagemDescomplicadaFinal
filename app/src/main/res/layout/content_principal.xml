@@ -122,37 +122,37 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/card_relatorios"
-        android:layout_below="@id/card_sondagens"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#eeeeee"
-        android:padding="5dp"
-        android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:onClick="navegar">
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/card_relatorios"-->
+        <!--android:layout_below="@id/card_sondagens"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="#eeeeee"-->
+        <!--android:padding="5dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:clickable="true"-->
+        <!--android:onClick="navegar">-->
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_assignment_black_48dp"/>
+        <!--<ImageView-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:src="@drawable/ic_assignment_black_48dp"/>-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Relatórios"
-            android:layout_marginLeft="60dp"
-            android:textStyle="bold"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Relatórios"-->
+            <!--android:layout_marginLeft="60dp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"/>-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="60dp"
-            android:text="Relatórios de sondagens por aluno e por turma"/>
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:layout_marginLeft="60dp"-->
+            <!--android:text="Relatórios de sondagens por aluno e por turma"/>-->
 
-    </RelativeLayout>
+    <!--</RelativeLayout>-->
 
 </RelativeLayout>

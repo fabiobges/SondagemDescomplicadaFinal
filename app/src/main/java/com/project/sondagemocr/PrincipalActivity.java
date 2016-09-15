@@ -45,48 +45,48 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_principal, menu);
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.menu_principal, menu);
+//
+//        return true;
+//    }
 
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        Intent intent= new Intent();
-
-        switch(id) {
-            case R.id.item_sondagens:
-                Toast.makeText(this, "Sondagens",Toast.LENGTH_SHORT).show();
-                intent = new Intent(this,MenuSondagemActivity.class);
-                break;
-            case R.id.item_turmas:
-                Toast.makeText(this, "Turmas", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this,CadastroTurmaActivity.class);
-                break;
-            case R.id.item_alunos:
-                Toast.makeText(this, "Alunos", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this,CadastroAlunoActivity.class);
-                break;
-            case R.id.item_relatorio:
-                Toast.makeText(this, "Relatórios", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this,null);
-                break;
-            case R.id.item_sair:
-                Toast.makeText(this, "Sair", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this,MainActivity.class);
-                break;
-
-        }
-
-        startActivity(intent);
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
+//
+//        Intent intent= new Intent();
+//
+//        switch(id) {
+//            case R.id.item_sondagens:
+//                Toast.makeText(this, "Sondagens",Toast.LENGTH_SHORT).show();
+//                intent = new Intent(this,MenuSondagemActivity.class);
+//                break;
+//            case R.id.item_turmas:
+//                Toast.makeText(this, "Turmas", Toast.LENGTH_SHORT).show();
+//                intent = new Intent(this,CadastroTurmaActivity.class);
+//                break;
+//            case R.id.item_alunos:
+//                Toast.makeText(this, "Alunos", Toast.LENGTH_SHORT).show();
+//                intent = new Intent(this,CadastroAlunoActivity.class);
+//                break;
+//            case R.id.item_relatorio:
+//                Toast.makeText(this, "Relatórios", Toast.LENGTH_SHORT).show();
+//                intent = new Intent(this,null);
+//                break;
+//            case R.id.item_sair:
+//                Toast.makeText(this, "Sair", Toast.LENGTH_SHORT).show();
+//                intent = new Intent(this,MainActivity.class);
+//                break;
+//
+//        }
+//
+//        startActivity(intent);
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -136,9 +136,6 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
                 break;
             case R.id.card_sondagens:
                 startActivity(new Intent(this, MenuSondagemActivity.class));
-                break;
-            case R.id.card_relatorios:
-                startActivity(new Intent(this, CadastroAlunoActivity.class));
                 break;
         }
     }
