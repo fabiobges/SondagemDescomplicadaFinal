@@ -72,6 +72,7 @@ public class SondagemListFragment extends ListFragment  {
 
                 Map<String, Object> item = new HashMap<String, Object>();
 
+                item.put("id",sondagemAluno.getId());
                 item.put("data", sondagemAluno.getData());
                 item.put("nomeAluno", sondagemAluno.getAluno().getNome());
                 item.put("turma", sondagemAluno.getAluno().getTurma().getIdentificador());
@@ -81,8 +82,8 @@ public class SondagemListFragment extends ListFragment  {
             }
 
 
-            String[] de = {"data", "nomeAluno", "turma"};
-            int[] para = {R.id.txViewDataSond, R.id.txViewNomeAluno,
+            String[] de = {"id", "data", "nomeAluno", "turma"};
+            int[] para = {R.id.txViewIdSond,R.id.txViewDataSond, R.id.txViewNomeAluno,
                     R.id.txViewTurma};
 
             SimpleAdapter adapter = new SimpleAdapter(getActivity(), listSondagens,
@@ -140,12 +141,14 @@ public class SondagemListFragment extends ListFragment  {
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id) {
         super.onListItemClick(listView,view,position,id);
-        Log.i("Script","OnListItemClick");
         ViewGroup viewGroup = (ViewGroup) view;
         TextView tx = (TextView) viewGroup.findViewById(R.id.txViewIdSond);
+        Log.i("Script","OnListItemClickk"+tx.getText().toString());
+        Log.i("Script","dsad"+tx.getText().toString());
         Toast.makeText(getActivity(), "Consultando Sondagem de Aluno", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getActivity(),ConsultaSondagemSimples.class);
-        intent.putExtra("id_sondagem_aluno",tx.getText());
+
+        intent.putExtra("id_sondagem_aluno",tx.getText().toString());
         startActivity(intent);
 
     }

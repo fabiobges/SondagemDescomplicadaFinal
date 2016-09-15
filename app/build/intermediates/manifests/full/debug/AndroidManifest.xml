@@ -7,6 +7,7 @@
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="22" />
+
     <!-- NORMALS PERMISSIONS -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -73,6 +74,10 @@
         <activity
             android:name="com.project.sondagemocr.AjudaSondagemActivity"
             android:label="@string/title_activity_ajuda_sondagem"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.project.sondagemocr.ConsultaSondagemSimples"
+            android:label="@string/title_activity_consulta_sondagem_simples"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

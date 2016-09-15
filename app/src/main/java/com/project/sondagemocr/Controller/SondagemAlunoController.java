@@ -47,14 +47,16 @@ public class SondagemAlunoController {
 
     public SondagemAluno consultaSondagemAlunoPorId(int id){
         try {
+            Log.i("Script","Achou sondagem no BD"+id);
             SQLiteDatabase connection = this.dataBase.getReadableDatabase();
             SondagemAluno sondagemAluno = new SondagemAluno();
             sondagemAluno.setSondagemModelo(new SondagemModelo());
             sondagemAluno.setAluno(new Aluno());
             sondagemAluno.setNivel(new Nivel());
-            Cursor cursor = connection.query("tb_sondagem", null, "id = " + id, null, null, null, null);
+            Cursor cursor = connection.query("tb_sondagem_aluno", null, "_id = " + id, null, null, null, null);
             if (cursor.getCount() > 0) {
                 cursor.moveToFirst();
+                Log.i("Script","Achou sondagem no BD");
                 do {
                     sondagemAluno.setId(cursor.getInt(cursor.getColumnIndex("_id")));
                     sondagemAluno.setPolissilaba(cursor.getString(cursor.getColumnIndex("polissilaba")));
@@ -67,6 +69,8 @@ public class SondagemAlunoController {
                     sondagemAluno.getSondagemModelo().setId(cursor.getInt(cursor.getColumnIndex("_id_sondagem_modelo")));
                     sondagemAluno.getNivel().setId(cursor.getInt(cursor.getColumnIndex("_id_nivel")));
                 } while (cursor.moveToNext());
+            }else{
+                Log.i("Script","Não acho nenhuma sondagem no BD");
             }
             cursor.close();
             connection.close();

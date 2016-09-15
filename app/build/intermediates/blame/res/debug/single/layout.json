@@ -32,6 +32,10 @@
         "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\src\\main\\res\\layout\\content_main.xml"
     },
     {
+        "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_consulta_sondagem_simples.xml",
+        "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\src\\main\\res\\layout\\content_consulta_sondagem_simples.xml"
+    },
+    {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_principal.xml",
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\src\\main\\res\\layout\\activity_principal.xml"
     },
@@ -270,6 +274,10 @@
     {
         "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_view_sondagem.xml",
         "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\src\\main\\res\\layout\\fragment_view_sondagem.xml"
+    },
+    {
+        "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_consulta_sondagem_simples.xml",
+        "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\src\\main\\res\\layout\\activity_consulta_sondagem_simples.xml"
     },
     {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
