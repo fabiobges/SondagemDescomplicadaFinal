@@ -19,7 +19,7 @@ import java.io.IOException;
 public class PoliFragment extends Fragment implements View.OnClickListener{
 
     View view;
-    static Bitmap bitmap;
+    static Bitmap bitmapPoli;
     static String strEscritaPoli;
     ImageView imgEscrita;
     public static EditText edtPoli;
@@ -37,7 +37,7 @@ public class PoliFragment extends Fragment implements View.OnClickListener{
         edtPoli = (EditText) view.findViewById(R.id.editTextPoli);
 
         edtPoli.setText(strEscritaPoli);
-        imgEscrita.setImageBitmap(bitmap);
+        imgEscrita.setImageBitmap(bitmapPoli);
         imgBtnEscrita.setOnClickListener(this);
         imgBtn.setOnClickListener(this);
 
@@ -52,7 +52,9 @@ public class PoliFragment extends Fragment implements View.OnClickListener{
             startActivityForResult(intent,0);
         }else if(v == imgBtnEscrita){
             strEscritaPoli = GoogleVision.resposta;
-            edtPoli.setText(strEscritaPoli.replaceAll(" ",""));
+            if(strEscritaPoli != null) {
+                edtPoli.setText(strEscritaPoli.replaceAll(" ", ""));
+            }
         }
     }
 
@@ -62,11 +64,11 @@ public class PoliFragment extends Fragment implements View.OnClickListener{
         if(data != null){
             Bundle bundle = data.getExtras();
             if(bundle != null){
-                bitmap =(Bitmap) bundle.get("data");
-                bitmap = GoogleVision.scaleBitmapDown(bitmap,1200);
+                bitmapPoli =(Bitmap) bundle.get("data");
+                bitmapPoli = GoogleVision.scaleBitmapDown(bitmapPoli,1200);
                 try {
-                    if(bitmap != null) {
-                        GoogleVision.callCloudVision(bitmap);
+                    if(bitmapPoli != null) {
+                        GoogleVision.callCloudVision(bitmapPoli);
                         Log.i("Script:","Bitmap não é null: ");
                     }else{
                         Log.i("Script:","Bitmap é null");
@@ -74,7 +76,7 @@ public class PoliFragment extends Fragment implements View.OnClickListener{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                imgEscrita.setImageBitmap(bitmap);
+                imgEscrita.setImageBitmap(bitmapPoli);
             }
         }
 

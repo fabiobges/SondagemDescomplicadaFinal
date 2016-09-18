@@ -20,7 +20,7 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
     public static EditText edtTextMono;
     View view;
     ImageView imgEscrita;
-    static Bitmap bitmap;
+    static Bitmap bitmapMono;
     static String strEscritaMono;
 
     private static final String CLOUD_VISION_API_KEY ="AIzaSyD1VeTN7j9fJVmOad_NjbqQD4aCr_GjynQ";
@@ -32,7 +32,7 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
         view = inflater.inflate(R.layout.mono_fragment,null);
 
         imgEscrita = (ImageView) view.findViewById(R.id.imageEscrita);
-        imgEscrita.setImageBitmap(bitmap);
+        imgEscrita.setImageBitmap(bitmapMono);
         imgBtn = (ImageButton) view.findViewById(R.id.imageButtonTiraFoto);
         imgBtn.setOnClickListener(this);
         imgBtnEscrita = (ImageButton) view.findViewById(R.id.imageButtonEscrita);
@@ -62,7 +62,9 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
         }else if(v == imgBtnEscrita){
             strEscritaMono = edtTextMono.getText().toString();
             strEscritaMono = GoogleVision.resposta;
-            edtTextMono.setText(strEscritaMono.replaceAll(" ",""));
+            if(strEscritaMono != null) {
+                edtTextMono.setText(strEscritaMono.replaceAll(" ", ""));
+            }
         }
     }
 
@@ -72,11 +74,11 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
 
             Bundle bundle = data.getExtras();
             if (bundle != null){
-                bitmap = (Bitmap) bundle.get("data");
-                bitmap = GoogleVision.scaleBitmapDown(bitmap,1200);
+                bitmapMono = (Bitmap) bundle.get("data");
+                bitmapMono = GoogleVision.scaleBitmapDown(bitmapMono,1200);
                 try {
-                    if(bitmap != null) {
-                        GoogleVision.callCloudVision(bitmap);
+                    if(bitmapMono != null) {
+                        GoogleVision.callCloudVision(bitmapMono);
                         Log.i("Script:","Bitmap não é null: "+strEscritaMono);
                     }else{
                         Log.i("Script:","Bitmap é null");
@@ -84,7 +86,7 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                imgEscrita.setImageBitmap(bitmap);
+                imgEscrita.setImageBitmap(bitmapMono);
 
             }
 
@@ -322,16 +324,18 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
 
     }
 
+    /*
+
     @Override
     public void onDestroy() {
         //((CadastroSondagemActivity)getActivity()).salvarDadosFragmentMono();
-        bitmap = null;
+        //bitmapMono = null;
         GoogleVision.resposta = null;
         Log.i("Script","bitmap recebe null");
         super.onDestroy();
         Log.i("Script","onDestroy");
     }
 
-
+    */
 
 }

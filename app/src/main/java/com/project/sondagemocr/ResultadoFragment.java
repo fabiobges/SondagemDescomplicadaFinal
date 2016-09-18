@@ -1,9 +1,12 @@
 package com.project.sondagemocr;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
@@ -30,6 +33,9 @@ import com.project.sondagemocr.Sondagem.AnalisePalavras;
 
 import org.w3c.dom.Text;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.util.Date;
 
 public class ResultadoFragment extends Fragment implements View.OnClickListener {
@@ -112,6 +118,7 @@ public class ResultadoFragment extends Fragment implements View.OnClickListener 
                 sondagemModelo.setDescSondagemMod(IdentificacaoFragment.spnSondagemModelo.getSelectedItem().toString());
                 sondagemModelo = sondagemModeloController.consultaSondagemModeloPorIdentificador(sondagemModelo);
                 SondagemAluno sondagemAluno = new SondagemAluno();
+                SondagemAlunoController sondagemAlunoController = new SondagemAlunoController(dataBase);
                 sondagemAluno.setAluno(aluno);
                 sondagemAluno.setSondagemModelo(sondagemModelo);
                 sondagemAluno.setPolissilaba(textAlunoPoli.getText().toString());
@@ -119,10 +126,11 @@ public class ResultadoFragment extends Fragment implements View.OnClickListener 
                 sondagemAluno.setDissilaba(textAlunoDissi.getText().toString());
                 sondagemAluno.setMonossilaba(textAlunoMono.getText().toString());
                 sondagemAluno.setFrase(textAlunoFrase.getText().toString());
-                sondagemAluno.setData(String.valueOf(new Date().getTime()));
+                sondagemAluno.setData(sondagemAlunoController.dataAtual());
                 sondagemAluno.setNivel(nivel);
-                SondagemAlunoController sondagemAlunoController = new SondagemAlunoController(dataBase);
                 sondagemAlunoController.insereSondagemAluno(sondagemAluno);
+                //Gravando as imagens de palavras de cada modalidade no SD Card
+                gravaImagemCardSD();
                 Toast.makeText(getContext(),"O cadastro da sondagem foi realizada com sucesso!",Toast.LENGTH_SHORT).show();
                 Intent intent =  new Intent(getContext(),PrincipalActivity.class);
                 startActivity(intent);
@@ -140,27 +148,32 @@ public class ResultadoFragment extends Fragment implements View.OnClickListener 
                 resultFrase = "A Sondagem automatizada não foi acionada!";
             }
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append("Detalhes do resultado da sondagem automatizada \n\n");
-            stringBuilder.append("Polissílaba \n");
-            stringBuilder.append("Modelo: " + silabasParaString(AnalisePalavras.separaSilabas(textModeloPoli.getText().toString())) + "\n");
-            stringBuilder.append("Aluno: " + silabasParaString(AnalisePalavras.separaSilabas(textAlunoPoli.getText().toString())) + "\n");
-            stringBuilder.append("Hipótese parcial: "+resultPoli+"\n\n");
-            stringBuilder.append("Trissílabas \n");
-            stringBuilder.append("Modelo: " + silabasParaString(AnalisePalavras.separaSilabas(textModeloTri.getText().toString())) + "\n");
-            stringBuilder.append("Aluno: " + silabasParaString(AnalisePalavras.separaSilabas(textAlunoTri.getText().toString())) + "\n");
-            stringBuilder.append("Hipótese parcial: "+resultTri+"\n\n");
-            stringBuilder.append("Dissílabas \n");
-            stringBuilder.append("Modelo: " + silabasParaString(AnalisePalavras.separaSilabas(textModeloDissi.getText().toString())) + "\n");
-            stringBuilder.append("Aluno: " + silabasParaString(AnalisePalavras.separaSilabas(textAlunoDissi.getText().toString())) + "\n");
-            stringBuilder.append("Hipótese parcial: "+resultDissi+"\n\n");
-            stringBuilder.append("Monossílabas \n");
-            stringBuilder.append("Modelo: " + silabasParaString(AnalisePalavras.separaSilabas(textModeloMono.getText().toString())).toString() + "\n");
-            stringBuilder.append("Aluno: " + silabasParaString(AnalisePalavras.separaSilabas(textAlunoMono.getText().toString())) + "\n");
-            stringBuilder.append("Hipótese parcial: "+resultMono+"\n\n");
-            stringBuilder.append("Frases \n");
-            stringBuilder.append("Modelo: " + silabasParaString(AnalisePalavras.separaSilabas(textModeloFrase.getText().toString())).toString() + "\n");
-            stringBuilder.append("Aluno: " + silabasParaString(AnalisePalavras.separaSilabas(textAlunoFrase.getText().toString())) + "\n");
-            stringBuilder.append("Hipótese parcial: "+resultFrase+"\n\n");
+            try {
+                stringBuilder.append("Detalhes do resultado da sondagem automatizada \n\n");
+                stringBuilder.append("Polissílaba \n");
+                stringBuilder.append("Modelo: " + silabasParaString(AnalisePalavras.separaSilabas(textModeloPoli.getText().toString())) + "\n");
+                stringBuilder.append("Aluno: " + silabasParaString(AnalisePalavras.separaSilabas(textAlunoPoli.getText().toString())) + "\n");
+                stringBuilder.append("Hipótese parcial: " + resultPoli + "\n\n");
+                stringBuilder.append("Trissílabas \n");
+                stringBuilder.append("Modelo: " + silabasParaString(AnalisePalavras.separaSilabas(textModeloTri.getText().toString())) + "\n");
+                stringBuilder.append("Aluno: " + silabasParaString(AnalisePalavras.separaSilabas(textAlunoTri.getText().toString())) + "\n");
+                stringBuilder.append("Hipótese parcial: " + resultTri + "\n\n");
+                stringBuilder.append("Dissílabas \n");
+                stringBuilder.append("Modelo: " + silabasParaString(AnalisePalavras.separaSilabas(textModeloDissi.getText().toString())) + "\n");
+                stringBuilder.append("Aluno: " + silabasParaString(AnalisePalavras.separaSilabas(textAlunoDissi.getText().toString())) + "\n");
+                stringBuilder.append("Hipótese parcial: " + resultDissi + "\n\n");
+                stringBuilder.append("Monossílabas \n");
+                stringBuilder.append("Modelo: " + silabasParaString(AnalisePalavras.separaSilabas(textModeloMono.getText().toString())).toString() + "\n");
+                stringBuilder.append("Aluno: " + silabasParaString(AnalisePalavras.separaSilabas(textAlunoMono.getText().toString())) + "\n");
+                stringBuilder.append("Hipótese parcial: " + resultMono + "\n\n");
+                stringBuilder.append("Frases \n");
+                stringBuilder.append("Modelo: " + silabasParaString(AnalisePalavras.separaSilabas(textModeloFrase.getText().toString())).toString() + "\n");
+                stringBuilder.append("Aluno: " + silabasParaString(AnalisePalavras.separaSilabas(textAlunoFrase.getText().toString())) + "\n");
+                stringBuilder.append("Hipótese parcial: " + resultFrase + "\n\n");
+            }catch (Exception ex){
+                stringBuilder = new StringBuilder();
+                stringBuilder.append("O número de sílabas de alguma das modalidades excedeu o limite!");
+            }
             chamaAlertDialog(stringBuilder.toString());
         }else if(v == btAutomatizada){
             try {
@@ -178,7 +191,7 @@ public class ResultadoFragment extends Fragment implements View.OnClickListener 
                 verificaResultado();
                 Toast.makeText(getContext(), "Sondagem Automatizada foi realizada!", Toast.LENGTH_SHORT).show();
             }catch (Exception ex){
-                chamaAlertDialog("Erro: "+ex.getMessage());
+                chamaAlertDialog("Erro: O número de sílabas de alguma das modalidades excedeu o limite de 30 sílabas!");
             }
         }
     }
@@ -186,7 +199,7 @@ public class ResultadoFragment extends Fragment implements View.OnClickListener 
     public void chamaAlertDialog(String message) {
         AlertDialog.Builder alBuilder = new AlertDialog.Builder(getContext());
         alBuilder.setMessage(message);
-        alBuilder.setNeutralButton("OK", null);
+        alBuilder.setNeutralButton("OK ", null);
         alBuilder.show();
     }
 
@@ -256,6 +269,48 @@ public class ResultadoFragment extends Fragment implements View.OnClickListener 
 
         }
         return palavraSeparada;
+    }
+
+    public void gravaImagemCardSD(){
+        OutputStream outputStream;
+        File filePath = Environment.getExternalStorageDirectory();
+        File dir = new File(filePath.getAbsolutePath()+"/Sondagem Descomplicada");
+        dir.mkdir();
+        SondagemAlunoController sondagemAlunoController = new SondagemAlunoController(dataBase);
+        int id = sondagemAlunoController.consultaUltimoId();
+        if(id > 0) {
+            try {
+                for(int i = 1; i < 6;i++) {
+                    File file = new File(dir, "" + id + "_"+i+".png");
+                    Log.i("Valor I:",""+i);
+                    outputStream = new FileOutputStream(file);
+                    if(i == 1 && MonoFragment.bitmapMono != null) {
+                        MonoFragment.bitmapMono.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+                    }else if(i == 2 && DissiFragment.bitmapDi != null){
+                        DissiFragment.bitmapDi.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+                    }else if(i == 3 && TriFragment.bitmapTri != null){
+                        TriFragment.bitmapTri.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+                    }else if(i == 4 && PoliFragment.bitmapPoli != null){
+                        PoliFragment.bitmapPoli.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+                    }else if(i == 5 && FraseFragment.bitmapFrase != null){
+                        FraseFragment.bitmapFrase.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+                    }
+                    outputStream.flush();
+                    outputStream.close();
+
+                }
+                MonoFragment.bitmapMono = null;
+                DissiFragment.bitmapDi = null;
+                TriFragment.bitmapTri = null;
+                PoliFragment.bitmapPoli = null;
+                FraseFragment.bitmapFrase = null;
+
+        } catch (Exception ex){
+                ex.getStackTrace();
+        }
+        }else{
+
+        }
     }
 /*
 

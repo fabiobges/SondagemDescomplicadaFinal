@@ -71,7 +71,11 @@ public class CadastroSondagemActivity extends AppCompatActivity implements TabLa
         mTabLayout_cadastro_sondagem.setOnTabSelectedListener(this);
 
 
-
+        MonoFragment.bitmapMono = null;
+        DissiFragment.bitmapDi = null;
+        TriFragment.bitmapTri = null;
+        PoliFragment.bitmapPoli = null;
+        FraseFragment.bitmapFrase = null;
         //Caso seja a primeira vez que a activity foi instanciada
         //automaticamante a MonoFragment será convocada
  /*       if(savedInstanceState == null){

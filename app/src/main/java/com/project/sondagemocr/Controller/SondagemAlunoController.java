@@ -13,7 +13,12 @@ import com.project.sondagemocr.Pojo.SondagemAluno;
 import com.project.sondagemocr.Pojo.SondagemModelo;
 import com.project.sondagemocr.Pojo.Turma;
 
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class SondagemAlunoController {
 
@@ -23,7 +28,8 @@ public class SondagemAlunoController {
         this.dataBase = dataBase;
     }
 
-    public void insereSondagemAluno(SondagemAluno sondagemAluno){
+    public void insereSondagemAluno(SondagemAluno sondagemAluno) throws ParseException {
+        Log.i("Date",sondagemAluno.getData());
 
         try{
             SQLiteDatabase connection = this.dataBase.getWritableDatabase();
@@ -42,7 +48,29 @@ public class SondagemAlunoController {
         }catch (Exception ex){
             Log.i("Script", "Erro "+ex.getMessage() );
         }
+    }
 
+    public int consultaUltimoId(){
+        int id;
+        try {
+            id=-1;
+            SQLiteDatabase connection = this.dataBase.getReadableDatabase();
+            Cursor cursor = connection.rawQuery("select _id from tb_sondagem_aluno order by _id desc limit 1 ;", null);
+            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
+                do {
+                    id = cursor.getInt(cursor.getColumnIndex("_id"));
+                } while (cursor.moveToNext());
+
+            }
+            cursor.close();
+            connection.close();
+            return id;
+        }catch (Exception ex){
+            Log.i("Error: ",ex.getMessage());
+            return -1;
+        }
     }
 
     public SondagemAluno consultaSondagemAlunoPorId(int id){
@@ -85,10 +113,8 @@ public class SondagemAlunoController {
         try {
             ArrayList<SondagemAluno> sondagensAlunos = new ArrayList<SondagemAluno>();
             int i = 0;
-            Log.i("Passou!: ","Passou1");
             SQLiteDatabase connection = this.dataBase.getReadableDatabase();
-            Log.i("Passou!: ","Passou2");
-            Cursor cursor = connection.rawQuery("SELECT s._id, s.polissilaba, s.trissilaba, s.dissilaba, s.monossilaba, s.frase, s.dt_sondagem, " +
+            Cursor cursor = connection.rawQuery("SELECT s._id, s.polissilaba, s.trissilaba, s.dissilaba, s.monossilaba, s.frase, strftime('%d/%m/%Y',s.dt_sondagem) as 'year', " +
                     " a.nome_aluno, t.identificacao_turma, t.ano_turma" +
                     " FROM tb_sondagem_aluno AS s" +
                     " INNER JOIN tb_aluno AS a ON(s._id_aluno = a._id)" +
@@ -97,8 +123,7 @@ public class SondagemAlunoController {
             cursor.moveToFirst();
 
             if (cursor.getCount() > 0) {
-
-
+                String date;
                 do {
                     SondagemAluno sondagemAluno = new SondagemAluno();
                     Aluno aluno = new Aluno();
@@ -109,7 +134,9 @@ public class SondagemAlunoController {
                     sondagemAluno.setDissilaba(cursor.getString(cursor.getColumnIndex("dissilaba")));
                     sondagemAluno.setMonossilaba(cursor.getString(cursor.getColumnIndex("monossilaba")));
                     sondagemAluno.setFrase(cursor.getString(cursor.getColumnIndex("frase")));
-                    sondagemAluno.setData(cursor.getString(cursor.getColumnIndex("dt_sondagem")));
+                    date = cursor.getString(cursor.getColumnIndex("year"));
+
+                    sondagemAluno.setData(date);
                     aluno.setNome(cursor.getString(cursor.getColumnIndex("nome_aluno")));
                     turma.setIdentificador(cursor.getString(cursor.getColumnIndex("identificacao_turma")));
                     turma.setAno(cursor.getString(cursor.getColumnIndex("ano_turma")));
@@ -128,5 +155,25 @@ public class SondagemAlunoController {
             return null;
         }
 
+    }
+
+    public String dataAtual(){
+        try{
+            String date = "";
+            SQLiteDatabase connection = this.dataBase.getReadableDatabase();
+            Cursor cursor = connection.rawQuery("SELECT date('now') as 'data';",null);
+            if(cursor.getCount() > 0){
+                cursor.moveToFirst();
+                do{
+                    date = cursor.getString(cursor.getColumnIndex("data"));
+                }while (cursor.moveToNext());
+            }
+            cursor.close();
+            connection.close();
+            return date;
+        }catch (Exception ex){
+            ex.getStackTrace();
+            return null;
+        }
     }
 }

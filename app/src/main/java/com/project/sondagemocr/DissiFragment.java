@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class DissiFragment extends Fragment implements View.OnClickListener{
 
-    static Bitmap bitmap;
+    static Bitmap bitmapDi;
     static String strEscritaDissi;
     ImageView imgEscrita;
     static public EditText edtDissi;
@@ -32,7 +32,7 @@ public class DissiFragment extends Fragment implements View.OnClickListener{
 
         edtDissi.setText(strEscritaDissi);
         imgBtnEscrita.setOnClickListener(this);
-        imgEscrita.setImageBitmap(bitmap);
+        imgEscrita.setImageBitmap(bitmapDi);
         imgBtn.setOnClickListener(this);
 
         return view;
@@ -46,7 +46,9 @@ public class DissiFragment extends Fragment implements View.OnClickListener{
             startActivityForResult(intent,0);
         }else if(v == imgBtnEscrita){
             strEscritaDissi = GoogleVision.resposta;
-            edtDissi.setText(strEscritaDissi.replaceAll(" ",""));
+            if(strEscritaDissi != null) {
+                edtDissi.setText(strEscritaDissi.replaceAll(" ", ""));
+            }
         }
     }
 
@@ -56,11 +58,11 @@ public class DissiFragment extends Fragment implements View.OnClickListener{
         if(data != null){
             Bundle bundle = data.getExtras();
             if(bundle != null){
-                bitmap =(Bitmap) bundle.get("data");
-                bitmap = GoogleVision.scaleBitmapDown(bitmap,1200);
+                bitmapDi =(Bitmap) bundle.get("data");
+                bitmapDi = GoogleVision.scaleBitmapDown(bitmapDi,1200);
                 try {
-                    if(bitmap != null) {
-                        GoogleVision.callCloudVision(bitmap);
+                    if(bitmapDi != null) {
+                        GoogleVision.callCloudVision(bitmapDi);
                         Log.i("Script:","Bitmap não é null: ");
                     }else{
                         Log.i("Script:","Bitmap é null");
@@ -68,7 +70,7 @@ public class DissiFragment extends Fragment implements View.OnClickListener{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                imgEscrita.setImageBitmap(bitmap);
+                imgEscrita.setImageBitmap(bitmapDi);
             }
         }
 

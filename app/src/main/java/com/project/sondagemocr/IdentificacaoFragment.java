@@ -57,6 +57,7 @@ public class IdentificacaoFragment extends Fragment implements AdapterView.OnIte
         spnTurma.setOnItemSelectedListener(this);
 
 
+
         return view;
     }
 

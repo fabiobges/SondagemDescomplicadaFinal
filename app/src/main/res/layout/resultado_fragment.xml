@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="5dp"
-        android:shrinkColumns="2"
+        android:shrinkColumns="1,2"
         android:stretchColumns="1,2">
 
         <TableRow

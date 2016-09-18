@@ -276,155 +276,155 @@ public class AnalisePalavras {
 
     //Método realiza a separação de silabas
     public static String[] separaSilabas(String palavra){
-        int i = 0;
-        int y = 0;
-        boolean ns = false;
-        silabasCorreta = new String[20];
-        listaLetras = new char[30];
-        //Recebendo letra por letra da palavra e transferindo para um array de char
-        for(char c : palavra.toCharArray()){
-            listaLetras[i] = c;
-            i++;
-        }
-
-        for(i=0; i<listaLetras.length; i++){
-            if(silabasCorreta[y]==null){
-                silabasCorreta[y] = "";
-            }
-            //Caso a lista de letras acabe o método será finalizado
-            if(listaLetras[i]=='\0'){
-                System.out.print("\n\nSaiu!!\n\n");
-                break;
+        try {
+            int i = 0;
+            int y = 0;
+            boolean ns = false;
+            silabasCorreta = new String[30];
+            listaLetras = new char[40];
+            //Recebendo letra por letra da palavra e transferindo para um array de char
+            for (char c : palavra.toCharArray()) {
+                listaLetras[i] = c;
+                i++;
             }
 
-            //Caso tenha occorrido a relação ans,ens,ins,ons,uns sera adicionado a letra "s" e fechara silaba
-            if (ns == true){
-                ns = false;
-                silabasCorreta[y] = silabasCorreta[y]+String.valueOf(listaLetras[i]);
-                y++;
-                continue;
-            }
+            for (i = 0; i < listaLetras.length; i++) {
+                if (silabasCorreta[y] == null) {
+                    silabasCorreta[y] = "";
+                }
+                //Caso a lista de letras acabe o método será finalizado
+                if (listaLetras[i] == '\0') {
+                    System.out.print("\n\nSaiu!!\n\n");
+                    break;
+                }
 
-            //Caso a letra na posição atual seja Consoante, entrará nesta condição
-            if((listaLetras[i]!='a')&&(listaLetras[i]!='e')&&(listaLetras[i]!='i')&&(listaLetras[i]!='o')&&
-                    (listaLetras[i]!='u')){
-
-                //Caso a letra após a consoante atual seja vogal ou H entrará na condição
-                if(((listaLetras[i+1]=='a')||(listaLetras[i+1]=='e')||(listaLetras[i+1]=='i')||(listaLetras[i+1]=='o')||
-                        (listaLetras[i+1]=='u')||(listaLetras[i+1]=='h'))
-                        //
-                        ||((listaLetras[i]=='b' || listaLetras[i]=='c' || listaLetras[i]=='d' || listaLetras[i]=='f' || listaLetras[i]=='g' || listaLetras[i]=='t' || listaLetras[i]=='p') && listaLetras[i+1]=='r')
-
-                        || ((listaLetras[i]=='b' || listaLetras[i]=='c' || listaLetras[i]=='f' ||
-                        listaLetras[i]=='g' || listaLetras[i]=='p')&&(listaLetras[i+1]=='l'))
-
-                        && ((listaLetras[i+2]=='a')||(listaLetras[i+2]=='e')||(listaLetras[i+2]=='i')||(listaLetras[i+2]=='o')||
-                                (listaLetras[i+2]=='u'))){
-                    //Array de silaba recebe letra e continua na sílaba
-                    silabasCorreta[y] = silabasCorreta[y]+String.valueOf(listaLetras[i]);
-                }else if(  listaLetras[i] == 'n' && listaLetras[i+1] == 's' && ((listaLetras[i+2]!='a')&&(listaLetras[i+2]!='e')&&(listaLetras[i+2]!='i')&&(listaLetras[i+2]!='o')&&
-                        (listaLetras[i+2]!='u'))) {
+                //Caso tenha occorrido a relação ans,ens,ins,ons,uns sera adicionado a letra "s" e fechara silaba
+                if (ns == true) {
+                    ns = false;
                     silabasCorreta[y] = silabasCorreta[y] + String.valueOf(listaLetras[i]);
-                    ns = true;
-                }
-                else{
-                    //Array de silaba recebe letra e fecha a silaba
-                    silabasCorreta[y] = silabasCorreta[y]+String.valueOf(listaLetras[i]);
-                    System.out.print("Consoante depois:"+silabasCorreta[y]+"\n");
                     y++;
+                    continue;
                 }
-            }
-            //Caso a letra na posição atual seja Vogal
-            else{
-                //Caso a letra após a Vogal seja uma Consoante entrará nesta condição
-                if((listaLetras[i+1]!='a')&&(listaLetras[i+1]!='e')&&(listaLetras[i+1]!='i')&&(listaLetras[i+1]!='o')&&
-                        (listaLetras[i+1]!='u')){
-                    //Caso a letra após a Vogal seja l, s, r, y, z ou x. E ainda que a letra seguinte não seja Vogal nem H, entrará na condição
-                    //Isto trata questão como silabas al,el,ar,er,ir,or,ur,an,en,etc
-                    if(((listaLetras[i+1]=='l')||(listaLetras[i+1]=='s')||(listaLetras[i+1]=='r')||(listaLetras[i+1]=='y')||
-                            (listaLetras[i+1]=='z')||(listaLetras[i+1]=='x')||(listaLetras[i+1]=='n'||(listaLetras[i+1]=='m')))
-                            &&((listaLetras[i+2]!='a')&&(listaLetras[i+2]!='e')&&(listaLetras[i+2]!='i')&&(listaLetras[i+2]!='o')&&
-                            (listaLetras[i+2]!='u')&&(listaLetras[i+2]!=' ')&&(listaLetras[i+2]!='h'))){//pode alterar
+
+                //Caso a letra na posição atual seja Consoante, entrará nesta condição
+                if ((listaLetras[i] != 'a') && (listaLetras[i] != 'e') && (listaLetras[i] != 'i') && (listaLetras[i] != 'o') &&
+                        (listaLetras[i] != 'u')) {
+
+                    //Caso a letra após a consoante atual seja vogal ou H entrará na condição
+                    if (((listaLetras[i + 1] == 'a') || (listaLetras[i + 1] == 'e') || (listaLetras[i + 1] == 'i') || (listaLetras[i + 1] == 'o') ||
+                            (listaLetras[i + 1] == 'u') || (listaLetras[i + 1] == 'h'))
+                            //
+                            || ((listaLetras[i] == 'b' || listaLetras[i] == 'c' || listaLetras[i] == 'd' || listaLetras[i] == 'f' || listaLetras[i] == 'g' || listaLetras[i] == 't' || listaLetras[i] == 'p') && listaLetras[i + 1] == 'r')
+
+                            || ((listaLetras[i] == 'b' || listaLetras[i] == 'c' || listaLetras[i] == 'f' ||
+                            listaLetras[i] == 'g' || listaLetras[i] == 'p') && (listaLetras[i + 1] == 'l'))
+
+                            && ((listaLetras[i + 2] == 'a') || (listaLetras[i + 2] == 'e') || (listaLetras[i + 2] == 'i') || (listaLetras[i + 2] == 'o') ||
+                            (listaLetras[i + 2] == 'u'))) {
                         //Array de silaba recebe letra e continua na sílaba
-                        silabasCorreta[y]=silabasCorreta[y]+listaLetras[i];
-                    }
-                    else{
+                        silabasCorreta[y] = silabasCorreta[y] + String.valueOf(listaLetras[i]);
+                    } else if (listaLetras[i] == 'n' && listaLetras[i + 1] == 's' && ((listaLetras[i + 2] != 'a') && (listaLetras[i + 2] != 'e') && (listaLetras[i + 2] != 'i') && (listaLetras[i + 2] != 'o') &&
+                            (listaLetras[i + 2] != 'u'))) {
+                        silabasCorreta[y] = silabasCorreta[y] + String.valueOf(listaLetras[i]);
+                        ns = true;
+                    } else {
                         //Array de silaba recebe letra e fecha a silaba
-                        silabasCorreta[y]=silabasCorreta[y]+listaLetras[i];
+                        silabasCorreta[y] = silabasCorreta[y] + String.valueOf(listaLetras[i]);
+                        System.out.print("Consoante depois:" + silabasCorreta[y] + "\n");
                         y++;
                     }
                 }
-                else{
-                    //Caso letra na posição atual seja Vogal I, entrará na condição
-                    //Trata a questão de hiato
-                    if(listaLetras[i]=='i'){
-                        //Array de silaba recebe letra e fecha a silaba
-                        silabasCorreta[y]=silabasCorreta[y]+listaLetras[i];
-                        y++;
-                        continue;
-                    }
-                    //Caso letra na posição atual seja Vogal U, entrará na condição
-                    //Trata a questão de hiato
-                    if(listaLetras[i]=='u'){
-                        //Caso U não seja primeira letra da palavra
-                        if(i > 0){
-                            //Caso a sílaba seja formada por quo,qui,que,gua,gue,gui,guo
-                            if(((listaLetras[i-1]=='q')||(listaLetras[i-1]=='g'))
-                                    &&(listaLetras[i+1]=='a')||(listaLetras[i+1]=='e')||(listaLetras[i+1]=='i')||(listaLetras[i+1]=='o')){
-                                //Array de silaba recebe letra e continua na sílaba
-                                silabasCorreta[y]=silabasCorreta[y]+listaLetras[i];
-                                continue;
-                            }
-                        }
-                        else{
-                            //Trata questão de hiato com letra U
+                //Caso a letra na posição atual seja Vogal
+                else {
+                    //Caso a letra após a Vogal seja uma Consoante entrará nesta condição
+                    if ((listaLetras[i + 1] != 'a') && (listaLetras[i + 1] != 'e') && (listaLetras[i + 1] != 'i') && (listaLetras[i + 1] != 'o') &&
+                            (listaLetras[i + 1] != 'u')) {
+                        //Caso a letra após a Vogal seja l, s, r, y, z ou x. E ainda que a letra seguinte não seja Vogal nem H, entrará na condição
+                        //Isto trata questão como silabas al,el,ar,er,ir,or,ur,an,en,etc
+                        if (((listaLetras[i + 1] == 'l') || (listaLetras[i + 1] == 's') || (listaLetras[i + 1] == 'r') || (listaLetras[i + 1] == 'y') ||
+                                (listaLetras[i + 1] == 'z') || (listaLetras[i + 1] == 'x') || (listaLetras[i + 1] == 'n' || (listaLetras[i + 1] == 'm')))
+                                && ((listaLetras[i + 2] != 'a') && (listaLetras[i + 2] != 'e') && (listaLetras[i + 2] != 'i') && (listaLetras[i + 2] != 'o') &&
+                                (listaLetras[i + 2] != 'u') && (listaLetras[i + 2] != ' ') && (listaLetras[i + 2] != 'h'))) {//pode alterar
+                            //Array de silaba recebe letra e continua na sílaba
+                            silabasCorreta[y] = silabasCorreta[y] + listaLetras[i];
+                        } else {
                             //Array de silaba recebe letra e fecha a silaba
-                            silabasCorreta[y]=silabasCorreta[y]+listaLetras[i];
+                            silabasCorreta[y] = silabasCorreta[y] + listaLetras[i];
+                            y++;
+                        }
+                    } else {
+                        //Caso letra na posição atual seja Vogal I, entrará na condição
+                        //Trata a questão de hiato
+                        if (listaLetras[i] == 'i') {
+                            //Array de silaba recebe letra e fecha a silaba
+                            silabasCorreta[y] = silabasCorreta[y] + listaLetras[i];
                             y++;
                             continue;
                         }
+                        //Caso letra na posição atual seja Vogal U, entrará na condição
+                        //Trata a questão de hiato
+                        if (listaLetras[i] == 'u') {
+                            //Caso U não seja primeira letra da palavra
+                            if (i > 0) {
+                                //Caso a sílaba seja formada por quo,qui,que,gua,gue,gui,guo
+                                if (((listaLetras[i - 1] == 'q') || (listaLetras[i - 1] == 'g'))
+                                        && (listaLetras[i + 1] == 'a') || (listaLetras[i + 1] == 'e') || (listaLetras[i + 1] == 'i') || (listaLetras[i + 1] == 'o')) {
+                                    //Array de silaba recebe letra e continua na sílaba
+                                    silabasCorreta[y] = silabasCorreta[y] + listaLetras[i];
+                                    continue;
+                                }
+                            } else {
+                                //Trata questão de hiato com letra U
+                                //Array de silaba recebe letra e fecha a silaba
+                                silabasCorreta[y] = silabasCorreta[y] + listaLetras[i];
+                                y++;
+                                continue;
+                            }
+                        }
+                        if (((listaLetras[i] == 'a') || (listaLetras[i] == 'e') || (listaLetras[i] == 'o')) &&
+                                ((listaLetras[i + 1] == 'á') || (listaLetras[i + 1] == 'é') || (listaLetras[i + 1] == 'í') || (listaLetras[i + 1] == 'ó') ||
+                                        (listaLetras[i + 1] == 'ú'))) {
+                            silabasCorreta[y] = silabasCorreta[y] + listaLetras[i];
+                            y++;
+                            continue;
+                        }
+                        //Casos como letras "ao" estiverem unidas serão mantidas na mesma silaba
+                        if (((listaLetras[i] == 'a' && listaLetras[i + 1] == 'o') ||
+                                (listaLetras[i] == 'e' && listaLetras[i + 1] == 'i') ||
+                                (listaLetras[i] == 'o' && listaLetras[i + 1] == 'i')) && (listaLetras[i + 2] != 'm')) {
+                            silabasCorreta[y] = silabasCorreta[y] + listaLetras[i];
+                            continue;
+                        }
+                        //Caso a letra da posição atual seja vogal e a próxima seja igual
+                        //Array de silaba recebe letra e fecha a silaba
+                        if (listaLetras[i] == listaLetras[i + 1]) {
+                            silabasCorreta[y] = silabasCorreta[y] + listaLetras[i];
+                            y++;
+                            continue;
+                        } else {
+                            System.out.print("Ultimo else");
+                            silabasCorreta[y] = silabasCorreta[y] + listaLetras[i];
+                            y++;
+                        }
                     }
-                    if(((listaLetras[i]=='a')||(listaLetras[i]=='e')||(listaLetras[i]=='o'))&&
-                            ((listaLetras[i+1]=='á')||(listaLetras[i+1]=='é')||(listaLetras[i+1]=='í')||(listaLetras[i+1]=='ó')||
-                                    (listaLetras[i+1]=='ú'))){
-                        silabasCorreta[y]=silabasCorreta[y]+listaLetras[i];
-                        y++;
-                        continue;
-                    }
-                    //Casos como letras "ao" estiverem unidas serão mantidas na mesma silaba
-                    if(((listaLetras[i] == 'a' && listaLetras[i+1] == 'o')||
-                            (listaLetras[i] == 'e' && listaLetras[i+1] == 'i')||
-                            (listaLetras[i] == 'o' && listaLetras[i+1] == 'i'))&&(listaLetras[i+2]!= 'm')){
-                        silabasCorreta[y]=silabasCorreta[y]+listaLetras[i];
-                        continue;
-                    }
-                    //Caso a letra da posição atual seja vogal e a próxima seja igual
-                    //Array de silaba recebe letra e fecha a silaba
-                    if(listaLetras[i]==listaLetras[i+1]){
-                        silabasCorreta[y]=silabasCorreta[y]+listaLetras[i];
-                        y++;
-                        continue;
-                    }
-                    else{
-                        System.out.print("Ultimo else");
-                        silabasCorreta[y]=silabasCorreta[y]+listaLetras[i];
-                        y++;
-                    }
+
+
                 }
-
-
+                //System.out.print("\nContagem y:"+y+" ::para length: "+listaLetras.length+"\n");
             }
-            //System.out.print("\nContagem y:"+y+" ::para length: "+listaLetras.length+"\n");
-        }
 
-        //Apenas informando por console a palavra em avaliação em silabas
-        String palavraSilabas = new String();
-        for(String silaba:silabasCorreta){
-            palavraSilabas = palavraSilabas+"-"+silaba;
-        }
-        Log.i("Sondagem palavra:",palavraSilabas);
+            //Apenas informando por console a palavra em avaliação em silabas
+            String palavraSilabas = new String();
+            for (String silaba : silabasCorreta) {
+                palavraSilabas = palavraSilabas + "-" + silaba;
+            }
+            Log.i("Sondagem palavra:", palavraSilabas);
 
-        return silabasCorreta;
+            return silabasCorreta;
+        }catch (Exception ex){
+            Log.i("Script","Excedeu limite de número de sílabas!");
+            return null;
+        }
 
     }
 

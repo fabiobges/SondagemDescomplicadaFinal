@@ -18,7 +18,7 @@ import java.io.IOException;
 public class TriFragment extends Fragment implements View.OnClickListener{
 
     View view;
-    static Bitmap bitmap;
+    static Bitmap bitmapTri;
     static String strEscritaTri;
     ImageView imgEscrita;
     public static EditText edtTri;
@@ -36,7 +36,7 @@ public class TriFragment extends Fragment implements View.OnClickListener{
 
         edtTri.setText(strEscritaTri);
         imgBtnEscrita.setOnClickListener(this);
-        imgEscrita.setImageBitmap(bitmap);
+        imgEscrita.setImageBitmap(bitmapTri);
         imgBtn.setOnClickListener(this);
 
         return view;
@@ -50,7 +50,9 @@ public class TriFragment extends Fragment implements View.OnClickListener{
             startActivityForResult(intent,0);
         }else if(v == imgBtnEscrita){
             strEscritaTri = GoogleVision.resposta;
-            edtTri.setText(strEscritaTri.replaceAll(" ",""));
+            if(strEscritaTri != null) {
+                edtTri.setText(strEscritaTri.replaceAll(" ", ""));
+            }
         }
     }
 
@@ -60,11 +62,11 @@ public class TriFragment extends Fragment implements View.OnClickListener{
         if(data != null){
             Bundle bundle = data.getExtras();
             if(bundle != null){
-                bitmap =(Bitmap) bundle.get("data");
-                bitmap = GoogleVision.scaleBitmapDown(bitmap,1200);
+                bitmapTri =(Bitmap) bundle.get("data");
+                bitmapTri = GoogleVision.scaleBitmapDown(bitmapTri,1200);
                 try {
-                    if(bitmap != null) {
-                        GoogleVision.callCloudVision(bitmap);
+                    if(bitmapTri != null) {
+                        GoogleVision.callCloudVision(bitmapTri);
                         Log.i("Script:","Bitmap não é null: ");
                     }else{
                         Log.i("Script:","Bitmap é null");
@@ -72,7 +74,7 @@ public class TriFragment extends Fragment implements View.OnClickListener{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                imgEscrita.setImageBitmap(bitmap);
+                imgEscrita.setImageBitmap(bitmapTri);
             }
         }
 

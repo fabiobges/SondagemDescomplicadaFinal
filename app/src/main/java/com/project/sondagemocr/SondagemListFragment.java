@@ -22,6 +22,7 @@ import com.project.sondagemocr.DataBase.DataBase;
 import com.project.sondagemocr.Pojo.SondagemAluno;
 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -76,15 +77,16 @@ public class SondagemListFragment extends ListFragment  {
                 item.put("data", sondagemAluno.getData());
                 item.put("nomeAluno", sondagemAluno.getAluno().getNome());
                 item.put("turma", sondagemAluno.getAluno().getTurma().getIdentificador());
+                item.put("anoTurma", sondagemAluno.getAluno().getTurma().getAno());
 
 
                 listSondagens.add(item);
             }
 
 
-            String[] de = {"id", "data", "nomeAluno", "turma"};
+            String[] de = {"id", "data", "nomeAluno", "turma", "anoTurma"};
             int[] para = {R.id.txViewIdSond,R.id.txViewDataSond, R.id.txViewNomeAluno,
-                    R.id.txViewTurma};
+                    R.id.txViewTurma, R.id.txViewAnoTurma};
 
             SimpleAdapter adapter = new SimpleAdapter(getActivity(), listSondagens,
                     R.layout.fragment_sondagem, de, para);
@@ -111,8 +113,9 @@ public class SondagemListFragment extends ListFragment  {
 
                 Map<String, Object> item = new HashMap<String, Object>();
 
+
                 item.put("id",sondagemAluno.getId());
-                item.put("data", sondagemAluno.getData());
+                item.put("data",  sondagemAluno.getData());
                 item.put("nomeAluno", sondagemAluno.getAluno().getNome());
                 item.put("turma", sondagemAluno.getAluno().getTurma().getIdentificador());
 
