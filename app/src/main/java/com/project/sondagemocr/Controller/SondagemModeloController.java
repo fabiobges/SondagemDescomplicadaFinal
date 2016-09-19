@@ -92,4 +92,33 @@ public class SondagemModeloController {
 
     }
 
+    public SondagemModelo consultaSondagemModeloPorId(SondagemModelo sondagemModelo){
+
+        try {
+            SQLiteDatabase connection = dataBase.getReadableDatabase();
+            Cursor cursor = connection.query("tb_sondagem_modelo", null, "_id = " + sondagemModelo.getId(), null, null, null, null);
+            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                do {
+                    sondagemModelo.setDescSondagemMod(cursor.getString(cursor.getColumnIndex("desc_sondagem_mod")));
+                    sondagemModelo.setPolissilaba(cursor.getString(cursor.getColumnIndex("polissilaba")));
+                    sondagemModelo.setTrissilaba(cursor.getString(cursor.getColumnIndex("trissilaba")));
+                    sondagemModelo.setDissilaba(cursor.getString(cursor.getColumnIndex("dissilaba")));
+                    sondagemModelo.setMonossilaba(cursor.getString(cursor.getColumnIndex("monossilaba")));
+                    sondagemModelo.setFrase(cursor.getString(cursor.getColumnIndex("frase")));
+                } while (cursor.moveToNext());
+            } else {
+                sondagemModelo = null;
+                Log.i("Script", "Não achou nenhuma Sondagem Modelo em BD");
+            }
+            cursor.close();
+            connection.close();
+            return sondagemModelo;
+        }catch (Exception ex){
+            Log.i("Script", "Erro "+ex.getMessage() );
+            return null;
+        }
+
+    }
+
 }

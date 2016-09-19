@@ -108,6 +108,7 @@ public class ResultadoFragment extends Fragment implements View.OnClickListener 
             try {
                 dataBase = new DataBase(getContext(), null, 1);
                 NivelController nivelController = new NivelController(dataBase);
+                Log.i("Selecao",spnHipotese.getSelectedItem().toString());
                 Nivel nivel = nivelController.consultaNivelPorNome(spnHipotese.getSelectedItem().toString());
                 AlunoController alunoController = new AlunoController(dataBase);
                 Aluno aluno = new Aluno();
@@ -239,11 +240,11 @@ public class ResultadoFragment extends Fragment implements View.OnClickListener 
     public void verificaResultado() {
         if ((alfabetico >= silabAlfabetico) && (alfabetico >= silabComValor) && (alfabetico >= silabSemValor) && (alfabetico >= preSilabico)) {
             spnHipotese.setSelection(1);
-        } else if ((silabAlfabetico > silabComValor) && (silabAlfabetico > silabSemValor) && (silabAlfabetico > preSilabico)) {
+        } else if ((silabAlfabetico >= silabComValor) && (silabAlfabetico >= silabSemValor) && (silabAlfabetico >= preSilabico)) {
             spnHipotese.setSelection(2);
-        } else if ((silabComValor > silabSemValor) && (silabComValor > preSilabico)) {
+        } else if ((silabComValor >= silabSemValor) && (silabComValor >= preSilabico)) {
             spnHipotese.setSelection(3);
-        } else if ((silabSemValor > preSilabico)) {
+        } else if ((silabSemValor >= preSilabico)) {
             spnHipotese.setSelection(4);
         } else {
             spnHipotese.setSelection(5);

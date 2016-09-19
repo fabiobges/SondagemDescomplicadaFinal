@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.*;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
+import android.widget.Toolbar;
 
 import com.project.sondagemocr.Controller.TurmaController;
 import com.project.sondagemocr.DataBase.DataBase;
@@ -25,6 +28,14 @@ public class CadastroTurmaActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_turma);
+        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle("Cadastro Turma");
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         edtIdentTurma = (EditText) findViewById(R.id.edtIdentTurma);
         edtAno = (EditText) findViewById(R.id.edtAnoTurma);
@@ -54,6 +65,16 @@ public class CadastroTurmaActivity extends AppCompatActivity implements View.OnC
                 lancaAlertDialog("Os campos não foram preenchidos corretamente!",null);
             }
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //Ativa tela anterior
+        if (item.getItemId() == android.R.id.home) {
+            finish();//fecha tela atual
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void insertTurma(){

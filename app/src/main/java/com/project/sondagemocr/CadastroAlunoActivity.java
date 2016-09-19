@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 
@@ -57,6 +58,14 @@ public class CadastroAlunoActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_aluno);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle("Cadastro Aluno");
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
 
 
         edtNome = (EditText) findViewById(R.id.edtNomeAluno);
@@ -117,6 +126,16 @@ public class CadastroAlunoActivity extends AppCompatActivity implements View.OnC
         }
 
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //Ativa tela anterior
+        if (item.getItemId() == android.R.id.home) {
+            finish();//fecha tela atual
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     public void lancaAlertDialog(String message,Exception ex){

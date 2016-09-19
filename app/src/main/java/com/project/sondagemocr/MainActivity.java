@@ -22,7 +22,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button button;
     private TextView txCadastroUsuario;
     private DataBase dataBase;
-    private SQLiteDatabase connection;
+
 
     //private GoogleApiClient client;
 
@@ -34,7 +34,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+        //Inserindo Hipoteses no Banco de dados
+        dataBase = new DataBase(this,null,1);
+        NivelController nivelController =new NivelController(dataBase);
+        //Verificando se Hipóteses já foram cadastradas
+        if(nivelController.consultaNivel() == false) {
+            Nivel nivel = new Nivel();
+            nivel.setNome("Pré-Silábico");
+            nivelController.insereNivel(nivel);
+            nivel.setNome("Silábico sem Valor Sonoro");
+            nivelController.insereNivel(nivel);
+            nivel.setNome("Silábico com Valor Sonoro");
+            nivelController.insereNivel(nivel);
+            nivel.setNome("Silábico Alfabético");
+            nivelController.insereNivel(nivel);
+            nivel.setNome("Alfabético");
+            nivelController.insereNivel(nivel);
+        }
 
         button = (Button)findViewById(R.id.btEntra);
         txCadastroUsuario = (TextView) findViewById(R.id.textView6);

@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.project.sondagemocr.ConsultaSondagemSimples"
+    tools:context=".ConsultaSondagemSimplesActivity"
     tools:showIn="@layout/activity_consulta_sondagem_simples"
     android:orientation="vertical">
 
@@ -30,9 +30,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="Polissílaba Modelo: "
             android:id="@+id/txViewSondModPoli"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,48 +43,74 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:text="Polissílaba Aluno: "
                 android:layout_marginBottom="14dp"/>
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:editable="false"
-                android:id="@+id/edtTxSondAluPoli"
-                android:layout_marginBottom="14dp"/>
+                android:id="@+id/edtTxSondAluPoli" />
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="90dp"
+            android:id="@+id/imgPoliConsul"
+            android:layout_marginBottom="14dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Trissilaba Modelo: "
+            android:textStyle="bold"
             android:id="@+id/txViewSondModTri"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="8dp"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:divider="@android:color/background_dark">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Trissílaba Aluno: "
+                android:textStyle="bold"
                 android:layout_marginBottom="14dp"/>
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:editable="false"
-                android:id="@+id/edtTxSondAluTri"
-                android:layout_marginBottom="14dp"/>
+                android:id="@+id/edtTxSondAluTri" />
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="90dp"
+            android:id="@+id/imgTriConsul"
+            android:layout_marginBottom="14dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Dissilaba Modelo: "
+            android:textStyle="bold"
             android:id="@+id/txViewSondModDi"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,22 +120,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dissílaba Aluno: "
+                android:textStyle="bold"
                 android:layout_marginBottom="14dp"/>
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:editable="false"
-                android:id="@+id/edtTxSondAluDi"
-                android:layout_marginBottom="14dp"/>
+                android:id="@+id/edtTxSondAluDi" />
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="90dp"
+            android:id="@+id/imgDiConsul"
+            android:layout_marginBottom="14dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Monossílaba Modelo: "
+            android:textStyle="bold"
             android:id="@+id/txViewSondModMono"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -117,22 +157,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Monossílaba Aluno:   "
+                android:textStyle="bold"
                 android:layout_marginBottom="14dp"/>
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:editable="false"
                 android:id="@+id/edtTxSondAluMono"
                 android:layout_marginBottom="14dp"/>
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="90dp"
+            android:id="@+id/imgMonoConsul"
+            android:layout_marginBottom="14dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Frase Modelo: "
+            android:textStyle="bold"
             android:id="@+id/txViewSondModFrase"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -141,22 +194,55 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Monossílaba Aluno:   "
+                android:text="Frase Aluno:   "
+                android:textStyle="bold"
                 android:layout_marginBottom="14dp"/>
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:editable="false"
-                android:id="@+id/edtTxSondAluFrase"
-                android:layout_marginBottom="14dp"/>
+                android:id="@+id/edtTxSondAluFrase" />
         </LinearLayout>
 
-        <Button
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="90dp"
+            android:id="@+id/imgFraseConsul"
+            android:layout_marginBottom="14dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Habilitar Alteração"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:text="Hipótese do Aluno:"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/spnHipoteseConsul"
+            android:clickable="false"
+            android:focusable="false"
+            />
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alterar Sondagem"
             android:id="@+id/btAlterar"/>
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remover Sondagem"
+            android:id="@+id/btRemover"/>
 
     </LinearLayout>
 

@@ -10,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 
@@ -26,7 +27,13 @@ public class MenuSondagemActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_sondagem);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Consulta Sondagens");
+        toolbar.setSubtitle("Sondagens de Alunos e Modelos");
         setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
@@ -50,6 +57,17 @@ public class MenuSondagemActivity extends AppCompatActivity implements View.OnCl
 
         }
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //Ativa tela anterior
+        if (item.getItemId() == android.R.id.home) {
+            finish();//fecha tela atual
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
 
 }

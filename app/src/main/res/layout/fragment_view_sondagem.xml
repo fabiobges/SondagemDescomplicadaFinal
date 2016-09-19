@@ -4,11 +4,56 @@
     android:layout_height="match_parent"
     >
 
-    <ListView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+        <EditText
+            android:id="@+id/edtTxAlunoConsul"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Aluno"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+            <Spinner
+                android:id="@+id/spnTurmaConsul"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"/>
+            <Spinner
+                android:id="@+id/spnAnoConsul"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"></Spinner>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <ListView
         android:id="@+id/android:list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"></ListView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/android:empty"
+        android:text="Não existe Sondagem cadastrada!"/>
 
 
 </LinearLayout>
