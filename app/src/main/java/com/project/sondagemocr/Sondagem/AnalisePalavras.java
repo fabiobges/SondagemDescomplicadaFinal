@@ -108,7 +108,9 @@ public class AnalisePalavras {
         for(int i=0; i<listaSilabasInserida.length; i++){
             if(listaSilabasCorreta[i+reg]=="" || listaSilabasCorreta[i+reg]== null){
                 if(listaSilabasInserida[i]==null || listaSilabasCorreta[i+reg]==""){
-                    if((listaSilabasCorreta[i+reg] == "" || listaSilabasCorreta[i+reg]==null)&& (listaSilabasInserida[i] != null|| listaSilabasCorreta[i]!="" ) ||!listaSilabasInserida[i].equals("")){
+                    if((listaSilabasCorreta[i+reg].equals("") ||
+                            listaSilabasCorreta[i+reg]==null)&& (listaSilabasInserida[i] != null||!listaSilabasCorreta[i].equals("") ) ||
+                            listaSilabasInserida[i] != ""){
                         erros++;
                     }else{
                         break;
@@ -131,7 +133,7 @@ public class AnalisePalavras {
             if(acertos == 0){
                 if(i>0){
                     //Caso não se tenha encontrado algum acerto de letras na silaba
-                    //atual tentamos encontrar algma combinada com silaba anterior da palavra inserida
+                    //atual tentamos encontrar alguma combinada com silaba anterior da palavra inserida
                     if(listaSilabasInserida[i-1].charAt(listaSilabasInserida[i-1].length()-1) == listaSilabasCorreta[i].charAt(0)){
                         i++;
                         erros++;
@@ -148,14 +150,22 @@ public class AnalisePalavras {
                             continue;
                         }else{
                             erros++;
-                            flag = false;
-                            break;
+                            continue;
                         }
                     }
                 }else{
-                    erros++;
-                    flag = false;
-                    break;
+                    if(tam > 5){
+                        erros++;
+                        //Caso silaba anterior ou posterior seja compatível a silaba correta derá reposicionada de acordo com sílaba inserida
+                        if (listaSilabasInserida[i].equals(listaSilabasCorreta[(i+reg)+1])){
+                            reg++;
+                        }
+                        continue;
+                    }else{
+                        erros++;
+                        continue;
+                    }
+
                 }
             }else if(acertos==1 && listaSilabasCorreta[i+reg].length()==2){
                 erros++;
@@ -252,21 +262,21 @@ public class AnalisePalavras {
         //Criando flag com valor true, caso se mantenha true ao final do método será declarado  Silábico sem valor
         boolean flag = true;
         //Recebendo tamanho de arrays para verificar limites
-        int taminc = tamanhoArray(listaSilabasInserida);
+        int tamins = tamanhoArray(listaSilabasInserida);
         int tamcor = tamanhoArray(listaSilabasCorreta);
 
-        //Caso a quantidade de silabas sejam iguais, será declarado Silabico alfabético
+        //Caso a quantidade de silabas sejam iguais ou com pouca diferença dependendo da quantidadade sílabas, será declarado Silabico sem valor sonoro
         if(tamcor > 5){
-            if(tamcor - taminc > 3 || tamcor - taminc < -3){
+            if(tamcor - tamins > 3 || tamcor - tamins < -3){
                 flag = false;
             }
         }
         else if(tamcor == 4 || tamcor == 5){
-            if(tamcor - taminc > 1 || tamcor - taminc < -1){
+            if(tamcor - tamins > 1 || tamcor - tamins < -1){
                 flag = false;
             }
         }else{
-            if(tamcor - taminc != 0){
+            if(tamcor - tamins != 0){
                 flag = false;
             }
         }
