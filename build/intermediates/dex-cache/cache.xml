@@ -1,3 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\Patrick Oliveira\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-vision\v1-rev22-1.22.0\c86f39a766f3c7e1fec7118dd41daef729f6c9b6\google-api-services-vision-v1-rev22-1.22.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="c86f39a766f3c7e1fec7118dd41daef729f6c9b6">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\google-api-services-vision-v1-rev22-1.22.0_113725c4cffcf7aae93c6f12faf013d8ec445cf1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.2.1_208a53a1a01bd12206099319f9677e6328746d57.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.2.1_870dd7705f0250fe0afed30fa43379d86c34a833.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-android\1.20.0\313dc99a7963523871495897ca11aa8472b3c6fd\google-http-client-android-1.20.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="313dc99a7963523871495897ca11aa8472b3c6fd">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\google-http-client-android-1.20.0_d774bdea029944536f5f6ba334f606a0927b9823.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\libs\internal_impl-23.2.1.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.1_bf3613b9f6cf9da20c1293eaee580bcdba46248a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-8.1.0_f96441f0cc57615a7ccaf645c0370cac4c692c9a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client-android\1.20.0\5673179575c32b69a474334255c3044adf18d40\google-api-client-android-1.20.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="05673179575c32b69a474334255c3044adf18d40">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\google-api-client-android-1.20.0_0c98cf131d307f3fdb5f7234a6826be2f1974fe9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.2.1_fdbc5592abd338cb56534c637d2869015efecd72.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.1_4aafe892d7e1d1a21abaf5704d52318cf10f0966.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.1.3\f6c3aed1cdfa21b5c1737c915186ea93a95a58bd\jackson-core-2.1.3.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\jackson-core-2.1.3_fcf8c65e130da3dfbf11cc02aa124d3a0114c488.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="dc55da9e01682cd8c6980d3e7688309ce6462651">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_99fafaf9a43d0264abe66f7ffba5ac1e00cedaf7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.2.1_2d9820a194d2f9c7ad6202fe29365e796eb4713c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\exploded-aar\com.android.support\design\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.2.1_a2ce1578983c10a879bc7f0d73595f6afe5394de.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.2.1_1ec752d716674308a0e8462a086f83a623efbaaa.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client\1.22.0\244350c0c845c583717ade13f5666a452fd0cfa\google-api-client-1.22.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="0244350c0c845c583717ade13f5666a452fd0cfa">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\google-api-client-1.22.0_727d7fc2b7df778ba1fe0591fe683c6ef3c1dd0b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appindexing-8.1.0_e26a8633fb0902419ebd73b491777e0953dc34f7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-gson\1.20.0\9204765f39000f6109c927ac66c7963bf9c7df19\google-http-client-gson-1.20.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="9204765f39000f6109c927ac66c7963bf9c7df19">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\google-http-client-gson-1.20.0_2faa33ef69fae12e49ab18cec05f2300185ccdab.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-jackson2\1.22.0\cc014d64ae11117e159d334c99d9c246d9b36f44\google-http-client-jackson2-1.22.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="cc014d64ae11117e159d334c99d9c246d9b36f44">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\google-http-client-jackson2-1.22.0_d69e599e0c16d4a58b78a111dc53c8e5187019bb.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\1.3.9\40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf\jsr305-1.3.9.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\jsr305-1.3.9_8804eb2bc416b395e59c5b748c5b1b6df787ca34.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client\1.22.0\1d63f369ac78e4838a3197147012026e791008cb\google-oauth-client-1.22.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="1d63f369ac78e4838a3197147012026e791008cb">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\google-oauth-client-1.22.0_9c52fbf795e989823274a703ff9ccffcb122891c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client\1.22.0\d441fc58329c4a4c067acec04ac361627f66ecc8\google-http-client-1.22.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="d441fc58329c4a4c067acec04ac361627f66ecc8">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\google-http-client-1.22.0_108742904eda0471b2be416f35430f6a22785a4e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="356bfbc1a1283038621d0bda17985668ce866a79">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\instant-run_e9c1b22a4e1e7b90311a1d5142f22e014eae57f1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\.gradle\caches\modules-2\files-2.1\com.google.guava\guava-jdk5\17.0\463f8378feba44df7ba7cd9272d01837dad62b36\guava-jdk5-17.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="463f8378feba44df7ba7cd9272d01837dad62b36">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\guava-jdk5-17.0_6711944b685ff109f44e199b69daaba8e9b9e59b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick Oliveira\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.1\2e66da15851f9f5b5079228f856c2f090ba98c38\gson-2.1.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="2e66da15851f9f5b5079228f856c2f090ba98c38">
+        <dex dex="C:\Users\Patrick Oliveira\Documents\sondagemocr\app\build\intermediates\pre-dexed\debug\gson-2.1_dd1448596995434ee895e05084db248d8bc53a68.jar" />
+    </item>
+
+</items>
