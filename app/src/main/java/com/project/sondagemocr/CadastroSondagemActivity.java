@@ -119,7 +119,6 @@ public class CadastroSondagemActivity extends AppCompatActivity implements TabLa
 
     @Override
     public void onTabSelected(TabLayout.Tab tab) {
-        Log.i("Script :","zdas4444: "+tab.getPosition());
         if(tab.getPosition() == 6){
             escritaPoli = PoliFragment.edtPoli.getText().toString();
             ResultadoFragment.textAlunoPoli.setText(escritaPoli.replaceAll(" ",""));  //Tratando qualquer espaço que Usuário deixe
@@ -135,12 +134,37 @@ public class CadastroSondagemActivity extends AppCompatActivity implements TabLa
             ResultadoFragment.textModeloDissi.setText(sondagemModelo.getDissilaba());
             ResultadoFragment.textModeloMono.setText(sondagemModelo.getMonossilaba());
             ResultadoFragment.textModeloFrase.setText(sondagemModelo.getFrase());
+        }else if(tab.getPosition() == 1){
+            if(!IdentificacaoFragment.spnSondagemModelo.getSelectedItem().equals("Sondagem Modelo")){
+                SondagemModeloController sondagemModeloController = new SondagemModeloController(new DataBase(this,null,1));
+                sondagemModelo = new SondagemModelo();
+                sondagemModelo.setDescSondagemMod(IdentificacaoFragment.spnSondagemModelo.getSelectedItem().toString());
+                sondagemModelo = sondagemModeloController.consultaSondagemModeloPorIdentificador(sondagemModelo);
+                mViewPager_cadastro_sondagem.setCurrentItem(1);
+
+            }else {
+                Toast.makeText(this,"A sondagem modelo não foi selecionada!",Toast.LENGTH_SHORT).show();
+                mViewPager_cadastro_sondagem.setCurrentItem(0);
+            }
         }
 
     }
 
     @Override
     public void onTabUnselected(TabLayout.Tab tab) {
+        if(tab.getPosition() == 0){
+            if(!IdentificacaoFragment.spnSondagemModelo.getSelectedItem().equals("Sondagem Modelo")){
+                SondagemModeloController sondagemModeloController = new SondagemModeloController(new DataBase(this,null,1));
+                sondagemModelo = new SondagemModelo();
+                sondagemModelo.setDescSondagemMod(IdentificacaoFragment.spnSondagemModelo.getSelectedItem().toString());
+                sondagemModelo = sondagemModeloController.consultaSondagemModeloPorIdentificador(sondagemModelo);
+                mViewPager_cadastro_sondagem.setCurrentItem(1);
+
+            }else {
+                Toast.makeText(this,"A sondagem modelo não foi selecionada!",Toast.LENGTH_SHORT).show();
+                mViewPager_cadastro_sondagem.setCurrentItem(0);
+            }
+        }
 
     }
 
