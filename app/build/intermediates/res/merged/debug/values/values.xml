@@ -372,7 +372,7 @@
     <string name="text_fragment_a">Sondagens</string>
     <string name="text_fragment_b">Modelo</string>
     <string name="title_activity_ajuda_sondagem">AjudaSondagemActivity</string>
-    <string name="title_activity_cadastro_aluno">CadastroAlunoActivity</string>
+    <string name="title_activity_cadastro_aluno">Cadastro de Aluno</string>
     <string name="title_activity_cadastro_sondagem">Cadastro de Sondagem</string>
     <string name="title_activity_cadastro_sondagem_mod">CadastroSondagemModActivity</string>
     <string name="title_activity_cadastro_turma">Cadastro de Turma</string>
