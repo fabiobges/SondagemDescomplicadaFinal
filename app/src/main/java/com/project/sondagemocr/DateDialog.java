@@ -14,7 +14,9 @@ import java.util.Calendar;
 public class DateDialog extends DialogFragment implements DatePickerDialog.OnDateSetListener{
 
     EditText edtNascAluno;
-    public DateDialog(View view){
+
+
+    public void receiveView(View view){
         edtNascAluno=(EditText)view;
     }
 
@@ -27,6 +29,7 @@ public class DateDialog extends DialogFragment implements DatePickerDialog.OnDat
     }
 
     public void onDateSet(DatePicker view, int year, int month, int day){
+
         String date = day + "/" + (month+1) + "/" + year;
         edtNascAluno.setText(date);
     }

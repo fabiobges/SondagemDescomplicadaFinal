@@ -223,8 +223,8 @@ public class AnalisePalavras {
 
 
             for(char c : listaSilabasInserida[i].toCharArray()){   //Percorrendo silaba da atual posição de array de silabas da palavra inserida pelo aluno
-                for(int y=0; y<listaSilabasCorreta[w].length(); y++){    //Percorrendo silaba da atual posição de array de silabas da palavra correta
-                    if((c == listaSilabasCorreta[w].charAt(y))||((c == 'k')&&(listaSilabasCorreta[i].charAt(y)=='c'))){ //Caso uma das letras da atual silaba da palavra correta sejam compativeis com umas das letras da silaba da palavra inserida sera contado acerto
+                for(int y=0; y<listaSilabasCorreta[i].length(); y++){    //Percorrendo silaba da atual posição de array de silabas da palavra correta
+                    if((c == listaSilabasCorreta[i].charAt(y))||((c == 'k')&&(listaSilabasCorreta[i].charAt(y)=='c'))){ //Caso uma das letras da atual silaba da palavra correta sejam compativeis com umas das letras da silaba da palavra inserida sera contado acerto
                         acertos++;
                     }
                 }

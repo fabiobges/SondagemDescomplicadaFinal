@@ -45,7 +45,8 @@ public class CadastroAlunoActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if(hasFocus){
-                    DateDialog dialog=new DateDialog(v);
+                    DateDialog dialog=new DateDialog();
+                    dialog.receiveView(v);
                     FragmentTransaction ft=getFragmentManager().beginTransaction();
                     dialog.show(ft, "DatePicker");
                 }
