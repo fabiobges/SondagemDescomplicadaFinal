@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -35,6 +36,10 @@ public class CadastroSondagemModActivity extends AppCompatActivity implements Vi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_sondagem_mod);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Cadastro Sondagem Modelo");
+        setSupportActionBar(toolbar);
 
         plus = (FloatingActionButton)findViewById(R.id.plus);
         btnCadastroSondModelo = (FloatingActionButton)findViewById(R.id.btnCadastroSondModelo);

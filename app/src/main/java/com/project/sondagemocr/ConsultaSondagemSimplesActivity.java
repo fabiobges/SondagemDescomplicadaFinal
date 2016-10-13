@@ -153,11 +153,24 @@ public class ConsultaSondagemSimplesActivity extends AppCompatActivity implement
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnHipoteseConsul.setAdapter(arrayAdapter);
-        arrayAdapter.add(sondagemAluno.getNivel().getNome());
-                  /*
-        //spnHipoteseConsul.setSelection(0);
-        //spnHipoteseConsul.setEnabled(false);
-        */
+        //arrayAdapter.add(sondagemAluno.getNivel().getNome());
+        arrayAdapter.add("Alfabético");
+        arrayAdapter.add("Silábico Alfabético");
+        arrayAdapter.add("Silábico com Valor Sonoro");
+        arrayAdapter.add("Silábico sem Valor Sonoro");
+        arrayAdapter.add("Pré-Silábico");
+
+        if(sondagemAluno.getNivel().getNome().equals("Alfabético")) {
+            spnHipoteseConsul.setSelection(0);
+        }else if(sondagemAluno.getNivel().getNome().equals("Silábico Alfabético")){
+            spnHipoteseConsul.setSelection(1);
+        }else if(sondagemAluno.getNivel().getNome().equals("Silábico com Valor Sonoro")){
+            spnHipoteseConsul.setSelection(2);
+        }else if(sondagemAluno.getNivel().getNome().equals("Silábico sem Valor Sonoro")){
+            spnHipoteseConsul.setSelection(3);
+        }else{
+            spnHipoteseConsul.setSelection(4);
+        }
 
         btAlterar.setOnClickListener(this);
         btRemover.setOnClickListener(this);

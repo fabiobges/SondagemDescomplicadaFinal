@@ -6,9 +6,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.*;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
+import android.widget.Toolbar;
 
 import com.project.sondagemocr.Adapters.MyFragmentPagerStateAdapter;
 
@@ -58,6 +60,10 @@ public class CadastroSondagemActivity extends AppCompatActivity implements TabLa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_sondagem);
+
+        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Cadastro Sondagem do Aluno");
+        setSupportActionBar(toolbar);
 
         mTabLayout_cadastro_sondagem = (TabLayout) findViewById(R.id.tab_layout_cadastro_sondagem);
         mViewPager_cadastro_sondagem = (ViewPager) findViewById(R.id.view_pager_cadastro_sondagem);
