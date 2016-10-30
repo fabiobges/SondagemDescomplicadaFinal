@@ -36,12 +36,12 @@
         "source": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\src\\main\\res\\layout\\fragment_consulta_turma.xml"
     },
     {
-        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_consulta_sondagem_simples.xml",
-        "source": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\src\\main\\res\\layout\\content_consulta_sondagem_simples.xml"
-    },
-    {
         "merged": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_consulta_sondagem_simples.xml",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\src\\main\\res\\layout\\content_consulta_sondagem_simples.xml"
     },
     {
         "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
@@ -72,12 +72,12 @@
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
-        "source": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
-    },
-    {
         "merged": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_sondagem.xml",
         "source": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\src\\main\\res\\layout\\fragment_sondagem.xml"
+    },
+    {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
         "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mono_fragment.xml",
@@ -88,16 +88,16 @@
         "source": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\src\\main\\res\\layout\\content_menu_sondagem.xml"
     },
     {
-        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_principal.xml",
-        "source": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\src\\main\\res\\layout\\content_principal.xml"
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
         "source": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.2.1\\res\\layout\\design_navigation_item.xml"
     },
     {
-        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_principal.xml",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\sondagemocr\\app\\src\\main\\res\\layout\\content_principal.xml"
     },
     {
         "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\layout\\poli_fragment.xml",
@@ -108,12 +108,12 @@
         "source": "C:\\Users\\Fabio B\\Documents\\SondagemDescomplicada\\app\\src\\main\\res\\layout\\poli_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\layout\\resultado_fragment.xml",
-        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\src\\main\\res\\layout\\resultado_fragment.xml"
-    },
-    {
         "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_sondagem_modelo.xml",
         "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\src\\main\\res\\layout\\fragment_sondagem_modelo.xml"
+    },
+    {
+        "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\layout\\resultado_fragment.xml",
+        "source": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\src\\main\\res\\layout\\resultado_fragment.xml"
     },
     {
         "merged": "C:\\Users\\Patrick Oliveira\\Documents\\projetos_unifacef\\SondagemOCR\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
