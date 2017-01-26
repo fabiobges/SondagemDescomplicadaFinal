@@ -6,6 +6,7 @@ import android.database.sqlite.*;
 import android.database.*;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
@@ -13,14 +14,16 @@ import android.widget.*;
 //import com.google.android.gms.appindexing.AppIndex;
 //import com.google.android.gms.common.api.GoogleApiClient;
 import com.project.sondagemocr.Controller.NivelController;
+import com.project.sondagemocr.Controller.UsuarioController;
 import com.project.sondagemocr.DataBase.DataBase;
 import com.project.sondagemocr.Pojo.Nivel;
+import com.project.sondagemocr.Pojo.Usuario;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
     private Button button;
-    private TextView txCadastroUsuario;
+    private TextView txCadastroUsuario,login,senha;
     private DataBase dataBase;
 
 
@@ -34,6 +37,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //IMPORTANTE CASO O BANCO SEJA ALTERADO
+        /*
         //Inserindo Hipoteses no Banco de dados
         dataBase = new DataBase(this,null,1);
         NivelController nivelController =new NivelController(dataBase);
@@ -51,10 +56,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
             nivel.setNome("Alfabético");
             nivelController.insereNivel(nivel);
         }
+        */
 
+        login = (TextView) findViewById(R.id.editTextLogin);
+        senha = (TextView) findViewById(R.id.editTextSenha);
         button = (Button)findViewById(R.id.btEntra);
         txCadastroUsuario = (TextView) findViewById(R.id.textView6);
-
         button.setOnClickListener(this);
 
         txCadastroUsuario.setOnClickListener(this);
@@ -93,11 +100,32 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if(v == button){
-            Intent intent = new Intent(this,PrincipalActivity.class);
-            startActivity(intent);
+            Usuario usuario = new Usuario();
+            usuario.setLoginUser(login.getText().toString());
+            usuario.setSenhaUser(senha.getText().toString());
+            dataBase = new DataBase(this,null,1);
+            UsuarioController usuarioController = new UsuarioController(dataBase);
+            usuario = usuarioController.consultaUsuario(usuario);
+
+            if(usuario != null) {
+                makeToast("Usuário certificado!");
+                Intent intent = new Intent(this, PrincipalActivity.class);
+                startActivity(intent);
+                login.setText("");
+                senha.setText("");
+            }else{
+                login.setText("");
+                senha.setText("");
+                makeToast("Login ou Senha estão incorretos!");
+            }
         }else if(v == txCadastroUsuario){
             Intent intent = new Intent(this,CadastroUsuarioActivity.class);
             startActivity(intent);
         }
     }
+
+    public void makeToast(String message){
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+    }
+
 }

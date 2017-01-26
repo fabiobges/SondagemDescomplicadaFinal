@@ -31,11 +31,11 @@ public class TriFragment extends Fragment implements View.OnClickListener{
 
         imgEscrita = (ImageView) view.findViewById(R.id.imageEscrita);
         imgBtn = (ImageButton) view.findViewById(R.id.imageButtonTiraFoto);
-        imgBtnEscrita = (ImageButton) view.findViewById(R.id.imageEscritaTri);
+        //imgBtnEscrita = (ImageButton) view.findViewById(R.id.imageEscritaTri);
         edtTri = (EditText) view.findViewById(R.id.editTextTri);
 
         edtTri.setText(strEscritaTri);
-        imgBtnEscrita.setOnClickListener(this);
+        //imgBtnEscrita.setOnClickListener(this);
         imgEscrita.setImageBitmap(bitmapTri);
         imgBtn.setOnClickListener(this);
 
@@ -55,7 +55,8 @@ public class TriFragment extends Fragment implements View.OnClickListener{
             }
         }
     }
-
+    //Chamando Google Vision
+    /*
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -79,6 +80,7 @@ public class TriFragment extends Fragment implements View.OnClickListener{
         }
 
     }
+    */
 /*
     @Override
     public void onDestroy() {

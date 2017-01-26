@@ -50,6 +50,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
 //        edtEscolaridade.setAdapter(arrayAdapter);
 //        edtCoord = (EditText) findViewById(R.id.edtCoord);
         edtLoginUsuario = (EditText) findViewById(R.id.edtLoginUsuario);
+        edtSenha = (EditText) findViewById(R.id.edtSenhaUsuario);
 
         btCadastra = (FloatingActionButton) findViewById(R.id.btCadastraUsuario);
 
@@ -74,7 +75,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
                     startActivity(intent);
                 }else{
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-                    alertDialog.setMessage("O grau de escolaridade não foi selecionado!");
+                    alertDialog.setMessage("Campos devem ser preenchidos!");
                     alertDialog.setNeutralButton("OK", null);
                     alertDialog.show();
                 }
@@ -98,5 +99,6 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
 //        usuario.setGrau_escolaridade(edtEscolaridade.getSelectedItem().toString());
 //        usuario.setCoordenador(edtCoord.getText().toString());
         usuario.setLoginUser(edtLoginUsuario.getText().toString());
+        usuario.setSenhaUser(edtSenha.getText().toString());
     }
 }

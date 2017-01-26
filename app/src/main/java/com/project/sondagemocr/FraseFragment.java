@@ -32,11 +32,11 @@ public class FraseFragment extends Fragment implements View.OnClickListener{
 
         imgEscrita = (ImageView) view.findViewById(R.id.imageEscrita);
         imgBtn = (ImageButton) view.findViewById(R.id.imageButtonTiraFoto);
-        imgBtnEscrita = (ImageButton) view.findViewById(R.id.imageBtnEscritaFrase);
+       // imgBtnEscrita = (ImageButton) view.findViewById(R.id.imageBtnEscritaFrase);
         edtFrase = (EditText) view.findViewById(R.id.editTextFrase);
 
         edtFrase.setText(strEscritaFrase);
-        imgBtnEscrita.setOnClickListener(this);
+        //imgBtnEscrita.setOnClickListener(this);
         imgEscrita.setImageBitmap(bitmapFrase);
         imgBtn.setOnClickListener(this);
 
@@ -57,6 +57,8 @@ public class FraseFragment extends Fragment implements View.OnClickListener{
         }
     }
 
+    //Chamando Google Vision
+    /*
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -80,6 +82,7 @@ public class FraseFragment extends Fragment implements View.OnClickListener{
         }
 
     }
+    */
 /*
     @Override
     public void onDestroy() {

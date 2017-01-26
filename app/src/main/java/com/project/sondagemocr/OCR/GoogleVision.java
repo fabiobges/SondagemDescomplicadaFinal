@@ -28,7 +28,7 @@ import java.util.List;
 
 public class GoogleVision {
 
-    private final static String CLOUD_VISION_API_KEY = "AIzaSyD1VeTN7j9fJVmOad_NjbqQD4aCr_GjynQ";
+    private final static String CLOUD_VISION_API_KEY = "xpto";
     public static String resposta;
 
     public static Bitmap scaleBitmapDown(Bitmap bitmap, int maxDimension) {
@@ -50,12 +50,13 @@ public class GoogleVision {
         }
         return Bitmap.createScaledBitmap(bitmap, resizedWidth, resizedHeight, false);
     }
-
-    public static void callCloudVision(final Bitmap bitmap) throws IOException {
+    //Necessita de configuração de ambiente no gradle
+    //public static void callCloudVision(final Bitmap bitmap) throws IOException {
         // Switch text to loading
         //mImageDetails.setText(R.string.loading_message);
 
         // Estruturando tarefas assincronas, é necessária a conexão com internet
+        /*
         new AsyncTask<Object, Void, String>() {
             @Override
             protected String doInBackground(Object... params) {
@@ -123,7 +124,7 @@ public class GoogleVision {
         }.execute();
 
     }
-
+    */
    /*
     public void uploadImage(Uri uri) {
         if (uri != null) {
@@ -148,7 +149,7 @@ public class GoogleVision {
     }
 
     */
-
+    /*
     private static String convertResponseToString(BatchAnnotateImagesResponse response) {
         String message = "I found these things:\n\n";
 
@@ -165,5 +166,6 @@ public class GoogleVision {
 
         return message;
     }
-
+    */
+    //}
 }

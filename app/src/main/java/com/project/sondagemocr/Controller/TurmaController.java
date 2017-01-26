@@ -39,7 +39,7 @@ public class TurmaController {
             arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             try {
                 SQLiteDatabase connection = dataBase.getReadableDatabase();
-                Cursor cursor = connection.query( "tb_turma", null, null, null, null, null, null, null);
+                Cursor cursor = connection.query( "tb_turma", null, null, null, "identificacao_turma", null, null, null);
                 cursor.moveToFirst();
                 if (cursor.getCount() > 0) {
                     do{

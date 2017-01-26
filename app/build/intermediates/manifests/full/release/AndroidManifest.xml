@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.project.sondagemocr"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="22" />
+
+    <!-- NORMALS PERMISSIONS -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- DANGEROUS PERMISSIONS -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.project.sondagemocr.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.project.sondagemocr.PrincipalActivity"
+            android:label="@string/title_activity_principal"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.project.sondagemocr.MenuSondagemActivity"
+            android:label="@string/title_activity_menu_sondagem"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.project.sondagemocr.CadastroSondagemActivity"
+            android:label="@string/title_activity_cadastro_sondagem"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.project.sondagemocr.CadastroUsuarioActivity"
+            android:label="@string/title_activity_cadastro_usuario"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.project.sondagemocr.CadastroTurmaActivity"
+            android:label="@string/title_activity_cadastro_turma"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.project.sondagemocr.CadastroAlunoActivity"
+            android:label="@string/title_activity_cadastro_aluno"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.project.sondagemocr.CadastroSondagemModActivity"
+            android:label="@string/title_activity_cadastro_sondagem_mod"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.project.sondagemocr.AjudaSondagemActivity"
+            android:label="@string/title_activity_ajuda_sondagem"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.project.sondagemocr.ConsultaSondagemSimplesActivity"
+            android:label="@string/title_activity_consulta_sondagem_simples"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>

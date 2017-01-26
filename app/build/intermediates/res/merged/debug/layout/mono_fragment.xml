@@ -25,6 +25,8 @@
         android:background="#a4a4a4"
         android:adjustViewBounds="true" />
 
+    <!--Chamando Google Vision-->
+    <!--
     <ImageButton
         android:layout_width="56dp"
         android:layout_height="wrap_content"
@@ -34,7 +36,7 @@
         android:layout_gravity="center"
         android:background="#fafafa"
         android:layout_marginTop="40dp" />
-
+    -->
     <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"

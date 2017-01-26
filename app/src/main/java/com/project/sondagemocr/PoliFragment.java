@@ -33,12 +33,12 @@ public class PoliFragment extends Fragment implements View.OnClickListener{
 
         imgEscrita = (ImageView) view.findViewById(R.id.imageEscrita);
         imgBtn = (ImageButton) view.findViewById(R.id.imageButtonTiraFoto);
-        imgBtnEscrita = (ImageButton) view.findViewById(R.id.imageEscritaPoli);
+        //imgBtnEscrita = (ImageButton) view.findViewById(R.id.imageEscritaPoli);
         edtPoli = (EditText) view.findViewById(R.id.editTextPoli);
 
         edtPoli.setText(strEscritaPoli);
         imgEscrita.setImageBitmap(bitmapPoli);
-        imgBtnEscrita.setOnClickListener(this);
+        //imgBtnEscrita.setOnClickListener(this);
         imgBtn.setOnClickListener(this);
 
         return view;
@@ -58,6 +58,8 @@ public class PoliFragment extends Fragment implements View.OnClickListener{
         }
     }
 
+    //Chamando Google Vision
+    /*
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -81,6 +83,7 @@ public class PoliFragment extends Fragment implements View.OnClickListener{
         }
 
     }
+    */
 /*
     @Override
     public void onDestroy() {

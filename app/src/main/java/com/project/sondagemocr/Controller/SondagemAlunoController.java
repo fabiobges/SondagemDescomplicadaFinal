@@ -158,9 +158,12 @@ public class SondagemAlunoController {
 
     }
 
-    public ArrayList<SondagemAluno> consultaSondagensAlunosPorTurma(String identificacaoTurma){
+    public ArrayList<SondagemAluno> consultaSondagensAlunosPorNomeAluno(String identificacaoTurma,String anoTurma,String nomeAluno){
         try {
-            Log.i("teste","teste10");
+            if(identificacaoTurma.equals("Turma")){
+                identificacaoTurma = "";
+                anoTurma = "";
+            }
             ArrayList<SondagemAluno> sondagensAlunos = new ArrayList<SondagemAluno>();
             int i = 0;
             SQLiteDatabase connection = this.dataBase.getReadableDatabase();
@@ -169,7 +172,9 @@ public class SondagemAlunoController {
                     " FROM tb_sondagem_aluno AS s" +
                     " INNER JOIN tb_aluno AS a ON(s._id_aluno = a._id)" +
                     " INNER JOIN tb_turma AS t ON(a._id_turma = t._id)" +
-                    " WHERE t.identificacao_turma = '"+identificacaoTurma+"' " +
+                    " WHERE t.identificacao_turma LIKE '"+identificacaoTurma+"%' " +
+                    " AND t.ano_turma LIKE '"+anoTurma+"%' " +
+                    " AND a.nome_aluno LIKE '"+nomeAluno+"%' " +
                     " ORDER BY s.dt_sondagem DESC; ",null);
             cursor.moveToFirst();
             if (cursor.getCount() > 0) {
@@ -204,20 +209,69 @@ public class SondagemAlunoController {
 
     }
 
-    public ArrayList<SondagemAluno> consultaSondagensAlunosPorTurmaAno(String identificacaoTurma,String anoTurma){
+    public ArrayList<SondagemAluno> consultaSondagensAlunosPorTurma(String identificacaoTurma,String nomeAluno){
         try {
             Log.i("teste","teste10");
             ArrayList<SondagemAluno> sondagensAlunos = new ArrayList<SondagemAluno>();
             int i = 0;
             SQLiteDatabase connection = this.dataBase.getReadableDatabase();
             Cursor cursor = connection.rawQuery("SELECT s._id, s.polissilaba, s.trissilaba, s.dissilaba, s.monossilaba, s.frase, strftime('%d/%m/%Y',s.dt_sondagem) as 'year', " +
-                    " strftime('%Y',s.dt_sondagem) as only_year, a.nome_aluno, t.identificacao_turma, t.ano_turma" +
+                    " a.nome_aluno, t.identificacao_turma, t.ano_turma" +
                     " FROM tb_sondagem_aluno AS s" +
                     " INNER JOIN tb_aluno AS a ON(s._id_aluno = a._id)" +
                     " INNER JOIN tb_turma AS t ON(a._id_turma = t._id)" +
                     " WHERE t.identificacao_turma = '"+identificacaoTurma+"' " +
-                    " AND only_year = '"+anoTurma+"' " +
+                    " AND a.nome_aluno LIKE '"+nomeAluno+"%' " +
                     " ORDER BY s.dt_sondagem DESC; ",null);
+            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                do {
+                    SondagemAluno sondagemAluno = new SondagemAluno();
+                    Aluno aluno = new Aluno();
+                    Turma turma =  new Turma();
+                    sondagemAluno.setId(cursor.getInt(cursor.getColumnIndex("_id")));
+                    sondagemAluno.setPolissilaba(cursor.getString(cursor.getColumnIndex("polissilaba")));
+                    sondagemAluno.setTrissilaba(cursor.getString(cursor.getColumnIndex("trissilaba")));
+                    sondagemAluno.setDissilaba(cursor.getString(cursor.getColumnIndex("dissilaba")));
+                    sondagemAluno.setMonossilaba(cursor.getString(cursor.getColumnIndex("monossilaba")));
+                    sondagemAluno.setFrase(cursor.getString(cursor.getColumnIndex("frase")));
+                    sondagemAluno.setData(cursor.getString(cursor.getColumnIndex("year")));
+                    aluno.setNome(cursor.getString(cursor.getColumnIndex("nome_aluno")));
+                    turma.setIdentificador(cursor.getString(cursor.getColumnIndex("identificacao_turma")));
+                    turma.setAno(cursor.getString(cursor.getColumnIndex("ano_turma")));
+                    aluno.setTurma(turma);
+                    sondagemAluno.setAluno(aluno);
+                    sondagensAlunos.add(i, sondagemAluno);
+                    Log.i("Aluno : ",aluno.getNome());
+                    i++;
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+            connection.close();
+            return sondagensAlunos;
+        }catch (Exception ex){
+            Log.i("Error DB ",ex.getMessage());
+            return null;
+        }
+
+    }
+
+    public ArrayList<SondagemAluno> consultaSondagensAlunosPorTurmaAno(String identificacaoTurma,String anoTurma,String nomeAluno){
+        try {
+            Log.i("teste",anoTurma+"-"+identificacaoTurma);
+            ArrayList<SondagemAluno> sondagensAlunos = new ArrayList<SondagemAluno>();
+            int i = 0;
+            SQLiteDatabase connection = this.dataBase.getReadableDatabase();
+            Cursor cursor = connection.rawQuery("SELECT s._id, s.polissilaba, s.trissilaba, s.dissilaba, s.monossilaba, s.frase, strftime('%d/%m/%Y',s.dt_sondagem) as 'year', " +
+                    " t.ano_turma, a.nome_aluno, t.identificacao_turma, t.ano_turma" +
+                    " FROM tb_sondagem_aluno AS s" +
+                    " INNER JOIN tb_aluno AS a ON(s._id_aluno = a._id)" +
+                    " INNER JOIN tb_turma AS t ON(a._id_turma = t._id)" +
+                    " WHERE t.identificacao_turma = '"+identificacaoTurma+"' " +
+                    " AND t.ano_turma = '"+anoTurma+"' " +
+                    " AND a.nome_aluno LIKE '"+nomeAluno+"%' " +
+                    " ORDER BY s.dt_sondagem DESC; ",null);
+            Log.i("teste","cursor"+cursor.getCount());
             cursor.moveToFirst();
             if (cursor.getCount() > 0) {
                 do {

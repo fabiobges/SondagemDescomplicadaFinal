@@ -6,8 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.text.method.KeyListener;
 import android.util.Log;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +36,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SondagemListFragment extends ListFragment  implements  AdapterView.OnItemSelectedListener{
+public class SondagemListFragment extends ListFragment  implements  AdapterView.OnItemSelectedListener {
 
     EditText editTxAlunoConsul;
     Spinner spnTurmaConsul, spnAnoConsul;
@@ -42,8 +46,6 @@ public class SondagemListFragment extends ListFragment  implements  AdapterView.
     SondagemAlunoController sondagemAlunoController;
     TurmaController turmaController;
     ArrayAdapter<String> anoAdapter;
-
-
 
 
     @Override
@@ -77,6 +79,25 @@ public class SondagemListFragment extends ListFragment  implements  AdapterView.
         turmaAdapter.insert("Turma",0);
         spnTurmaConsul.setAdapter(turmaAdapter);
 
+        editTxAlunoConsul.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                preencheListSondagensNomeAluno(spnTurmaConsul.getSelectedItem().toString(),
+                        spnAnoConsul.getSelectedItem().toString(),
+                        editTxAlunoConsul.getText().toString());
+
+            }
+        });
         spnTurmaConsul.setOnItemSelectedListener(this);
         spnAnoConsul.setOnItemSelectedListener(this);
 
@@ -127,25 +148,37 @@ public class SondagemListFragment extends ListFragment  implements  AdapterView.
         }
     }
 
-    private void preencheListSondagensTurma(String identificacaoTurma) {
+    private void preencheListSondagensNomeAluno(String identificacaoTurma,String anoTurma,String nomeAluno) {
 
         listSondagens =  new ArrayList<Map<String, Object>>();
 
         sondagensAlunos = new ArrayList<SondagemAluno>();
         SondagemAlunoController sondagemAlunoController = new SondagemAlunoController(dataBase);
-        sondagensAlunos = sondagemAlunoController.consultaSondagensAlunosPorTurma(identificacaoTurma);
+        sondagensAlunos = sondagemAlunoController.consultaSondagensAlunosPorNomeAluno(identificacaoTurma,anoTurma,nomeAluno);
 
         preencheList();
 
     }
 
-    private void preencheListSondagensTurmaAno(String identificacaoTurma,String anoTurma) {
+    private void preencheListSondagensTurma(String identificacaoTurma,String nomeAluno) {
 
         listSondagens =  new ArrayList<Map<String, Object>>();
 
         sondagensAlunos = new ArrayList<SondagemAluno>();
         SondagemAlunoController sondagemAlunoController = new SondagemAlunoController(dataBase);
-        sondagensAlunos = sondagemAlunoController.consultaSondagensAlunosPorTurmaAno(identificacaoTurma,anoTurma);
+        sondagensAlunos = sondagemAlunoController.consultaSondagensAlunosPorTurma(identificacaoTurma,nomeAluno);
+
+        preencheList();
+
+    }
+
+    private void preencheListSondagensTurmaAno(String identificacaoTurma,String anoTurma,String nomeAluno) {
+
+        listSondagens =  new ArrayList<Map<String, Object>>();
+
+        sondagensAlunos = new ArrayList<SondagemAluno>();
+        SondagemAlunoController sondagemAlunoController = new SondagemAlunoController(dataBase);
+        sondagensAlunos = sondagemAlunoController.consultaSondagensAlunosPorTurmaAno(identificacaoTurma,anoTurma,nomeAluno);
 
         preencheList();
 
@@ -218,11 +251,10 @@ public class SondagemListFragment extends ListFragment  implements  AdapterView.
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         if(parent == spnTurmaConsul){
             if(!spnTurmaConsul.getSelectedItem().equals("Turma")){
-                preencheListSondagensTurma(spnTurmaConsul.getSelectedItem().toString());
+                preencheListSondagensTurma(spnTurmaConsul.getSelectedItem().toString(),editTxAlunoConsul.getText().toString());
                 anoAdapter = turmaController.consultaTurmaPorIdentificacao(getActivity(),spnTurmaConsul.getSelectedItem().toString());
                 spnAnoConsul.setAdapter(anoAdapter);
             }else if(spnTurmaConsul.getSelectedItem().equals("Turma")){
-                Log.i("anoAd","ano");
                 anoAdapter.clear();
                 anoAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item);
                 anoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -232,15 +264,19 @@ public class SondagemListFragment extends ListFragment  implements  AdapterView.
             }
         }else if(parent == spnAnoConsul){
             if(!spnAnoConsul.getSelectedItem().equals("Ano")){
-               // preencheListSondagensTurmaAno(spnTurmaConsul.getSelectedItem().toString(),spnAnoConsul.getSelectedItem().toString());
+                preencheListSondagensTurmaAno(spnTurmaConsul.getSelectedItem().toString(),spnAnoConsul.getSelectedItem().toString(),editTxAlunoConsul.getText().toString());
             }
         }
     }
+
+
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+
 }
 
 

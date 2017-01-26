@@ -7,10 +7,15 @@ import java.util.Date;
 public class Turma {
 
     private int id;
+    private Escola escola;
     private Usuario usuario;
     private ArrayList<Aluno> alunos;
     private String identificador;
     private String ano;
+
+    public Turma(){
+        escola = new Escola();
+    }
 
     public int getId() {
         return id;
@@ -51,4 +56,8 @@ public class Turma {
     public void setAno(String ano) {
         this.ano = ano;
     }
+
+    public Escola getEscola() { return escola;}
+
+    public void setEscola(Escola escola) {this.escola = escola;}
 }

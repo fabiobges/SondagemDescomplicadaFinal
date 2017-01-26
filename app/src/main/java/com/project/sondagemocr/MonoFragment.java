@@ -35,8 +35,8 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
         imgEscrita.setImageBitmap(bitmapMono);
         imgBtn = (ImageButton) view.findViewById(R.id.imageButtonTiraFoto);
         imgBtn.setOnClickListener(this);
-        imgBtnEscrita = (ImageButton) view.findViewById(R.id.imageButtonEscrita);
-        imgBtnEscrita.setOnClickListener(this);
+        //imgBtnEscrita = (ImageButton) view.findViewById(R.id.imageButtonEscrita);
+        //imgBtnEscrita.setOnClickListener(this);
         edtTextMono = (EditText) view.findViewById(R.id.editTextMono);
         edtTextMono.setText(strEscritaMono);
 
@@ -68,6 +68,8 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
         }
     }
 
+    //Chamando Google Vision
+    /*
     @Override
     public void onActivityResult(int requestCode, int responseCode, Intent data){
         if(data != null){
@@ -94,7 +96,7 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
 
 
     }
-
+    */
 
 
     //Estruturando dimensões da imagem para melhor aproveitamento

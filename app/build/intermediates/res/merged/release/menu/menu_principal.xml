@@ -1,0 +1,39 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.project.sondagemocr.PrincipalActivity">
+    <item
+        android:id="@+id/item_sondagens"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_visibility_black_48dp"
+        android:title="@string/item_sondagens"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/item_turmas"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_supervisor_account_black_48dp"
+        android:title="@string/item_turmas"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/item_alunos"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_face_black_48dp"
+        android:title="@string/item_alunos"
+        app:showAsAction="never" />
+
+    <item
+        android:visible="false"
+        android:id="@+id/item_relatorio"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_assignment_black_48dp"
+        android:title="@string/item_relatorio"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item_sair"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_exit_to_app_black_48dp"
+        android:title="@string/item_sair"
+        app:showAsAction="never" />
+</menu>

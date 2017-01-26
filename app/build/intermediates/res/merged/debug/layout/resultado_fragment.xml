@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TableLayout
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:shrinkColumns="1,2"
+        android:stretchColumns="1,2">
+
+        <TableRow
+            android:id="@+id/idTableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="80dp"
+                android:textAlignment="center"
+                android:textSize="22dp"/>
+            <TextView
+                android:layout_width="80dp"
+                android:text="Aluno"
+                android:textSize="26dp"/>
+
+            <TextView
+                android:layout_width="80dp"
+                android:text="Modelo"
+                android:textSize="26dp"
+                android:paddingBottom="24dp"
+                android:paddingLeft="5dp"/>
+        </TableRow>
+        <TableRow
+            android:id="@+id/idTableRowPoli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="POLISSÍLABA"
+                android:textSize="15dp"
+                android:paddingTop="15dp"
+                android:layout_height="50dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/textAlunoPoli"
+                android:text="Aluno"
+                android:textSize="15dp"
+                android:layout_height="50dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/textModeloPoli"
+                android:text="Modelo"
+                android:textSize="15dp"
+                android:layout_height="50dp"/>
+
+        </TableRow>
+        <TableRow
+            android:id="@+id/idTableRowTri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="TRISSÍLABA"
+                android:paddingTop="15dp"
+                android:textSize="15dp"
+                android:layout_height="50dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/textAlunoTri"
+                android:text="Aluno"
+                android:textSize="15dp"
+                android:layout_height="50dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/textModeloTri"
+                android:text="Modelo"
+                android:textSize="15dp"
+                android:layout_height="50dp"/>
+
+        </TableRow>
+        <TableRow
+            android:id="@+id/idTableRowDi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="DISSÌLABA"
+                android:paddingTop="15dp"
+                android:textSize="15dp"
+                android:layout_height="50dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/textAlunoDissi"
+                android:text="Aluno"
+                android:textSize="15dp"
+                android:layout_height="50dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/textModeloDissi"
+                android:text="Modelo"
+                android:textSize="15dp"
+                android:layout_height="50dp"/>
+
+        </TableRow>
+        <TableRow
+            android:id="@+id/idTableRowMono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="MONOSSÍLABA"
+                android:paddingTop="15dp"
+                android:textSize="15dp"
+                android:layout_height="50dp"
+                android:paddingRight="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/textAlunoMono"
+                android:text="Aluno"
+                android:textSize="15dp"
+                android:layout_height="50dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/textModeloMono"
+                android:text="Modelo"
+                android:textSize="15dp"
+                android:layout_height="50dp"/>
+
+        </TableRow>
+        <TableRow
+            android:id="@+id/idTableRowFrase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="FRASE"
+                android:paddingTop="15dp"
+                android:textSize="15dp"
+                android:layout_height="50dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/textAlunoFrase"
+                android:text="Aluno aluno aluno aluno aluno"
+                android:textSize="15dp"
+                android:layout_height="50dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/textModeloFrase"
+                android:text="Modelo modelo modelo modelo"
+                android:textSize="15dp"
+                android:layout_height="50dp"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/btAutomatizaSondagem"
+        android:text="Acionar Avaliação Automatizada"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HIPÓTESE DO ALUNO:"
+        android:textSize="20dp"
+        android:layout_marginTop="18dp"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:id="@+id/spnHipotese"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            <Button
+                android:id="@+id/btDetalhesResultadoSondagem"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="10dp"
+                android:text="DETALHES"
+                android:textSize="18dp"
+                android:textColor="@color/branco"/>
+            <Button
+                android:id="@+id/btCadastraResultadoSondagem"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="20dp"
+                android:text="GRAVAR"
+                android:textSize="18dp"
+                android:textColor="@color/branco"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
