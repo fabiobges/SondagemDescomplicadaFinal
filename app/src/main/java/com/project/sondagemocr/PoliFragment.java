@@ -59,7 +59,7 @@ public class PoliFragment extends Fragment implements View.OnClickListener{
     }
 
     //Chamando Google Vision
-    /*
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -67,23 +67,23 @@ public class PoliFragment extends Fragment implements View.OnClickListener{
             Bundle bundle = data.getExtras();
             if(bundle != null){
                 bitmapPoli =(Bitmap) bundle.get("data");
-                bitmapPoli = GoogleVision.scaleBitmapDown(bitmapPoli,1200);
-                try {
-                    if(bitmapPoli != null) {
-                        GoogleVision.callCloudVision(bitmapPoli);
-                        Log.i("Script:","Bitmap não é null: ");
-                    }else{
-                        Log.i("Script:","Bitmap é null");
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+//                bitmapPoli = GoogleVision.scaleBitmapDown(bitmapPoli,1200);
+//                try {
+//                    if(bitmapPoli != null) {
+//                        GoogleVision.callCloudVision(bitmapPoli);
+//                        Log.i("Script:","Bitmap não é null: ");
+//                    }else{
+//                        Log.i("Script:","Bitmap é null");
+//                    }
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
                 imgEscrita.setImageBitmap(bitmapPoli);
             }
         }
 
     }
-    */
+
 /*
     @Override
     public void onDestroy() {

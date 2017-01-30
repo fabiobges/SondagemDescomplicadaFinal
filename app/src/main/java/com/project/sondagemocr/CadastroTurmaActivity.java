@@ -50,8 +50,9 @@ public class CadastroTurmaActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
         if(v == btCadastra){
-            if(edtAno.getText() != null && edtIdentTurma.getText() != null){
-                insertTurma();
+            boolean flag = insertTurma();
+            if(flag == false){
+
                 try{
                     TurmaController turmaController = new TurmaController(dataBase);
                     turmaController.insereTurma(turma);
@@ -59,10 +60,8 @@ public class CadastroTurmaActivity extends AppCompatActivity implements View.OnC
                     Intent intent = new Intent(this, PrincipalActivity.class);
                     startActivity(intent);
                 }catch (Exception ex){
-                    lancaAlertDialog("Não foi possível inserir Turma ao Banco de dados",ex);
+                    lancaAlertDialog("Não foi possível inserir Turma ao Banco de dados!",ex);
                 }
-            }else{
-                lancaAlertDialog("Os campos não foram preenchidos corretamente!",null);
             }
         }
     }
@@ -77,9 +76,18 @@ public class CadastroTurmaActivity extends AppCompatActivity implements View.OnC
         return super.onOptionsItemSelected(item);
     }
 
-    private void insertTurma(){
+    private boolean insertTurma(){
         turma.setIdentificador(edtIdentTurma.getText().toString());
+        if(turma.getIdentificador().equals("")){
+            lancaAlertDialog("A turma não foi informada!",null);
+            return true;
+        }
         turma.setAno(edtAno.getText().toString());
+        if(turma.getAno().length() <= 3){
+            lancaAlertDialog("O ano da turma não foi informado corretamente!",null);
+            return true;
+        }
+        return false;
     }
 
     public void lancaAlertDialog(String message,Exception ex){

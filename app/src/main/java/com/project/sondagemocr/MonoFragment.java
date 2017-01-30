@@ -23,7 +23,6 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
     static Bitmap bitmapMono;
     static String strEscritaMono;
 
-    private static final String CLOUD_VISION_API_KEY ="AIzaSyD1VeTN7j9fJVmOad_NjbqQD4aCr_GjynQ";
 
 
     @Override
@@ -69,7 +68,7 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
     }
 
     //Chamando Google Vision
-    /*
+
     @Override
     public void onActivityResult(int requestCode, int responseCode, Intent data){
         if(data != null){
@@ -77,17 +76,17 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
             Bundle bundle = data.getExtras();
             if (bundle != null){
                 bitmapMono = (Bitmap) bundle.get("data");
-                bitmapMono = GoogleVision.scaleBitmapDown(bitmapMono,1200);
-                try {
-                    if(bitmapMono != null) {
-                        GoogleVision.callCloudVision(bitmapMono);
-                        Log.i("Script:","Bitmap não é null: "+strEscritaMono);
-                    }else{
-                        Log.i("Script:","Bitmap é null");
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                //bitmapMono = GoogleVision.scaleBitmapDown(bitmapMono,1200);
+                //try {
+                   // if(bitmapMono != null) {
+                        //GoogleVision.callCloudVision(bitmapMono);
+                    //    Log.i("Script:","Bitmap não é null: "+strEscritaMono);
+                    //}else{
+                     //   Log.i("Script:","Bitmap é null");
+                    //}
+                //} catch (IOException e) {
+                 //   e.printStackTrace();
+                //}
                 imgEscrita.setImageBitmap(bitmapMono);
 
             }
@@ -96,7 +95,7 @@ public class MonoFragment extends Fragment implements View.OnClickListener{
 
 
     }
-    */
+
 
 
     //Estruturando dimensões da imagem para melhor aproveitamento

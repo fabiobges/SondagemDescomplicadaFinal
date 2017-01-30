@@ -37,6 +37,7 @@ public class TurmaController {
             Log.i("Script","Consultando Turma");
             ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(context,android.R.layout.simple_spinner_item);
             arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            arrayAdapter.add("Turma");
             try {
                 SQLiteDatabase connection = dataBase.getReadableDatabase();
                 Cursor cursor = connection.query( "tb_turma", null, null, null, "identificacao_turma", null, null, null);

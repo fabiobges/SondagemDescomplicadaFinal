@@ -6,8 +6,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- DANGEROUS PERMISSIONS -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -72,6 +70,10 @@
         <activity
             android:name=".ConsultaSondagemSimplesActivity"
             android:label="@string/title_activity_consulta_sondagem_simples"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ConsultaSondagemModSimplesActivity"
+            android:label="@string/title_activity_consulta_sondagem_mod_simples"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

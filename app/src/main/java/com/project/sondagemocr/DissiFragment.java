@@ -52,7 +52,6 @@ public class DissiFragment extends Fragment implements View.OnClickListener{
         }
     }
     //Chamando Google Vision
-    /*
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -60,23 +59,23 @@ public class DissiFragment extends Fragment implements View.OnClickListener{
             Bundle bundle = data.getExtras();
             if(bundle != null){
                 bitmapDi =(Bitmap) bundle.get("data");
-                bitmapDi = GoogleVision.scaleBitmapDown(bitmapDi,1200);
-                try {
-                    if(bitmapDi != null) {
-                        GoogleVision.callCloudVision(bitmapDi);
-                        Log.i("Script:","Bitmap não é null: ");
-                    }else{
-                        Log.i("Script:","Bitmap é null");
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+//                bitmapDi = GoogleVision.scaleBitmapDown(bitmapDi,1200);
+//                try {
+//                    if(bitmapDi != null) {
+//                        GoogleVision.callCloudVision(bitmapDi);
+//                        Log.i("Script:","Bitmap não é null: ");
+//                    }else{
+//                        Log.i("Script:","Bitmap é null");
+//                    }
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
                 imgEscrita.setImageBitmap(bitmapDi);
             }
         }
 
     }
-    */
+
 /*
     @Override
     public void onDestroy() {

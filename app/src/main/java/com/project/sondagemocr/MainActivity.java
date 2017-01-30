@@ -38,7 +38,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
 
         //IMPORTANTE CASO O BANCO SEJA ALTERADO
-        /*
+
         //Inserindo Hipoteses no Banco de dados
         dataBase = new DataBase(this,null,1);
         NivelController nivelController =new NivelController(dataBase);
@@ -56,7 +56,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             nivel.setNome("Alfabético");
             nivelController.insereNivel(nivel);
         }
-        */
+
 
         login = (TextView) findViewById(R.id.editTextLogin);
         senha = (TextView) findViewById(R.id.editTextSenha);

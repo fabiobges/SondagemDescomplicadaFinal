@@ -20,7 +20,9 @@ import com.project.sondagemocr.Pojo.Turma;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class CadastroAlunoActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -110,19 +112,43 @@ public class CadastroAlunoActivity extends AppCompatActivity implements View.OnC
 
     public boolean insertAluno(){
         aluno.setNome(edtNome.getText().toString());
+        if(aluno.getNome().equals("")){
+            lancaAlertDialog("O nome do aluno não foi informado!",null);
+            return false;
+        }
         aluno.setRa(edtRa.getText().toString());
+        if(aluno.getRa().equals("")){
+            lancaAlertDialog("O RA do aluno não foi informado!",null);
+            return false;
+        }
         aluno.getResponsavel().setNome(edtNomeResp.getText().toString());
-//        aluno.getResponsavel().setCpf(edtCpfResp.getText().toString());
+        if(aluno.getResponsavel().getNome().equals("")){
+            lancaAlertDialog("O nome do responsável do aluno não foi informado!",null);
+            return false;
+        }
         aluno.getResponsavel().setTelefone(edtTelResp.getText().toString());
         turma.setIdentificador(spnTurmaAluno.getSelectedItem().toString());
-        turma = turmaController.consultaTurmaId(turma);
-        aluno.setTurma(turma);
+        if(turma.getIdentificador().equals("Turma")){
+            lancaAlertDialog("A turma do aluno não foi informada!",null);
+            return false;
+        }else {
+            turma = turmaController.consultaTurmaId(turma);
+            aluno.setTurma(turma);
+        }
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             aluno.setDt_nascimento(sdf.parse(edtNasc.getText().toString()));
-            return true;
+            GregorianCalendar calendar = (GregorianCalendar) GregorianCalendar.getInstance();
+            calendar.add(Calendar.YEAR,-5);
+            if(calendar.getTime().after(aluno.getDt_nascimento()) == true){
+                return true;
+            }else{
+                lancaAlertDialog("Não é possível que o aluno tenha esta idade!",null);
+                return false;
+            }
+
         } catch (Exception ex){
-            lancaAlertDialog("Data não foi inserida corretamente!",null);
+            lancaAlertDialog("Data não foi inserida!",null);
             return false;
         }
 

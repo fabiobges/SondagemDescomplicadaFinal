@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="false"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
 
     <!--<TextView-->
@@ -19,80 +20,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-    <TextView
-        android:id="@+id/tema"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:clickable="false"
-        android:layout_marginLeft="16dp"
-        android:focusable="false"
-        android:layout_marginTop="10dp"
-        android:text="Animais" />
-
-
-    <ImageView
-        android:id="@+id/but"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="false"
-        android:layout_marginRight="16dp"
-        android:focusable="false"
-        android:src="@drawable/ic_list_black_24dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-    <TextView
-        android:id="@+id/temaDoce"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:clickable="false"
-        android:layout_marginLeft="16dp"
-        android:focusable="false"
-        android:layout_marginTop="10dp"
-        android:text="Doces" />
-
-
-    <ImageView
-        android:id="@+id/butDoce"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="false"
-        android:layout_marginRight="16dp"
-        android:focusable="false"
-        android:src="@drawable/ic_list_black_24dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <TextView
+                android:id="@+id/descModelo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:layout_marginLeft="16dp"
+                android:focusable="false"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
         <TextView
-            android:id="@+id/temaObj"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:clickable="false"
-            android:layout_marginLeft="16dp"
-            android:focusable="false"
-            android:layout_marginTop="10dp"
-            android:text="Objetos" />
-
-
-        <ImageView
-            android:id="@+id/butObj"
+            android:id="@+id/idModelo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="false"
-            android:layout_marginRight="16dp"
             android:focusable="false"
-            android:src="@drawable/ic_list_black_24dp" />
+            android:visibility="invisible" />
 
+                <ImageView
+                    android:id="@+id/but"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:layout_marginRight="16dp"
+                    android:focusable="false"
+                    android:src="@drawable/ic_list_black_24dp" />
     </LinearLayout>
+
+
 
 </LinearLayout>

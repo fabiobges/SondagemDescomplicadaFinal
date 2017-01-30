@@ -33,8 +33,9 @@
         <EditText android:id="@+id/edtNomeAluno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="Nome" />
+            android:maxLength="80"
+            android:inputType="textPersonName"
+            android:hint="Nome*" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -46,7 +47,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:hint="Registro do Aluno" />
+            android:maxLength="10"
+            android:hint="Registro do Aluno*" />
     </android.support.design.widget.TextInputLayout>
 
     <!--<android.support.design.widget.TextInputLayout-->
@@ -66,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:hint="Data de Nascimento"/>
+        android:hint="Data de Nascimento*"/>
 
     <Spinner
         android:layout_marginTop="10dp"
@@ -93,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:hint="Nome" />
+            android:hint="Nome*" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout

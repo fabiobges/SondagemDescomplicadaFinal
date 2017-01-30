@@ -55,7 +55,7 @@ public class ConsultaSondagemSimplesActivity extends AppCompatActivity implement
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +64,7 @@ public class ConsultaSondagemSimplesActivity extends AppCompatActivity implement
                         .setAction("Action", null).show();
             }
         });
+        */
 
         Bundle bundle = getIntent().getExtras();
 

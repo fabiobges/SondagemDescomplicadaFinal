@@ -58,7 +58,7 @@ public class FraseFragment extends Fragment implements View.OnClickListener{
     }
 
     //Chamando Google Vision
-    /*
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -67,22 +67,22 @@ public class FraseFragment extends Fragment implements View.OnClickListener{
             if(bundle != null){
                 bitmapFrase =(Bitmap) bundle.get("data");
                 bitmapFrase = GoogleVision.scaleBitmapDown(bitmapFrase,1200);
-                try {
-                    if(bitmapFrase != null) {
-                        GoogleVision.callCloudVision(bitmapFrase);
-                        Log.i("Script:","Bitmap não é null: ");
-                    }else{
-                        Log.i("Script:","Bitmap é null");
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    if(bitmapFrase != null) {
+//                        GoogleVision.callCloudVision(bitmapFrase);
+//                        Log.i("Script:","Bitmap não é null: ");
+//                    }else{
+//                        Log.i("Script:","Bitmap é null");
+//                    }
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
                 imgEscrita.setImageBitmap(bitmapFrase);
             }
         }
 
     }
-    */
+
 /*
     @Override
     public void onDestroy() {

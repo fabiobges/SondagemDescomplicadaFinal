@@ -8,17 +8,14 @@ import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.text.method.KeyListener;
 import android.util.Log;
 
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
@@ -79,6 +76,7 @@ public class SondagemListFragment extends ListFragment  implements  AdapterView.
         turmaAdapter.insert("Turma",0);
         spnTurmaConsul.setAdapter(turmaAdapter);
 
+        //Ação ao digitar campo de editTxAlunoConsul
         editTxAlunoConsul.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

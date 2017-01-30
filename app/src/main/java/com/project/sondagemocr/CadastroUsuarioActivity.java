@@ -66,18 +66,20 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
     public void onClick(View v) {
         if(v == btCadastra){
             try {
-                if(!edtNome.getText().equals("")) {
-                    insertUsuario();
+                boolean flag = insertUsuario();
+                if(flag == false) {
                     UsuarioController usuarioController = new UsuarioController(dataBase);
                     usuarioController.insereUsuario(usuario);
                     Toast.makeText(this, "Cadastro de usuário realizado com sucesso!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(this, CadastroUsuarioActivity.class);
+                    Intent intent = new Intent(this, MainActivity.class);
                     startActivity(intent);
                 }else{
+                    /*
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
                     alertDialog.setMessage("Campos devem ser preenchidos!");
                     alertDialog.setNeutralButton("OK", null);
                     alertDialog.show();
+                    */
                 }
             }catch (Exception ex){
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
@@ -89,16 +91,34 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
 
     }
 
-    private void insertUsuario(){
-        Log.i("Script",edtNome.getText().toString());
+    private boolean insertUsuario(){
         usuario.setNome(edtNome.getText().toString());
-        Log.i("Script",usuario.getNome());
-//        usuario.setRg(edtRg.getText().toString());
-//        usuario.setCpf(edtCpf.getText().toString());
-//        usuario.setDt_nascimento(edtNasc.getText().toString());
-//        usuario.setGrau_escolaridade(edtEscolaridade.getSelectedItem().toString());
-//        usuario.setCoordenador(edtCoord.getText().toString());
+        if(usuario.getNome().equals("")){
+            Toast.makeText(this, "Nome do usuário deve ser informado!", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        if(usuario.getNome().length() <= 3){
+            Toast.makeText(this, "Nome do usuário deve conter número mínimo de 4 caracteres!", Toast.LENGTH_SHORT).show();
+            return true;
+        }
         usuario.setLoginUser(edtLoginUsuario.getText().toString());
+        if(usuario.getLoginUser().equals("")){
+            Toast.makeText(this, "E-mail do usuário deve ser informado!", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        if(usuario.getLoginUser().length() <=7){
+            Toast.makeText(this, "E-mail do usuário deve conter número mínimo de caracteres!", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        if(usuario.getLoginUser().contains("@")==false ){
+            Toast.makeText(this, "E-mail do usuário deve ser válido!", Toast.LENGTH_SHORT).show();
+            return true;
+        }
         usuario.setSenhaUser(edtSenha.getText().toString());
+        if(usuario.getSenhaUser().equals("")){
+            Toast.makeText(this, "Senha do usuário deve ser informado!", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return false;
     }
 }

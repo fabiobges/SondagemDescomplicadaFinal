@@ -52,4 +52,10 @@
     <string name="text_fragment_a">Sondagens</string>
     <string name="text_fragment_b">Modelo</string>
     <string name="title_activity_consulta_sondagem_simples">ConsultaSondagemSimples</string>
+    <string name="title_activity_view_sondagem_modelo">ViewSondagemModeloActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_consulta_sondagem_mod_simples">ConsultaSondagemModSimplesActivity
+    </string>
 </resources>

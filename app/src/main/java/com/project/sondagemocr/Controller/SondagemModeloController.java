@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import com.project.sondagemocr.DataBase.DataBase;
 import com.project.sondagemocr.Pojo.SondagemModelo;
 
+import java.util.ArrayList;
+
 public class SondagemModeloController {
 
     DataBase dataBase;
@@ -63,6 +65,35 @@ public class SondagemModeloController {
 
     }
 
+    public ArrayList<SondagemModelo> consultaSondagemModeloArray(){
+
+        try{
+            ArrayList<SondagemModelo> sondagemModelos = new ArrayList<>();
+            SQLiteDatabase connection = dataBase.getReadableDatabase();
+            Cursor cursor = connection.query("tb_sondagem_modelo",null,null,null,null,null,"desc_sondagem_mod",null);
+            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                do{
+                    SondagemModelo sondagemModelo = new SondagemModelo();
+                    sondagemModelo.setId(cursor.getInt(cursor.getColumnIndex("_id")));
+                    sondagemModelo.setDescSondagemMod(cursor.getString(cursor.getColumnIndex("desc_sondagem_mod")));
+                    sondagemModelos.add(sondagemModelo);
+                }while (cursor.moveToNext());
+
+            }else {
+                Log.i("Script", "Não achou nenhuma Sondagem em BD");
+            }
+            cursor.close();
+            connection.close();
+            return sondagemModelos;
+        }catch (Exception ex) {
+            Log.i("Script", "Erro " + ex.getMessage());
+            return null;
+        }
+
+
+    }
+
     public SondagemModelo consultaSondagemModeloPorIdentificador(SondagemModelo sondagemModelo){
 
         try {
@@ -100,6 +131,7 @@ public class SondagemModeloController {
             cursor.moveToFirst();
             if (cursor.getCount() > 0) {
                 do {
+                    sondagemModelo.setId(cursor.getInt(cursor.getColumnIndex("_id")));
                     sondagemModelo.setDescSondagemMod(cursor.getString(cursor.getColumnIndex("desc_sondagem_mod")));
                     sondagemModelo.setPolissilaba(cursor.getString(cursor.getColumnIndex("polissilaba")));
                     sondagemModelo.setTrissilaba(cursor.getString(cursor.getColumnIndex("trissilaba")));
@@ -119,6 +151,17 @@ public class SondagemModeloController {
             return null;
         }
 
+    }
+
+    public void removeSondagemModelo(SondagemModelo sondagemModelo){
+        try{
+            SQLiteDatabase connection = this.dataBase.getWritableDatabase();
+            connection.delete("tb_sondagem_modelo", "_id =" + sondagemModelo.getId(), null);
+            Log.i("Script","Erro passou :"+sondagemModelo.getId());
+            connection.close();
+        }catch (Exception ex){
+            Log.i("Script","Erro ao remover sondagem modelo:"+ex);
+        }
     }
 
 }

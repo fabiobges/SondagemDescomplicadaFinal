@@ -56,7 +56,7 @@ public class TriFragment extends Fragment implements View.OnClickListener{
         }
     }
     //Chamando Google Vision
-    /*
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -64,23 +64,23 @@ public class TriFragment extends Fragment implements View.OnClickListener{
             Bundle bundle = data.getExtras();
             if(bundle != null){
                 bitmapTri =(Bitmap) bundle.get("data");
-                bitmapTri = GoogleVision.scaleBitmapDown(bitmapTri,1200);
-                try {
-                    if(bitmapTri != null) {
-                        GoogleVision.callCloudVision(bitmapTri);
-                        Log.i("Script:","Bitmap não é null: ");
-                    }else{
-                        Log.i("Script:","Bitmap é null");
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+//                bitmapTri = GoogleVision.scaleBitmapDown(bitmapTri,1200);
+//                try {
+//                    if(bitmapTri != null) {
+//                        GoogleVision.callCloudVision(bitmapTri);
+//                        Log.i("Script:","Bitmap não é null: ");
+//                    }else{
+//                        Log.i("Script:","Bitmap é null");
+//                    }
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
                 imgEscrita.setImageBitmap(bitmapTri);
             }
         }
 
     }
-    */
+
 /*
     @Override
     public void onDestroy() {
